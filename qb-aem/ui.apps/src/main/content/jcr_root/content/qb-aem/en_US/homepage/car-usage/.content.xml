@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-10-17T03:03:24.455-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/qb-aem/templates/page-home"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Car Usage"
+        sling:resourceType="qb-aem/components/structure/page-home">
+        <logo
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/structure/logo"/>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/content/title"/>
+        <topnav
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/structure/topnav"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/text"
+                text="&lt;p>This is a home page&lt;/p>"
+                textIsRich="true"/>
+        </par>
+        <parsysHome
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <progressbar_copy
+                jcr:created="{Date}2017-10-06T08:41:53.540-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T08:41:53.540-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/progressbar"/>
+            <carusagefunnel_copy
+                jcr:created="{Date}2017-10-16T05:49:25.879-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-16T06:31:50.645-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/carusagefunnel"
+                clocktext=" in 5 minutes your offer will be ready"
+                funnelimg="/content/dam/PolandAsset/graphic-car-usage.png"
+                subtitletext="Additional description goes here."
+                titletext="Car Usage"/>
+            <yeardropdownstatic_c
+                jcr:created="{Date}2017-10-17T00:07:29.104-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T00:07:29.104-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/yeardropdownstatic">
+                <parsysYeardropdown jcr:primaryType="nt:unstructured">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-16T02:51:16.865-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-16T06:00:17.807-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Year of first registration"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysYeardropdown>
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:39:53.382-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:40:17.953-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Year of first registration"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </yeardropdownstatic_c>
+            <radiocirclegroup_cop
+                jcr:created="{Date}2017-10-17T01:24:38.365-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T01:24:38.365-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/radiocirclegroup">
+                <parsysRadiocircle
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:24:48.718-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:25:26.375-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Was your car imported within last 12 months?"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysRadiocircle>
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:40:43.824-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:42:06.893-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Was your car imported within last 12 months?"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </radiocirclegroup_cop>
+            <selectoptionstatic_c
+                jcr:created="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/selectoptionstatic">
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:44:32.204-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:45:10.263-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Country of first registration of your car"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </selectoptionstatic_c>
+            <yeardropdownstatic_c_1378258753
+                jcr:created="{Date}2017-10-17T00:07:29.104-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T00:07:29.104-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/yeardropdownstatic">
+                <parsysYeardropdown jcr:primaryType="nt:unstructured">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-16T02:51:16.865-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-16T06:00:17.807-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Year of first registration"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysYeardropdown>
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:39:53.382-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:48:30.482-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Since when you own your car"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </yeardropdownstatic_c_1378258753>
+            <selectoptionstatic_c_343328963
+                jcr:created="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/selectoptionstatic">
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:44:32.204-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:50:31.592-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="For what purpose do you use your car "
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </selectoptionstatic_c_343328963>
+            <selectoptionstatic_c_624306349
+                jcr:created="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T01:42:59.538-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/selectoptionstatic">
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <radiotogglegroupstat
+                        jcr:created="{Date}2017-10-17T02:49:23.599-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T02:49:23.599-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/radiotogglegroupstatic">
+                        <parsysTexttooltip
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <texttooltipcomponent
+                                jcr:created="{Date}2017-10-17T02:50:06.873-04:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-10-17T02:50:45.239-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                                text="Place of parking during night"
+                                tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                        </parsysTexttooltip>
+                    </radiotogglegroupstat>
+                    <zipcodeinputstatic
+                        jcr:created="{Date}2017-10-17T03:01:05.695-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T03:01:05.695-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/zipcodeinputstatic">
+                        <parsysTexttooltip
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <texttooltipcomponent
+                                jcr:created="{Date}2017-10-17T03:01:20.057-04:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-10-17T03:02:21.137-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                                text="Where do you park your car during night "
+                                tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                        </parsysTexttooltip>
+                    </zipcodeinputstatic>
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T01:44:32.204-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T01:53:38.310-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Planned yearly mileage"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </selectoptionstatic_c_624306349>
+            <textfieldstatic
+                jcr:created="{Date}2017-10-17T02:01:33.294-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T02:01:33.294-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/textfieldstatic">
+                <parsysTexttooltip
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <radiotogglegroupstat
+                        jcr:created="{Date}2017-10-17T02:49:23.599-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T02:49:23.599-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/radiotogglegroupstatic">
+                        <parsysTexttooltip
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <texttooltipcomponent
+                                jcr:created="{Date}2017-10-17T02:50:06.873-04:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-10-17T02:51:47.381-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                                text="How long your car will be used aboard"
+                                tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                        </parsysTexttooltip>
+                    </radiotogglegroupstat>
+                    <texttooltipcomponent
+                        jcr:created="{Date}2017-10-17T02:02:08.326-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-10-17T02:02:36.971-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/texttooltipcomponent"
+                        text="Current mileage (in km)"
+                        tooltippara="We ask you to prepare a tailored offer for your needs"/>
+                </parsysTexttooltip>
+            </textfieldstatic>
+            <gridrow_copy
+                jcr:created="{Date}2017-10-16T06:15:03.329-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-16T06:15:03.329-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/gridrow">
+                <button1
+                    jcr:lastModified="{Date}2017-10-16T07:27:11.334-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="qb-aem/components/content/button"
+                    arrowvariation="c-icon--arrow-right c-icon-flip"
+                    buttonlink="/content/qb-aem/en_US/homepage/car-detail"
+                    buttontext="Back"
+                    buttonvariation="c-button c-button--direct-cta"/>
+                <button2
+                    jcr:lastModified="{Date}2017-10-16T07:27:31.005-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="qb-aem/components/content/button"
+                    arrowvariation="c-icon--arrow-right"
+                    buttonlink="#"
+                    buttontext="Next"
+                    buttonvariation="c-button c-button--direct-cta"/>
+            </gridrow_copy>
+            <infocardform
+                jcr:created="{Date}2017-10-16T03:07:38.236-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-16T07:38:19.149-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/infocardForm"
+                buttontext="Give me a call"
+                opimage="/content/dam/PolandAsset/operator2.png"
+                titletext="Give me call">
+                <button3
+                    jcr:lastModified="{Date}2017-10-16T03:08:21.809-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="qb-aem/components/content/button"
+                    buttonlink="#"
+                    buttontext="Give me a call"
+                    buttonvariation="c-button"/>
+            </infocardform>
+        </parsysHome>
+        <iparsysFooter jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

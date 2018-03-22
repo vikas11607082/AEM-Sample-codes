@@ -1,0 +1,57 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure tiles  multifield component  </div>
+
+
+<div class="l-grid l-grid--max-width">
+  <div class="l-grid__row">
+  
+
+      <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+        <h2 class="c-heading c-tile__heading-section--standard u-text-center">
+
+ ${properties.headtext}
+   
+
+</h2>
+
+      </div>
+  
+    <!-- Tiles  multifield AEM component -->
+	<div  data-sly-use.mbeanObj="com.allianz.absi.dpp.qb_aem.core.models.TilesTouchMultiComponent" data-sly-unwrap>
+    <div data-sly-test="${!mbeanObj.mBean}" data-sly-unwrap></div>
+	  <div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" data-sly-unwrap>
+	  	<div data-sly-list.itemsList="${items.items}" data-sly-unwrap>
+    <div class="l-grid__column-small-12 l-grid__column-medium-12 l-grid__column-large-4">
+      <div class="c-tile c-tile--text">
+  <div class="c_tile__image-wrapper c_tile__image-wrapper--fix-height">
+    <figure class="c-image c-image--center ">
+  <img class="c-image__img c-tile__image" alt="useful description of image if informative and not decoration only." src="${itemsList.tilesimage}">
+</figure>
+
+  </div>
+
+  <h5 class="c-heading c-tile__heading-sub-section">
+
+  ${itemsList.tilestext}
+   
+
+</h5>
+
+
+  <p class="c-copy ">
+  
+ ${itemsList.paragraphtext}
+  
+</p>
+
+</div>
+
+    </div>
+	  </div> </div></div>
+   
+   
+   <!-- Tiles Link multifield AEM component codes ends here-->
+
+      
+
+  </div>
+</div>

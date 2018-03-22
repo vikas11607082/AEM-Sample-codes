@@ -1,2 +1,6 @@
 #base=js
-script.js
+#logic.js
+#dark-light.js
+#listener.js
+#aemeventlistener.js
+#jquery.infinitecarousel.js

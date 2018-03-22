@@ -1,0 +1,37 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure Footer service component  </div>
+<div class="c-footer__service">
+  
+
+
+
+  <nav class="c-footer__legal" role="navigation" aria-label="Service Links" data-sly-use.mbeanObj="com.allianz.absi.dpp.qb_aem.core.models.TouchMultiComponent">
+
+    <div data-sly-test="${!mbeanObj.mBean}" data-sly-unwrap></div>
+    <div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" data-sly-unwrap>
+      <div data-sly-list.itemsList="${items.items}">	
+
+    <a class="c-footer__legal-link" href="${itemsList.footerlegalurl}">
+      ${itemsList.footerlegaltext}
+    </a>
+
+</div>	
+</div>
+   </nav>
+
+
+
+
+  <div class="c-footer__copyright">
+  <small class="c-copyright" role="contentinfo">${properties.coprighttext}</small>
+</div>
+
+  
+
+  <div class="c-poland-chat-link ">
+  <span class="c-poland-chat-link__title">
+   ${properties.text}
+  </span>
+  <i class="c-icon c-icon--poland c-icon--poland--chat" aria-hidden="true"></i>
+</div>
+
+</div>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d892b68c-5387-45cb-9d78-c0a4a11c2701">
+    <jcr:content
+        dam:relativePath="PolandAsset/Trailor.png"
+        jcr:lastModified="{Date}2017-10-06T02:43:22.451-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="XML:com.adobe.xmp: &lt;x:xmpmeta xmlns:x=&quot;adobe:ns:meta/&quot; x:xmptk=&quot;XMP Core 5.4.0&quot;>&#xa;   &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;>&#xa;      &lt;rdf:Description rdf:about=&quot;&quot;&#xa;            xmlns:tiff=&quot;http://ns.adobe.com/tiff/1.0/&quot;&#xa;            xmlns:exif=&quot;http://ns.adobe.com/exif/1.0/&quot;&#xa;            xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&#xa;            xmlns:xmp=&quot;http://ns.adobe.com/xap/1.0/&quot;>&#xa;         &lt;tiff:ResolutionUnit>2&lt;/tiff:ResolutionUnit>&#xa;         &lt;tiff:Compression>5&lt;/tiff:Compression>&#xa;         &lt;tiff:XResolution>144&lt;/tiff:XResolution>&#xa;         &lt;tiff:Orientation>1&lt;/tiff:Orientation>&#xa;         &lt;tiff:YResolution>144&lt;/tiff:YResolution>&#xa;         &lt;exif:UserComment>&#xa;            &lt;rdf:Alt>&#xa;               &lt;rdf:li xml:lang=&quot;x-default&quot;>Screenshot&lt;/rdf:li>&#xa;            &lt;/rdf:Alt>&#xa;         &lt;/exif:UserComment>&#xa;         &lt;exif:PixelXDimension>350&lt;/exif:PixelXDimension>&#xa;         &lt;exif:ColorSpace>1&lt;/exif:ColorSpace>&#xa;         &lt;exif:PixelYDimension>233&lt;/exif:PixelYDimension>&#xa;         &lt;dc:subject>&#xa;            &lt;rdf:Bag/>&#xa;         &lt;/dc:subject>&#xa;         &lt;xmp:ModifyDate>2017:06:15 14:06:57&lt;/xmp:ModifyDate>&#xa;         &lt;xmp:CreatorTool>Pixelmator 3.6&lt;/xmp:CreatorTool>&#xa;      &lt;/rdf:Description>&#xa;   &lt;/rdf:RDF>&#xa;&lt;/x:xmpmeta>&#xa;&#xa;"
+            dam:extracted="{Date}2017-10-06T02:43:14.659-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}144"
+            dam:Physicalheightininches="{Decimal}1.6181386709213257"
+            dam:Physicalwidthindpi="{Long}144"
+            dam:Physicalwidthininches="{Decimal}2.430680513381958"
+            dam:Progressive="no"
+            dam:sha1="0f18cd7465a946280beab13c6f5fed567cfb97db"
+            dam:size="{Long}69819"
+            dc:format="image/png"
+            dc:subject="[]"
+            dc:subject_xmpArrayType="rdf:Bag"
+            exif:ColorSpace="{Long}1"
+            exif:PixelXDimension="{Long}350"
+            exif:PixelYDimension="{Long}233"
+            exif:UserComment="[Screenshot]"
+            exif:UserComment_xmpArrayType="rdf:Alt"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:Compression="{Long}5"
+            tiff:ImageLength="{Long}233"
+            tiff:ImageWidth="{Long}350"
+            tiff:Orientation="{Long}1"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:XResolution="144"
+            tiff:YResolution="144"
+            xmp:CreatorTool="Pixelmator 3.6"
+            xmp:ModifyDate="{Date}2017-06-15T14:06:57.000-04:00"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

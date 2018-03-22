@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+    <bmw.png/>
+    <operator2.png/>
+    <allianz-logo.png/>
+    <allianz-online.png/>
+    <sale-funnel-bg-car-detail.png/>
+    <car_banner.png/>
+    <Heart.png/>
+    <Badge.png/>
+    <Camper.png/>
+    <Oldtimer.png/>
+    <Scooter.png/>
+    <Stars.png/>
+    <Trailer.png/>
+    <Trailer-yellow.png/>
+    <Trailer-gray.png/>
+    <Car.png/>
+    <Checklist.png/>
+    <Headset.png/>
+    <Phone.png/>
+    <Shield.png/>
+    <World.png/>
+    <footer-illustration.png/>
+    <aatik-tasneem.jpg/>
+    <andrew-neel.jpg/>
+    <ben-white.jpg/>
+    <brooke-lark.jpg/>
+    <andrew-neel-2x.jpg/>
+    <ben-white-2x.jpg/>
+    <brooke-lark-2x.jpg/>
+    <clem.jpg/>
+    <denys-nevozhai.jpg/>
+    <clem-onojeghuo.jpg/>
+    <clem-2x.jpg/>
+    <clem-onojeghuo-2x.jpg/>
+    <rob-bye.jpg/>
+    <Trailor.png/>
+    <pexels-photo.jpg/>
+    <rob-bye-2x.jpg/>
+    <vinh-pham.jpg/>
+    <vinh-pham-2x.jpg/>
+    <star.png/>
+    <star-filled.png/>
+    <graphic-car-usage.png/>
+</jcr:root>

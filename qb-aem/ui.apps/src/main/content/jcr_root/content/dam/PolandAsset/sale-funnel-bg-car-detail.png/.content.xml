@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="b14c667d-7da9-45d6-a45e-7197a1b87f17">
+    <jcr:content
+        dam:relativePath="PolandAsset/sale-funnel-bg-car-detail.png"
+        jcr:lastModified="{Date}2017-09-29T00:36:03.233-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-09-29T00:35:54.757-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}3.1246094703674316"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}7.63793420791626"
+            dam:Progressive="no"
+            dam:sha1="7611446d5a265e2d9a7629b13749839b5cdc45e0"
+            dam:size="{Long}85348"
+            dc:format="image/png"
+            exif:ColorSpace="{Long}65535"
+            exif:PixelXDimension="{Long}550"
+            exif:PixelYDimension="{Long}225"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            photoshop:ColorMode="{Long}3"
+            tiff:ImageLength="{Long}225"
+            tiff:ImageWidth="{Long}550"
+            tiff:Orientation="{Long}1"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:XResolution="720000/10000"
+            tiff:YResolution="720000/10000"
+            xmp:CreateDate="{Date}2017-09-18T18:29:48.000+07:00"
+            xmp:CreatorTool="Adobe Photoshop CC 2017 (Macintosh)"
+            xmp:MetadataDate="{Date}2017-09-18T18:31:43.000+07:00"
+            xmp:ModifyDate="{Date}2017-09-18T18:31:43.000+07:00"
+            xmpMM:DocumentID="xmp.did:d9b2d2e3-d386-46b3-949e-e567e7ced326"
+            xmpMM:InstanceID="xmp.iid:d9b2d2e3-d386-46b3-949e-e567e7ced326"
+            xmpMM:OriginalDocumentID="xmp.did:d9b2d2e3-d386-46b3-949e-e567e7ced326">
+            <xmpMM:History
+                jcr:primaryType="nt:unstructured"
+                xmpArraySize="{Long}1"
+                xmpArrayType="rdf:Seq"
+                xmpNodeType="xmpArray">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="created"
+                    stEvt:instanceID="xmp.iid:d9b2d2e3-d386-46b3-949e-e567e7ced326"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Macintosh)"
+                    stEvt:when="{Date}2017-09-18T18:29:48.000+07:00"
+                    xmpNodeType="xmpStruct"/>
+            </xmpMM:History>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

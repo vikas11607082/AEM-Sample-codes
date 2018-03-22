@@ -1,0 +1,13 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure Social media icon component  </div>
+<div class="col-md-4 social-links" data-sly-use.mbeanObj="com.mygenesis.components.core.models.SocialMediaMultifieldComponent">
+
+					<div data-sly-test="${!mbeanObj.mBean}" data-sly-unwrap></div>
+						<div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" data-sly-unwrap>
+							<div data-sly-list.itemsList="${items.items}">	
+								<span class="social-icon-links footer-part" >
+								<A HREF="${itemsList.socialmediagenesisurl}" title="${itemsList.socialmediatitletext}"><img src="${itemsList.socialmediaicon}"  alt="${itemsList.socialmediaalttext}"></A> 
+								</span>
+							</div>	
+						</div>
+
+            </div>

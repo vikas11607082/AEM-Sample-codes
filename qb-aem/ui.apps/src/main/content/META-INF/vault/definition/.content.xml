@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:created="{Date}2017-10-17T03:09:46.209-04:00"
+    jcr:createdBy="admin"
+    jcr:description="UI apps package for qb-aem"
+    jcr:lastModified="{Date}2017-10-17T03:09:46.209-04:00"
+    jcr:lastModifiedBy="admin"
+    jcr:primaryType="vlt:PackageDefinition"
+    buildCount="6"
+    builtWith="Adobe Experience Manager-6.2.0"
+    group="qb-aem"
+    lastUnwrapped="{Date}2017-10-17T03:09:46.209-04:00"
+    lastUnwrappedBy="admin"
+    lastWrapped="{Date}2017-10-17T03:09:46.209-04:00"
+    lastWrappedBy="admin"
+    name="qb-aem.ui.apps"
+    version="0.0.1-SNAPSHOT">
+    <thumbnail.png/>
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/apps/qb-aem"
+            rules="[]"/>
+        <f1
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/etc/designs/qb-aem"
+            rules="[]"/>
+        <f2
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/content/qb-aem"
+            rules="[]"/>
+        <f3
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/content/dam/PolandAsset"
+            rules="[]"/>
+    </filter>
+</jcr:root>

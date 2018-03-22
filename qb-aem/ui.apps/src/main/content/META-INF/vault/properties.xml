@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="createdBy">admin</entry>
+<entry key="name">qb-aem.ui.apps</entry>
+<entry key="lastModified">2017-10-17T03:09:46.209-04:00</entry>
+<entry key="lastModifiedBy">admin</entry>
+<entry key="created">2017-10-17T03:09:54.113-04:00</entry>
+<entry key="buildCount">6</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="dependencies"/>
+<entry key="packageFormatVersion">2</entry>
+<entry key="description">UI apps package for qb-aem</entry>
+<entry key="lastWrapped">2017-10-17T03:09:46.209-04:00</entry>
+<entry key="group">qb-aem</entry>
+<entry key="lastWrappedBy">admin</entry>
+</properties>

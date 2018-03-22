@@ -1,0 +1,28 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure Footer social link component  </div>
+
+
+<div class="c-footer__social u-hidden-small-down" data-sly-use.mbeanObj="com.allianz.absi.dpp.qb_aem.core.models.SocialLinkTouchMultiComponent">
+
+
+
+
+
+   <div data-sly-test="${!mbeanObj.mBean}" data-sly-unwrap></div>
+	 <div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" data-sly-unwrap>
+		<div data-sly-list.itemsList="${items.items}">	
+
+
+
+
+                <a class="c-footer__social-link" href="${itemsList.sociallink}" title="${itemsList.socialtext}">
+                  <i class="c-icon c-icon--2x ${itemsList.iconvariation}" aria-hidden="true"></i>
+               </a>
+
+							</div>	
+						</div>
+
+
+
+
+
+</div>

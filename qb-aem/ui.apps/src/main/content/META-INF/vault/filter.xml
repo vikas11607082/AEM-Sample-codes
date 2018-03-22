@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/qb-aem"/>
-    <filter root="/apps/sling" />
     <filter root="/etc/designs/qb-aem"/>
+    <filter root="/content/qb-aem"/>
+    <filter root="/content/dam/PolandAsset"/>
 </workspaceFilter>

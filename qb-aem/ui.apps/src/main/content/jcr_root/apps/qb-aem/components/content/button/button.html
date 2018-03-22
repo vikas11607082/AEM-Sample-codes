@@ -1,0 +1,11 @@
+<sly data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure button Component </sly>
+
+
+
+<sly data-sly-test.myPath="${properties.buttonlink}.html" />
+<button class="${properties.buttonvariation} ${properties.arrowvariation} u-responsive-button-width u-margin-right-md c-button--icon  type"   onclick="location.href='${myPath @ context='scriptString'}'"   style="width:130px !important;">
+
+  ${properties.buttontext}
+
+
+</button> 

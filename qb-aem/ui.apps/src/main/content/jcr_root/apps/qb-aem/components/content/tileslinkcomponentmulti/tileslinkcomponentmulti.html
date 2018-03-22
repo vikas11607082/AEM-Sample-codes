@@ -1,0 +1,75 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure tiles link multifield component  </div>
+
+
+
+<div class="l-grid l-grid--max-width">
+
+
+      <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+        <h2 class="c-heading c-tile__heading-section--standard u-text-center">
+
+ ${properties.headtext}
+   
+
+</h2>
+
+      </div>
+
+  <div class="l-grid__row">
+    
+
+    
+    
+
+      <div class="c-tile-container">
+  <div class="l-grid l-grid--max-width">
+    
+    <div class="l-grid__row">
+      
+    <!-- Tiles Link multifield AEM component -->
+	<div  data-sly-use.mbeanObj="com.allianz.absi.dpp.qb_aem.core.models.TilesLinkTouchMultiComponent" data-sly-unwrap>
+	<div data-sly-test="${!mbeanObj.mBean}" data-sly-unwrap></div>
+      <div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" data-sly-unwrap>
+	  	<div data-sly-list.itemsList="${items.items}" data-sly-unwrap>
+      <div class="l-grid__column-small-6 l-grid__column-medium-4">
+        <div class="c-tile c-tile--fluid">
+  <a href="#" aria-label="more information about short version of tile title" class="c-tile__link">
+    <figure class="c-image c-tile__image-box-90by56 ">
+  <img class="c-image__img c-tile__image" alt="useful description of image if informative and not decoration only." src="${itemsList.tilesimage}">
+</figure>
+
+
+    <h5 class="c-heading c-tile__heading-sub-section">
+
+ ${itemsList.headtext}
+   
+
+</h5>
+
+
+        <span class="c-link c-link--block c-tile__info-link">
+
+    <span aria-hidden="true" class="c-link__icon c-icon  ${itemsList.arrowvariation}"></span>
+
+  <span class="c-link__text">${itemsList.linktext}</span>
+  
+</span>
+
+  </a>
+</div>
+
+      </div>
+	  
+	  
+	    </div>   </div>  </div>
+<!-- Tiles Link multifield AEM component codes ends here-->
+	  
+	  
+	  
+	  
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>

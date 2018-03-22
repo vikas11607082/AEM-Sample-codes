@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-10-16T07:56:04.312-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/qb-aem/templates/page-home"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Car detail"
+        sling:resourceType="qb-aem/components/structure/page-home">
+        <logo
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/structure/logo"/>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/content/title"/>
+        <topnav
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="qb-aem/components/structure/topnav"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/text"
+                text="&lt;p>This is a home page&lt;/p>"
+                textIsRich="true"/>
+        </par>
+        <parsysHome
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <progressbar
+                jcr:created="{Date}2017-10-06T08:41:53.540-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T08:41:53.540-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/progressbar"/>
+            <funnel
+                jcr:created="{Date}2017-10-06T06:34:28.998-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T06:39:51.798-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/funnel"
+                clocktext=" in 5 minutes your offer will be ready"
+                funnelimg="/content/dam/PolandAsset/sale-funnel-bg-car-detail.png"
+                subtitletext="Your individual offer will be ready after fill in a few data"
+                titletext="Tailored insurance in just a few steps"/>
+            <fueltypecomponent
+                jcr:created="{Date}2017-10-06T07:52:30.676-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T07:52:56.571-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/fueltypecomponent"
+                headertext="Let’s find your car"
+                subheadtext="Fuel type"/>
+            <carbodycomponent
+                jcr:created="{Date}2017-10-06T07:40:34.202-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T07:47:04.098-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/carbodycomponent"
+                headertabletext1="Car body"/>
+            <carmodelcomponent
+                jcr:created="{Date}2017-10-06T07:34:36.648-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T07:35:08.987-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/carmodelcomponent"
+                headertabletext1="Car Model"/>
+            <carenginecomponent
+                jcr:created="{Date}2017-10-06T07:30:19.652-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T07:30:39.484-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/carenginecomponent"
+                headertabletext1="Car engine"
+                headertabletext2="explanation goes here"/>
+            <modeltablecomponent
+                jcr:created="{Date}2017-10-06T07:15:22.667-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T07:25:13.655-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/modeltablecomponent"
+                countsubtext="Please choose your model"
+                counttext="We have found 5 versions of Skoda Octavia....Active"
+                headertabletext1="Model and version"
+                headertabletext2="Power (kW / KM)"
+                headertabletext3=" Car body"/>
+            <standardequipmentcom
+                jcr:created="{Date}2017-10-06T08:20:31.303-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-16T07:56:04.309-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/standardequipmentcomponent"
+                buttontext="MORE OPTIONS"
+                buttonurl="#"
+                explanationtext="explanation goes here"
+                extratext="and more in here"
+                headertext="Standard equipment"/>
+            <antitheftsecuritiesc
+                jcr:created="{Date}2017-10-06T08:00:31.253-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T08:00:45.198-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/antitheftsecuritiescomponent"
+                headtext="Anti-theft security"/>
+            <sideofwheelcomponent
+                jcr:created="{Date}2017-10-06T08:03:35.582-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T08:03:47.240-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/sideofwheelcomponent"
+                headtext="Side of wheel"/>
+            <gridrowcomponent
+                jcr:created="{Date}2017-10-06T08:07:15.338-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-06T08:07:15.338-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/gridrowcomponent">
+                <parsysRowGridsystem
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <button2_copy_copy
+                        jcr:lastModified="{Date}2017-10-16T06:44:18.766-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="qb-aem/components/content/button"
+                        buttonlink="/content/qb-aem/en_US/homepage/car-usage"
+                        buttontext="Next"
+                        buttonvariation="c-button c-button--direct-cta"/>
+                </parsysRowGridsystem>
+            </gridrowcomponent>
+            <infocardform
+                jcr:created="{Date}2017-10-16T06:53:55.025-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-16T07:50:37.050-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="qb-aem/components/content/infocardForm"
+                buttontext="Give me a call"
+                buttonurl="#"
+                opimage="/content/dam/PolandAsset/operator2.png"
+                titletext="Give me call">
+                <button3
+                    jcr:lastModified="{Date}2017-10-16T06:55:21.096-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="qb-aem/components/content/button"
+                    buttonlink="#"
+                    buttontext="Give me a call"
+                    buttonvariation="c-button"/>
+            </infocardform>
+        </parsysHome>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,70 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>Please configure Stage Component </div>
+
+<div class="c-stage c-stage--cutout c-stage--cutout--poland t-bg-soft-beige-light ">
+
+  <div class="c-stage__content">
+    <div class="l-grid l-grid--max-width">
+      <div class="l-grid__row">
+        <div class="l-grid__column-large-10 offset-large-1">
+            <h1 class="c-heading c-heading c-heading--page c-stage__headline">
+
+
+   ${properties.titletext}
+
+</h1>
+
+        </div>
+
+        <div class="l-grid__column-large-8 offset-large-2 c-stage--cutout--poland__list-group">
+          <ul class="c-list c-list--icon">
+    <li class="c-list__item ">
+      <span aria-hidden="true" class="c-icon c-icon--check t-rich-green"></span>
+      Extensive protection with best price garantee
+    </li>
+    <li class="c-list__item ">
+      <span aria-hidden="true" class="c-icon c-icon--check t-rich-green"></span>
+      24h help service - in case of x
+    </li>
+    <li class="c-list__item ">
+      <span aria-hidden="true" class="c-icon c-icon--check t-rich-green"></span>
+      Customization of your personal insurance
+    </li>
+</ul>
+
+        </div>
+
+        <div class="l-grid__column-large-12">
+          <figure class="c-image c-stage__cutout-image ">
+  <img class="c-image__img" alt="useful description of image if informative and not decoration only." src="${properties.image}">
+</figure>
+
+        </div>
+        <div class="l-grid__column-large-12 u-justfiy-center">
+
+
+    <div class="l-grid__column-large-12 u-justfiy-center">
+
+<sly data-sly-test.myPath="${properties.buttonurl}.html" />
+          <button class="c-button c-button--direct-cta u-responsive-button-width u-margin-right-md" type="" onclick="location.href='${myPath @ context='scriptString'}'" >
+${properties.buttontext}
+</button>
+<sly data-sly-test.myPath2="${properties.buttonurl2}.html" />
+          <button class="c-button c-button--direct-cta u-responsive-button-width" type="" onclick="location.href='${myPath2 @ context='scriptString'}'" >
+${properties.buttontext2}
+</button>
+
+        </div>
+        </div>
+      </div>
+      <div class="c-promotional-element c-promotional-element--circle c-promotional-element--rotate c-promotional-element--circle--bordered t-border-rich-red">
+        <div class="c-promotional-element--circle__inner t-rich-red u-text-center">
+          <h3 class="c-heading c-heading--subsection-large c-heading--promo-large c-heading--promo-large--bold">
+           ${properties.discount}<span class="c-heading--promo-large__small-text">%</span>
+          </h3>
+          <p class="c-promotional-element__text-small c-promotional-element__text-bold"> ${properties.promotionaltext}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
