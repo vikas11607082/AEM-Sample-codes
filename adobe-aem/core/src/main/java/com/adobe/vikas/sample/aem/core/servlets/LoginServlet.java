@@ -31,13 +31,14 @@ import com.adobe.vikas.sample.aem.core.service.LoginService;
 		})
 
 @Designate(ocd = LoginServlet.LoginConfig.class)
-@ObjectClassDefinition(name = "Login Servlet Configuration", description = "The configuration for the Login component.")
+
 
 public class LoginServlet extends SlingAllMethodsServlet  {
 
 	String restString;
 	private LoginService loginservice;
 
+	@ObjectClassDefinition(name = "Login Servlet Configuration", description = "The configuration for the Login component.")
 	public @interface LoginConfig {
 
 		@AttributeDefinition(name = "Enter URL", description = "This message is displayed on startup of the component.")
