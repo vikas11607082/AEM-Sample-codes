@@ -18,15 +18,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.allianz.absi.dpp</groupId>
-        <artifactId>qb-aem</artifactId>
+        <groupId>com.adobe.vikas</groupId>
+        <artifactId>sample.aem</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>qb-aem.core</artifactId>
+    <artifactId>sample.core</artifactId>
     <packaging>bundle</packaging>
     <name>qb-aem - Core</name>
-    <description>Core bundle for qb-aem</description>
+    <description>Core bundle for sample-aem</description>
     <build>
         <plugins>
             <plugin>
@@ -51,7 +51,7 @@
                         <!-- Import any version of javax.inject, to allow running on multiple versions of AEM -->
                         <Import-Package>javax.inject;version=0.0.0,*</Import-Package>
                         <Sling-Model-Packages>
-                            com.allianz.absi.dpp.qb_aem.core
+                            com.adobe.vikas.sample.aem.core
                         </Sling-Model-Packages>
                     </instructions>
                 </configuration>

@@ -21,8 +21,8 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.allianz.absi.dpp</groupId>
-        <artifactId>qb-aem</artifactId>
+        <groupId>com.adobe.vikas</groupId>
+        <artifactId>sample.aem</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -30,7 +30,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>qb-aem.ui.content</artifactId>
+    <artifactId>aem.ui.content</artifactId>
     <packaging>content-package</packaging>
     <name>qb-aem - UI content</name>
     <description>UI content package for qb-aem</description>
