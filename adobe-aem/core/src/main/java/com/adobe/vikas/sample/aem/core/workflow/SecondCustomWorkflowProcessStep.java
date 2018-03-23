@@ -1,5 +1,6 @@
 package com.adobe.vikas.sample.aem.core.workflow;
 
+import org.osgi.framework.Constants;
 
 import org.osgi.service.component.annotations.Component;
 
