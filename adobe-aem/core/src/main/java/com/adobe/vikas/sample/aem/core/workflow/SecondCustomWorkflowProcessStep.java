@@ -1,6 +1,5 @@
 package com.adobe.vikas.sample.aem.core.workflow;
 
-
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 
@@ -16,6 +15,7 @@ import com.adobe.granite.workflow.metadata.MetaDataMap;
 				("process.label=" + "Custom workflow process step 2"),
 				(Constants.SERVICE_VENDOR + "=Vikash Kumar"),
 				(Constants.SERVICE_DESCRIPTION + "=Custom workflow process steps2 service")
+
 
 		})
 public class SecondCustomWorkflowProcessStep implements WorkflowProcess {
