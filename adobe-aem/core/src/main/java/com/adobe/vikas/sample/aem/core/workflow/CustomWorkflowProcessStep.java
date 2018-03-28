@@ -15,8 +15,8 @@ import com.adobe.granite.workflow.metadata.MetaDataMap;
 
 		service = CustomWorkflowProcessStep.class, property = {
 				("process.label=" + "Custom workflow process step 1"),
-				(Constants.SERVICE_VENDOR + "Vikash Kumar"),
-				(Constants.SERVICE_DESCRIPTION + "Custom workflow process steps1 service")
+				(Constants.SERVICE_VENDOR + "=Vikash Kumar"),
+				(Constants.SERVICE_DESCRIPTION + "=Custom workflow process steps1 service")
 
 		})
 

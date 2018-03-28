@@ -7,11 +7,20 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.osgi.framework.Constants;
+import org.osgi.service.component.annotations.Component;
 
 import com.adobe.vikas.sample.aem.core.service.LoginService;
 
 
 
+@Component(immediate = true, service = LoginService.class, property = {
+		Constants.SERVICE_DESCRIPTION + "=Sample login service",
+		Constants.SERVICE_VENDOR + "=Vikash kumar"
+
+}
+
+)
 public class LoginServiceImpl implements LoginService {
 
 
