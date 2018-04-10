@@ -1,0 +1,19 @@
+    <div class="c-modal">
+        <div class="c-modal__backdrop" (click)="clickOk();"></div>
+        <div class="c-modal__container">
+            <div class="c-modal__content">
+                <button aria-label="close" id="pricerecalclosebtn" class="c-modal__close" (click)="clickOk();"><span aria-hidden="true" class="fa fa-close"></span></button>
+                <div class="c-popup">
+                    <div class="l-grid__column-12 u-padding-bottom-sm">
+                        <h3 id="pricerecalpopupheading" i18n = "@@price-recalculation-heading" class="c-heading u-text-center u-text-weight-semibold">The price has been recalculated</h3>
+                    </div>
+                    <div class="l-grid__column-12 u-text-center">
+                        <p id="pricerecalpopupinfotext" i18n = "@@price-recalculation-subtext" class="c-copy c-copy--xlarge u-margin-bottom-0">Cena polisy uległa przeliczeniu i jest zgodna z obecną taryfą obowiązującą dla kalkulowanej przez Ciebie oferty. Zapoznaj się z nową ceną i kontynuuj kalkulację.</p>    
+                    </div>
+                    <div class="l-grid__column-12 u-text-center u-margin-top-lg">
+                        <button id="pricerecalpopupbtn" i18n = "@@price-recalculation-ok" class="c-button c-button--direct-cta" type="" (click)="clickOk();">OK</button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

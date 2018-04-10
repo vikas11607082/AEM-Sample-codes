@@ -1,0 +1,375 @@
+<div *ngIf="showCCSearchPage">
+    <div class="c-header-spacer c-header-spacer--single-row">
+        <header class="c-header">
+            <div class="c-navigation">
+                <div class="c-navigation--fixed">
+                    <div class="c-navigation__bar c-header__wrapper">
+                        <div class="c-main-navbar">
+                        </div>
+                        <h6 class="c-heading u-margin-right-lg">
+                            {{userNameForCCSearch}}
+                        </h6>
+                        <div class=""></div>
+                        <div class="c-header-reduced__item c-header-reduced__item--poland c-header-reduced__item--poland--separator">
+                            <a class="c-link c-header__login-button" href="javascript:void()" (click)="clickLogoutCC()">
+                                <span aria-hidden="true" class="c-link__icon c-icon c-icon--arrow-right"></span>
+                                <span class="c-link__text"> </span>
+                                <span>Logout </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+    <div class="l-grid l-grid--full-width">
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column-12 l-grid__column-small-6 l-grid__column-medium-4">
+                <div class="c-textfield js-floating u-margin-top-40">
+                    <input #textbox id="txtEmailId" class="c-textinput__field c-textinput__field--floating js-floating__input" type="text" [input]="txtEmailId" [(ngModel)]="txtEmailId" (keypress)="removeSpace($event);" (keyup)="isEmailValid=true;" (blur)="emailValidation($event);"
+                        onCopy="return false;" onDrag="return false;" onPaste="return false;" onDrop="return false;" dpp-input/>
+                    <label for="" class="c-textinput__label c-textinput__label--floating">
+                    <span class="c-textinput__label--optional"></span>
+                    Email address
+                </label>
+                    <error *ngIf="!isEmailValid" [errorMsg]="'dataInvalid'"></error>
+                    <p class="c-textinput__label--bottom"></p>
+                </div>
+            </div>
+            <div class="l-grid__column-12 l-grid__column-small-6 l-grid__column-medium-4">
+                <div class="c-textfield js-floating u-margin-top-40">
+                    <input #textbox id="txtQuoteId" class="c-textinput__field c-textinput__field--floating js-floating__input" type="text" [input]="txtQuote" [(ngModel)]="txtQuote" (keyup)="isQuoteIdValid=true;" (keypress)="omit_special_char_space($event);acceptOnlyNumbers($event);"
+                        onCopy="return false;" onDrag="return false;" onPaste="return false;" onDrop="return false;" (blur)="quoteValiation($event)" dpp-input/>
+                    <label for="" class="c-textinput__label c-textinput__label--floating">
+                    <span class="c-textinput__label--optional"></span>
+                    Quote ID
+                </label>
+                    <error *ngIf="!isQuoteIdValid" [errorMsg]="'dataInvalid'"></error>
+                    <p class="c-textinput__label--bottom"></p>
+                </div>
+            </div>
+        </div>
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column u-text-center u-margin-top-60">
+                <button id="btnSearch" class="c-button c-button--direct-cta u-margin-right-lg" type="" (click)="btnSearch()">
+                SEARCH
+            </button>
+                <button id="btnClear" class="c-button c-button--direct-cta c-button--direct-cta--secondary u-margin-right-lg" type="" (click)="clearSearch()">
+                CLEAR
+            </button>
+                <button id="btnNewQuote" class="c-button c-button--icon c-icon c-icon--poland c-icon--poland--plus c-button--secondary u-margin-bottom-40" (click)="createNewQuote()">
+                NEW QUOTE
+            </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="c-poland-search-result-table c-table__container js-table-scroll-wrapper">
+        <div class="c-poland-search-result-table--info">
+            <div>Swipe to view more</div>
+            <div>Total {{allItems.length}} results found</div>
+        </div>
+
+        <!-- <div class="l-scroll__container js-table-scroll-wrapper--top">
+            <div style="width: 2734px; height:10px;">
+                
+            </div>
+          </div> -->
+        <div class="l-scroll__container js-table-scroll-wrapper--top">
+            <table class="c-table js-table-sortable  c-table--light">
+                <caption class="u-aria-only">
+                    List of companies and their prices.<br>
+                    <span>Column one contains the official codes used in financial markets.</span>
+                </caption>
+                <thead class="c-table__header">
+                    <tr class="c-table__header__row">
+                        <th>
+                            <div class="c-table__header__title--block">
+                                <!-- <span class="c-table__sort-indicator ">
+                                        <i class="c-icon c-icon--chevron-up" aria-hidden="true" ></i>
+                                        <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                                    </span> -->
+                                <span class="c-table__header__title"></span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('name')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true" ></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Name</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('surname')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Surname</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('companyname')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Company name</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('peselnumber')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">PESEL number</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('regonnumber')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Regon number</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('quoteid')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Quote ID</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('policyid')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Policy number</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('price')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Price</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('phonenumber')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Phone number</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('emailaddress')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Customer E-mail</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('town')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Town</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('street')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Street</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('zipcode')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Zip code</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('carbrand')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Car brand</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('carmodel')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Car model</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('vehiclenumber')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Vehicle number</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('sourceofsale')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Source of sales</span>
+                            </div>
+                        </th>
+                        <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable" (click)="setFieldName('quotedate')">
+                            <div class="c-table__header__title--block">
+                                <span class="c-table__sort-indicator ">
+                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                            </span>
+                                <span class="c-table__header__title">Quote creating date</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let item of allItems | sort:selectedField" class="c-table__content" (dblclick)="retriveData(item.quoteid,item.emailaddress)">
+                    <tr class="c-table__row ">
+                        <td class="c-table__cell">
+                            <input type="button" style="border:none;background:none;" (click)="retriveData(item.quoteid,item.emailaddress)" value="OPEN" />
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.name}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.surname}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.companyname}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.peselnumber}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.regonnumber}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.quoteid}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.policyid}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.price}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.phonenumber}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.emailaddress}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.town}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.street}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.zipcode}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.carbrand}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.carmodel}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.vehiclenumber}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.sourceofsale}}
+                        </td>
+                        <td class="c-table__cell ">
+                            {{item.quotedate}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="c-poland-results-per-page" aria-label="Please enter how many results you want to see per page" *ngIf="clearRecord">
+        <div class="l-grid l-grid--full-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-medium-6 c-results-per-page__container--left justify-content-medium-start">
+                    <a class="c-results-per-page__icon--left" (click)="setPage(1)">
+                        <i class="c-icon c-icon--arrow-left-slim" aria-hidden="true"></i>
+                    </a>
+                    <nav aria-label="Page navigation" class="c-pagination">
+                        <h2 class="u-aria-only">You are here:</h2>
+
+                        <ul *ngIf="page.pages && page.pages.length" class="c-pagination__container">
+                            <li class="c-pagination__item">
+                                <a class="c-pagination__link" (click)="setPage(page.currentPage - 1)">
+                                    <i class="c-pagination__arrow-previous c-icon c-icon--arrow-left" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li *ngFor="let page of page.pages" class="c-pagination__item c-pagination__item--expanded-view">
+                                <a class="c-pagination__link" (click)="setPage(page)">{{page}}</a>
+                            </li>
+                            <li class="c-pagination__item">
+                                <a class="c-pagination__link" (click)="setPage(page.currentPage + 1)">
+                                    <i class="c-pagination__arrow-next c-icon c-icon--arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <a class="c-results-per-page__icon--left" (click)="setPage(page.totalPages)">
+                        <i class="c-icon c-icon--arrow-right-slim" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="l-grid__column-medium-6 c-results-per-page__container--right justify-content-medium-end">
+                    <p class="c-copy c-results-per-page__label">
+                        Results per page
+                    </p>
+                    <a class="c-pagination__link" (click)="setPage(page.currentPage - 1)">
+                        <i class="c-pagination__arrow-previous c-icon c-icon--arrow-left" aria-hidden="true"></i>
+                    </a>
+                    <input class="c-results-per-page__input" type="text" value="10" />
+                    <a class="c-pagination__link" (click)="setPage(page.currentPage + 1)">
+                        <i class="c-pagination__arrow-next c-icon c-icon--arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-root></footer-root>
+</div>

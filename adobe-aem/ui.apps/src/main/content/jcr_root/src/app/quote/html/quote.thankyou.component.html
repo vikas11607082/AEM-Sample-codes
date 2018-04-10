@@ -1,0 +1,258 @@
+<!-- <header-root>
+</header-root> -->
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p8tu-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text" >
+               Vehicle Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p8tu-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text" >
+               Personal Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear ">
+             <p i18n = "@@p8tu-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text" >
+               Insurance Details
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p8tu-progressBar-application" class="c-copy c-copy--large c-progress-bar__text" >
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+<!-- progressbar end -->
+<div class="u-text-center c-sale-funnel c-sale-funnel--bg-light-gray ">
+    <div class="u-padding-md">
+        <h1 i18n="@@p8tu-headerDescription-confirmation" class="c-heading  l-grid__column-large-10 offset-large-1">
+            Confirmation for you
+        </h1>
+    </div>
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image  ">
+            <img class="c-sale-funnel__image c-sale-funnel--image" alt="useful description of image if informative and not decoration only." src="{{'/assets/images/sale-funnel-bg-next-steps.png' | imagepathresolver}}"  />
+        </figure>
+        <div class="c-sale-funnel__image__footer--center c-sale-funnel--bg-light-gray"></div>
+        <div class="c-sale-funnel__image__footer t-bg-poland-soft-blue"></div>
+    </div>
+    <!--<div class="u-padding-bottom-lg t-bg-poland-soft-blue">
+        <h2 i18n="@@p8tu-headerDescription-thanksforChoosingAllianz" class="c-heading c-heading--negative c-sale-funnel__form--title">
+            Thank you for choosing Allianz
+        </h2>
+    </div> -->
+</div>
+<!-- imge -->
+
+<div class="t-bg-soft-blue-light u-margin-bottom-lg" *ngIf="showAppointInspe">
+    <div class="c-poland-radio-circle-group u-padding-top-lg u-padding-bottom-lg">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-2 ">
+                    <h3 i18n="@@p8tu-headerDescription-appointInspection" class="c-heading u-text-center">
+                        <b>Appoint inspection in convenient place</b>
+                    </h3>
+                    <p i18n="@@p8tu-paragraph-carInspection" class="c-copy c-copy--large u-margin-top-lg">
+                        We invite you for car inspection. We will call you and agree on convenient time and place.<br>Note - you have 14 days for car inspection.it is mandatory to keep the Casco cover
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end self inspection -->
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="onlinePaymentFlag">
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2 u-text-center">
+            <h3 i18n="@@p8tu-headerDescription-onlinePayment" class="c-heading u-text-center">
+                Make online payment now
+            </h3>
+            <p i18n="@@p8tu-paragraph-paymentGatewayTransferred" class="c-copy c-copy--xlarge u-text-center">
+                You will be transferred to payment gateway
+            </p>
+            <p i18n="@@p8tu-paragraph-amount" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">
+                Amount
+                <span class="t-primary-action u-padding-left-md">{{policyPrice}} </span>
+            </p>
+            <button (click)="getPaymentServiceData()" id="btn_PayNow" i18n="@@p8tu-button-payNow" class="c-button align-self-center c-button--redCTA u-margin-bottom-lg" type="">
+        PAY NOW
+      </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Payment successful -->
+
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="onlinePaymentSuccessfulFlag">
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2 u-text-center">
+            <h3 i18n="@@p8tu-headerDescription-onlinePaymentSuccessful" class="c-heading u-text-center">
+                Online payment
+            </h3>
+
+            <h3 i18n="@@p8tu-headerDescription-paymentSuccess" class="c-heading u-text-weight-light u-margin-top-md u-margin-bottom-md">
+                Payment success !
+                <span class="c-icon c-icon--check-circle u-font-size-xl t-rich-green"></span>
+            </h3>
+            <p i18n="@@p8tu-paragraph-amountSuccessful" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">
+                Amount
+                <span class="t-primary-action u-padding-left-md" data-hj-suppress="">{{policyPrice}}</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Payment unsuccessful -->
+
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="onlinePaymentUnsuccessfulFlag">
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2 u-text-center">
+            <h3 i18n="@@p8tu-headerDescription-onlinePayment3" class="c-heading u-text-center">
+                Online payment
+            </h3>
+            <h3 i18n="@@p8tu-headerDescription-paymentUnsuccessful" class="c-heading u-text-weight-light u-margin-top-md u-margin-bottom-md">
+                Payment unsuccessful
+                <span class="c-icon c-icon--exclamation-circle u-font-size-xl t-rich-red"></span>
+            </h3>
+            <p i18n="@@p8tu-paragraph-amountUnsuccessful" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold" data-hj-suppress=""> Amount <span class="t-primary-action u-padding-left-md" data-hj-suppress="">{{policyPrice}} </span>
+            </p>
+            <button id="btn_TryAgain" i18n="@@p8tu-button-tryAgain" class="c-button align-self-center c-button--direct-cta u-margin-bottom-lg c-button--direct-cta" type="" (click)="tryAgainForPayment()">
+        TRY AGAIN
+      </button>
+        </div>
+    </div>
+</div>
+
+<!-- Payment pending html -->
+
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="onlinePaymentPendingFlag">
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2 u-text-center">
+            <h3 i18n="@@p8tu-headerDescription-onlinePaymentPending" class="c-heading u-text-center">
+                Online payment
+            </h3>
+            <h3 i18n="@@p8tu-headerDescription-paymentPending" class="c-heading u-text-weight-light u-margin-top-md u-margin-bottom-md">
+                Payment pending
+                <span class="c-icon c-icon--exclamation-circle u-font-size-xl t-rich-orange"></span>
+            </h3>
+            <p i18n="@@p8tu-paragraph-amountPending" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">
+                Amount <span class="t-primary-action u-padding-left-md" data-hj-suppress="">{{policyPrice}} </span>
+            </p>
+            <!--<button id="btn_TryAgainPending" i18n="@@p8tu-button-tryAgainPending" class="c-button align-self-center c-button--direct-cta u-margin-bottom-lg c-button--direct-cta" type=""  (click)="tryAgainForPayment()" >
+        TRY AGAIN
+      </button>-->
+        </div>
+    </div>
+</div>
+<!-- Payment pending html end -->
+
+
+<!-- Payment cancel html -->
+
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="onlinePaymentCancelFlag">
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2 u-text-center">
+            <h3 i18n="@@p8tu-headerDescription-onlinePaymentCancel" class="c-heading u-text-center">
+                Online payment
+            </h3>
+            <h3 i18n="@@p8tu-headerDescription-paymentCancel" class="c-heading u-text-weight-light u-margin-top-md u-margin-bottom-md">
+                Payment cancel
+                <span class="c-icon c-icon--exclamation-circle u-font-size-xl t-rich-red"></span>
+            </h3>
+            <p i18n="@@p8tu-paragraph-amountCancel" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">
+                Amount <span class="t-primary-action u-padding-left-md" data-hj-suppress="" >{{policyPrice}} </span>
+            </p>
+            <button id="btn_TryAgainCancel" i18n="@@p8tu-button-tryAgainCancel" class="c-button align-self-center c-button--direct-cta u-margin-bottom-lg c-button--direct-cta" type=""  (click)="tryAgainForPayment()">
+        TRY AGAIN
+      </button>
+        </div>
+    </div>
+</div>
+<!-- Payment cancel html end -->
+
+<!--Payment at Bank start -->
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg" *ngIf="isPaymentatBank">
+        <div class="l-grid__row">
+           <div class="l-grid__column l-grid__column-8 offset-2">
+              <h3 i18n="@@p8tu-BankPaymentMethod" class="c-heading u-text-center">You have chosen bank transfer as payment method</h3>
+              <p i18n="@@p8tu-BankTransferPayment" class="c-copy c-copy--xlarge u-text-center"> Here are your bank transfer details to complete the payment</p>
+              <p class="c-copy c-copy--xlarge u-text-center u-text-weight-bold" data-hj-suppress="" >
+                 Bank account no. <span class="t-primary-action u-padding-left-md" data-hj-suppress="">{{accountNumberofBank}}</span>
+              </p>
+              <p data-hj-suppress="" i18n="@@p8tu-policyNo" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">Policy Number <span class="t-primary-action u-padding-left-md">{{policyNumber}}</span></p>
+              <p data-hj-suppress="" i18n="@@p8tu-payAtBank-amount" class="c-copy c-copy--xlarge u-text-center u-text-weight-bold">Amount <span class="t-primary-action u-padding-left-md">{{policyPrice}}</span>
+              </p>
+           </div>
+        </div>
+     </div>
+<!--Payment at Bank end-->
+
+<div class="t-bg-soft-beige-light u-margin-bottom-lg u-padding-top-lg u-padding-bottom-lg">
+    <div class="l-grid">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-8 offset-2">
+                <h3 i18n="@@p8tu-headerDescription-linktoDocuments" class="c-heading u-text-center u-margin-top-md">
+                    We will send you an email with link to the documents
+                </h3>
+                <p i18n="@@p8tu-paragraph-preparingDocuments" class="c-copy c-copy--large u-margin-top-lg">
+                    We are preparing your documents. We will send you email with a link, thru which you will be able to download your documents. When you get the message, please proceed according to instructions that will be provided in it
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Below divs structure not required -->
+<!--
+<div class="l-grid u-padding-top-lg u-padding-bottom-lg">
+    <div class="l-grid__row">
+        <div class="l-grid__column u-text-center u-margin-bottom-lg">
+            <h3 i18n="@@p8tu-headerDescription-accessAccount" class="c-heading u-text-center">
+
+                Access your account to view your policy data
+
+
+            </h3>
+
+            <p i18n="@@p8tu-paragraph-downloadDocuments" class="c-copy c-copy--large u-text-center">
+
+                Download documents and edit your information
+
+
+            </p>
+
+            <p class="c-copy u-text-center">
+
+
+
+
+            </p>
+
+            <button id="btn_MyAcount" i18n="@@p8tu-button-gotoMyAccount" class="c-button align-self-center" type="" routerLink="/login">
+  GO TO MY ACCOUNT
+</button>
+
+        </div>
+    </div>
+</div> -->
+
+<!-- Above divs structure not required -->
+
+<div class="t-bg-soft-beige-light">
+</div>
+
+<!-- <hotline-support></hotline-support> -->
+<error-pop-up *ngIf="showBackendError" (onPopupClosed)="closeErrorPopup()"></error-pop-up>
+<call-pop-up *ngIf="showCallCenterError" (onPopupClosed)="closeCallCenterPopup()"></call-pop-up>
+<ng-template error-factory></ng-template>
+<!-- ---------------------------------------------------------------------------------Footer------------------------------------------------------------------------------------------------ -->
+<footer-root></footer-root>

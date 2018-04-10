@@ -1,0 +1,32 @@
+<div class="c-poland-radio-circle-group {{styleModifier}}">
+  <div class="l-grid l-grid--max-width">
+    <div class="l-grid__row">
+      <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+        <h3 class="c-heading u-text-center">
+          {{header.headlineItem.text}}
+        </h3>
+      </div>
+    </div>
+
+    <div class="c-radio-circle l-grid__row">
+      <form [formGroup]="formGroup">
+        <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-12 c-poland-radio-circle-group__item" *ngFor="let item of items">
+          <input id="rdo_{{name}}_{{item.key}}" class="c-radio-circle__input" formControlName="{{name}}" name="{{name}}" type="radio" value="{{item.key}}">
+          <label for="{{name}}-{{item.key}}" class="c-radio-circle__label {{item.icon}}">
+            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+            <span class="c-radio-circle__label-text">{{item.label}}</span>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,516 @@
+<!-- <header-root></header-root>-->
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p2cu-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text" >  
+          Vehicle Data
+      </p>
+
+    </span>
+            <span class="c-progress-bar__item ">
+      <p i18n = "@@p2cu-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text" >
+          Personal Data
+      </p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p2cu-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text" >  
+        Insurance Details
+      </p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p2cu-progressBar-application" class="c-copy c-copy--large c-progress-bar__text" >
+  
+    Application
+
+</p>
+
+    </span>
+        </div>
+    </div>
+</div>
+<div class="l-grid__row">
+    <div class="l-grid__column-12">
+        <div class="u-text-center c-sale-funnel t-bg-poland-green-light ">
+            <div class="u-padding-md">
+                <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+                <p i18n="@@p2cu-paragraph-5Minutes" class="c-copy c-copy--large t-rich-grey"> in 5 minutes your offer will be ready</p>
+                <h1 i18n="@@p2cu-headerDescription-carUsage" class="c-heading  l-grid__column-large-10 offset-large-1">
+                    Car Usage
+                </h1>
+
+            </div>
+            <div class="c-sale-funnel__image-container u-padding-top-lg">
+                <figure class="c-image c-image--fixed-height ">
+                    <img class="c-image__img c-sale-funnel__image " alt="useful description of image if informative and not decoration only." src="{{'/assets/images/graphic-car-usage.png' | imagepathresolver}}" />
+                </figure>
+                <div class="c-sale-funnel__image__footer--center t-bg-poland-green-light"></div>
+                <div class="c-sale-funnel__image__footer t-bg-poland-green"></div>
+            </div>
+            <div class="u-padding-bottom-lg  t-bg-poland-green">
+                <h6 i18n="@@p2cu-headerDescription-licencePlate" class="c-heading c-heading--subsection-small c-heading--subsection-small--negative u-padding-top-lg u-margin-bottom-0 c-sale-funnel__form--title">
+                    Please fill in your licence plate number.
+                </h6>
+                <div class="u-padding-top-lg c-sale-funnel__form">
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-textfield js-floating u-margin-top-0 c-textfield--negative c-textfield--center">
+                            <input id="txt_LicenceNo" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModelOptions]="{standalone: true}" maxlength="10" [ngModel]="plateNo | uppercase" (ngModelChange)="plateNo=$event" required (keypress)="omit_special_char($event)"
+                                (keyup)="onKeyLicensePlate($event)" (focus)="addClass($event)" (blur)="removeClass($event);" [input]="plateNo"  data-hj-suppress="" dpp-input/>
+                            <label for="text-1" class="c-textinput__label c-textinput__label--floating">
+                     <span i18n = "@@p2cu-span-licencePlate" class="c-textinput__label--optional"></span>
+                     <!--Licence plate (optional)-->
+                     Numer rejestracyjny (opcjonalnie)
+                     </label>
+                            <p class="c-textinput__label--bottom"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div #yearOfReg class="l-grid u-padding-top-sm u-padding-bottom-sm">
+    <div class="l-gird__row u-text-center u-margin-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-yearOfFirstReg" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-0">
+            Year of first registration
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip1,tooltip1popup1,$event)" (mouseout)="removeClassTooltip(tooltip1,tooltip1popup1,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip1></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup1>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+
+
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column-3 l-grid__column-medium-2 l-grid__column-large-2 u-padding-right-none u-padding-left-none">
+                <drop-down [dropDownName]="'firstRegYear'" [placeholder]="firstRegDate" i18n-placeholder="@@p2cu-placeholder-firstRegYear" [dropDownItems]="years" (onDataPicked)="firstRegistrationDate($event)"></drop-down>
+            </div>
+            <div class="u-padding-top-lg">
+                <i class="c-icon c-icon--calendar icon-sm"> </i>
+            </div>
+        </div>
+        <div class="l-grid__row justify-content-center">
+            <error *ngIf="dateFirstRegNull==true" [errorMsg]="'noSelection'"></error>
+        </div>
+    </div>
+
+    <div #importedInMonths class="c-poland-radio-circle-group u-margin-bottom-lg u-padding-top-lg u-margin-top-lg" style="padding-left: 2%;">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h2 i18n="@@p2cu-headerDescription-carImported" class="c-heading c-heading--subsection-medium u-text-center">
+                        Was your car imported within last 12 months
+                        <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip2,tooltip1popup2,$event)" (mouseout)="removeClassTooltip(tooltip2,tooltip1popup2,$event)">
+                            <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip2></a>
+                            <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup2>
+                                <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                            </div>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_CarImported_1" class="c-radio-circle__input" name="radio-icon-group-1" type="radio" value="yes" [ngModel]="carImportedInMonths" (ngModelChange)="carImportedInMonths=$event" />
+                    <label for="rdo_CarImported_1" class="c-radio-circle__label" (click)="showcarImported()">
+            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+            <span i18n = "@@p2cu-span-yes" class="c-radio-circle__label-text">Yes</span>
+            </label>
+                </div>
+                <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_CarImported_2" class="c-radio-circle__input" name="radio-icon-group-1" type="radio" value="no" [ngModel]="carImportedInMonths" (ngModelChange)="carImportedInMonths=$event" (change)="resetCountryRegistration()" />
+                    <label for="rdo_CarImported_2" class="c-radio-circle__label" (click)="hidecarImported()">
+            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+            <span i18n = "@@p2cu-span-no" class="c-radio-circle__label-text">No</span>
+            </label>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <error *ngIf="carImportNull==true" [errorMsg]="'noSelection'"></error>
+            </div>
+        </div>
+    </div>
+
+    <div #countryOfReg class="l-gird__row u-margin-top-lg u-padding-top-lg" *ngIf="carImported == true">
+        <h2 i18n="@@p2cu-headerDescription-countryOfFirstReg" class="c-heading c-heading--subsection-medium u-margin-bottom-lg u-text-center">
+            Country of first registration of your car
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip3,tooltip1popup3,$event)" (mouseout)="removeClassTooltip(tooltip3,tooltip1popup3,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip3></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup3>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+
+        <div class="l-grid__column-large-4 l-grid__column-medium-5 l-grid__column-small-6 u-margin-auto">
+            <div class="c-select js-select ">
+                <select class="c-select__natural" name="select-1" aria-hidden="false">
+      <option value="Europe (withoud Great Britain)">
+         Europe (withoud Great Britain)
+      </option>
+      <option value="Asia">
+         Asia
+      </option>
+     
+   </select>
+                <div class="c-select__container" (click)="showDropDownCountryOfRegistration(dropDownCountryRegistration,$event,dropDownCountryRegistrationSpan)" aria-hidden="true">
+                    <span class="c-select__placeholder" tabindex="0">{{selectedCountryRegistration}}</span>
+                    <span #dropDownCountryRegistrationSpan class="c-select__icon c-icon c-icon--chevron-down is-open"></span>
+                    <ul class="c-select__option-list is-visible" #dropDownCountryRegistration ngDefaultControl id="countryRegistrationDropdown" style="
+        display: none;
+         ">
+                        <li class="c-select__option " *ngFor="let x of countryRegistration" data-value="{{x}}" (clickOutside)="hideDropDownCountryRegistration(dropDownCountryRegistration, selectedCountryRegistration,$event,dropDownCountryRegistrationSpan)" (click)="hideDropDownCountryRegistration(dropDownCountryRegistration, x, $event,dropDownCountryRegistrationSpan);">{{x}}</li>
+                    </ul>
+                </div>
+                <div class="c-select__container">
+                    <error *ngIf="countryRegNull == true" [errorMsg]="'noSelection'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div #carOwnDate class="l-gird__row u-text-center u-margin-top-lg u-padding-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-sinceWhenOwnCar" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-0">
+            Since when you own your car
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip4,tooltip1popup4,$event)" (mouseout)="removeClassTooltip(tooltip4,tooltip1popup4,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip4></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup4>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+
+
+
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column-3 l-grid__column-medium-2 l-grid__column-large-2 u-padding-right-none u-padding-left-none">
+                <drop-down [dropDownName]="'carOwnYear'" [placeholder]="carOwnedFromDate" i18n-placeholder="@@p2cu-placeholder-carOwnYear" [dropDownItems]="carOwnYears" (onDataPicked)="setCarOwnedDate($event)"></drop-down>
+            </div>
+            <div class="u-padding-top-lg">
+                <i class="c-icon c-icon--calendar icon-sm"> </i>
+            </div>
+        </div>
+        <div class="l-grid__row justify-content-center">
+            <error *ngIf="carOwnedDateNull==true" [errorMsg]="'noSelection'"></error>
+        </div>
+    </div>
+
+
+    <div #purpose class="l-gird__row u-margin-top-lg u-padding-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-whatPurpose" class="c-heading c-heading--subsection-medium u-margin-bottom-lg u-text-center">
+            For what purpose do you use your car
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip5,tooltip1popup5,$event)" (mouseout)="removeClassTooltip(tooltip5,tooltip1popup5,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip5></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup5>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+        <div class="l-grid__column-large-4 l-grid__column-medium-5 l-grid__column-small-6 u-margin-auto">
+            <div class="c-select js-select ">
+                <select class="c-select__natural" name="select-1" aria-hidden="false">
+      <option value="Private Usage">
+         Private
+      </option>
+      <option value="Taxi/person transport service/Ube">
+         Taxi/person transport service/Uber
+      </option>
+      
+      <option value="Other">Other</option>
+   </select>
+                <div class="c-select__container" (click)="showDropDownWhatPurposeCar($event,dropDownWhatpurpose,dropDownWhatPurposeSpan)" aria-hidden="true">
+                    <span class="c-select__placeholder" tabindex="0">{{selectedWhatPurpose}}</span>
+                    <span #dropDownWhatPurposeSpan class="c-select__icon c-icon c-icon--chevron-down is-open" id="Purpose_arrow"></span>
+                    <ul class="c-select__option-list is-visible" #dropDownWhatpurpose ngDefaultControl id="whatPurposeDropdown" style="display: none;">
+                        <li class="c-select__option " *ngFor="let x of carPurpose" data-value="{{x}}" (clickOutside)="hideDropDownWhatPurpose(dropDownWhatpurpose, selectedWhatPurpose, dropDownWhatPurposeSpan, $event)" (click)="hideDropDownWhatPurpose(dropDownWhatpurpose, x, dropDownWhatPurposeSpan, $event);">{{x}}</li>
+                    </ul>
+                </div>
+                <div class="c-select__container">
+                    <error *ngIf="selWhatPurposeNull == true" [errorMsg]="'noSelection'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div #parkingNight class="c-poland-toggle-group u-margin-top-lg u-padding-top-lg" style="padding-left:3%;">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h2 i18n="@@p2cu-headerDescription-placeOfParking" class="c-heading c-heading--subsection-medium u-text-center">
+                        Place of parking during night
+                        <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip6,tooltip1popup6,$event)" (mouseout)="removeClassTooltip(tooltip6,tooltip1popup6,$event)">
+                            <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip6></a>
+                            <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup6>
+                                <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                            </div>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+            <div class="l-grid__row">
+                <div class="l-grid__column-12" style="padding-left: 5%;">
+                    <div class="c-radio-toggle c-radio-toggle--poland">
+                        <ng-container *ngFor="let x of parkingNightValues;let idx=index;">
+                            <input id="{{idx}}" class="c-radio-toggle__input" name="poland-toggle" type="radio" value="{{x}}" aria-selected="true" (click)="trackparkingnight(x)" [ngModel]="parkingDuringNights" (ngModelChange)="parkingDuringNights=$event" (change)="isMandatoryValidation()">
+                            <label for="{{idx}}" class="c-radio-toggle__label">
+                         {{x}}
+                     </label>
+                        </ng-container>
+                    </div>
+                    <div class="c-radio-toggle c-radio-toggle--poland">
+                        <error *ngIf="parkingDuringNightsNull == true" [errorMsg]="'noSelection'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div #zipCodeEle class="l-gird__row u-text-center u-margin-top-lg u-padding-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-parkDuringNight" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-sm">
+            Where do you park your car during night
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip7,tooltip1popup7,$event)" (mouseout)="removeClassTooltip(tooltip7,tooltip1popup7,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip7></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup7>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+        <div class="l-grid__column-medium-4 u-margin-auto">
+            <div class="c-textfield js-floating c-textfield--center u-margin-top-0">
+                <input id="txt_zipcode" type="text" style="text-align:center;" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModelOptions]="{standalone: true}" (keyup)="validateZip($event)" (focus)="addClass($event)" (blur)="removeClass($event)"
+                    maxlength="6" (keypress)="zipAcceptOnlyNumbers($event)" [ngModel]="zipCode" (ngModelChange)="zipCode=$event" (change)="isMandatoryValidation()" [input]="zipCode" data-hj-suppress="" dpp-input />
+                <label for="" class="c-textinput__label c-textinput__label--floating">
+    <span i18n = "@@p2cu-span-zipcode" class="c-textinput__label--optional">Enter your zipcode</span>   
+    
+  </label>
+                <p class="c-textinput__label--bottom"></p>
+            </div>
+        </div>
+        <div class="l-grid__column-medium-4 u-margin-auto">
+            <error *ngIf="zipCodeNull == true" [errorMsg]="'noInput'"></error>
+            <error *ngIf="zipCodeInvalid == true" [errorMsg]="'dataInvalid'"></error>
+        </div>
+    </div>
+    <div class="l-grid__row u-margin-top-lg justify-content-center">
+        <div class="l-grid__column-medium-12">
+            <div class="c-poland-help-find-me-out-modal c-tooltip js-toggle-tooltip ">
+                <a i18n="@@p2cu-href-helpMeFindOut" class="c-link c-tooltip__link js-toggle-tooltip__link c-icon c-icon--search" aria-expanded="false" #helpMeFindZip (click)="helpMeFindOut(helpMeFindZip,helpMeFindZipPopup,$event,inputTown)">
+    Help me find out
+  </a>
+                <!--help me find out poupup starts-->
+                <div role="tooltip" class="c-tooltip__item c-tooltip__item--editable l-grid__column-small-12 l-grid__column-medium-8 l-grid__column-large-6" (clickOutside)="hideHelpMeFindOut(helpMeFindZip, helpMeFindZipPopup,$event)" #helpMeFindZipPopup aria-hidden="true">
+                    <div class="l_grid">
+                        <div class="l-grid__row">
+                            <div class="l-grid__column-12">
+                                <p i18n="@@p2cu-paragraph-helpMeFindOut" class="c-copy c-copy--xlarge">
+                                    Help me find out
+                                </p>
+                            </div>
+                        </div>
+                        <div class="l-grid__row">
+                            <div class="l-grid__column-6">
+                                <div class="c-poland-form-select js-poland-form-select js-floating u-margin-top-0" #dropDownTown (clickOutside)="hideDropDownClickOutside(dropDownTown,$event)" (click)="showDDTown(dropDownTown,inputStreet1)">
+                                    <span class="c-poland-form-select__placeholder">{{selectedTown}}</span>
+                                    <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                                    <div class="c-poland-form-select__option-container">
+                                        <div class="c-poland-form-select__filter">
+                                            <input id="dd_town" type="text" placeholder="Type town name" i18n-placeholder="@@p2cu-placeholder-TownName" style="width:100%;" #inputTown (keyup)="getTownData($event)" (keypress)="omit_specialChar($event)" [ngModel]="searchValues" min-chars=2 (ngModelChange)="searchValues=$event"
+                                                dpp-input [input]="searchValues">
+                                        </div>
+                                        <div class="c-poland-form-select__option-list">
+                                            <ul class="c-poland-form-select__option-group" allow-clear="true">
+                                                <li class="c-poland-form-select__option" (click)="hideDropDownTown(dropDownTown,$event,x)" data-value="{{x}}" *ngFor="let x of townValues">{{x}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="l-grid__column-6">
+                                <div class="c-poland-form-select js-poland-form-select js-floating u-margin-top-0" #dropDownStreet1 (clickOutside)="hideDropDownClickOutside(dropDownStreet1,$event)" (click)="showDDStreet1(dropDownStreet1)">
+                                    <span class="c-poland-form-select__placeholder">{{selectedStreet1}}</span>
+                                    <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                                    <div class="c-poland-form-select__option-container">
+                                        <div class="c-poland-form-select__filter">
+                                            <input id="{{x}}" type="text" placeholder="Type street name" i18n-placeholder="@@p2cu-placeholder-StreetName1" style="width:100%;" #inputStreet1 (keyup)="getStreet1Data($event)" (keypress)="omit_specialChar($event)" [ngModel]="street1" min-chars=1 (ngModelChange)="street1=$event"
+                                                dpp-input [input]="street1">
+                                        </div>
+                                        <div class="c-poland-form-select__option-list">
+                                            <ul class="c-poland-form-select__option-group">
+                                                <li class="c-poland-form-select__option" (click)="hideDropDownStreet1(dropDownStreet1,$event,x)" data-value="{{x}}" *ngFor="let x of streetValues1">{{x}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-grid__row">
+                            <div class="l-grid__column-12">
+                                <div class="c-poland-form-select js-poland-form-select js-floating u-margin-top-0" #dropDownStreet (clickOutside)="hideDropDownClickOutside(dropDownStreet,$event)" (click)="showDDStreet(dropDownStreet)">
+                                    <span class="c-poland-form-select__placeholder">{{selectedStreet}}</span>
+                                    <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                                    <div class="c-poland-form-select__option-container">
+                                        <!--<div class="c-poland-form-select__filter">
+                                        <input id="{{x}}" type="text" placeholder="Type street name" style="width:100%;" #inputStreet (keyup)="onKeyStreetData($event)" (keypress)="omit_specialChar($event)" (ngModel)="selectedStreet" min-chars=2 (ngModelChange)="street=$event" dpp-input [input]="street">
+                                    </div>-->
+                                        <div class="c-poland-form-select__option-list">
+                                            <ul class="c-poland-form-select__option-group" id="select_Street2">
+                                                <li class="c-poland-form-select__option" (click)="hideDropDownStreet(dropDownStreet,$event,x)" data-value="{{x}}" *ngFor="let x of showStreet">{{x}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-grid__row justify-content-center u-margin-top-md" (click)="confirmZip(helpMeFindZip,helpMeFindZipPopup,$event)">
+                            <button class="c-button  c-button--direct-cta">
+                  CONFIRM
+                  </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--help me find out poupup ends-->
+            </div>
+        </div>
+    </div>
+
+    <div #useAbroad class="c-poland-toggle-group u-margin-top-lg u-padding-top-lg" style="padding-left:3%;">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h2 i18n="@@p2cu-headerDescription-howLongCarUsed" class="c-heading c-heading--subsection-medium u-text-center">
+                        How long your car will be used abroad
+                        <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip8,tooltip1popup8,$event)" (mouseout)="removeClassTooltip(tooltip8,tooltip1popup8,$event)">
+                            <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip8></a>
+                            <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup8>
+                                <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                            </div>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="l-grid__row">
+                <div class="l-grid__column-12" style="padding-left: 4%;">
+                    <div class="c-radio-toggle c-radio-toggle--poland ">
+                        <ng-container *ngFor="let rdo_abroad of carAbroadValues;let idx=index;">
+                            <input id="{{rdo_abroad}}" class="c-radio-toggle__input" name="poland-toggle-1" type="radio" value="{{rdo_abroad}}" aria-selected="true" (click)="trackcarusageabroad(rdo_abroad)"[ngModel]="carUsedAbroad" (ngModelChange)="carUsedAbroad=$event" (change)="isMandatoryValidation()">
+                            <label for="{{rdo_abroad}}" class="c-radio-toggle__label">
+       {{rdo_abroad}}
+    </label>
+                        </ng-container>
+                    </div>
+                    <div class="c-radio-toggle c-radio-toggle--poland ">
+                        <error *ngIf="carUsedAbroadNull == true" [errorMsg]="'noSelection'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div #currentMileageEle class="l-gird__row u-text-center u-margin-top-lg u-padding-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-currentMieage" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-sm">
+
+            Current mileage (in km)
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip9,tooltip1popup9,$event)" (mouseout)="removeClassTooltip(tooltip9,tooltip1popup9,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip9></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup9>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+
+        </h2>
+
+        <div class="l-grid__column-large-2 l-grid__column-medium-3 l-grid__column-small-4 u-margin-auto">
+            <div class="c-textfield js-floating u-margin-top-0 c-textfield--center">
+                <input id="txt_CurentMileage" class="c-textinput__field c-textinput__field--floating js-floating__input" type="text" id="milleage" (keypress)="acceptOnlyNumbers($event)" [ngModel]="currentMileage" (ngModelChange)="currentMileage=$event" [ngModelOptions]="{standalone: true} "
+                  (mouseout)="trackCurrentMileage(currentMileage)"  #currentMileageInput [input]="currentMileage" dpp-input (focus)="removeSpace($event)" (blur)="addSpace($event)" (change)="isMandatoryValidation()" style="text-align:center" maxlength="7" />
+                <label for="" class="c-textinput__label c-textinput__label--floating">
+    <span class="c-textinput__label--optional"></span>
+  </label>
+                <p class="c-textinput__label--bottom"></p>
+            </div>
+            <div class="c-textfield js-floating u-margin-top-0 c-textfield--center">
+                <error *ngIf="currentMileageNull == true" [errorMsg]="'noInput'"></error>
+            </div>
+        </div>
+    </div>
+    <div #plannedMileage class="l-gird__row u-margin-top-lg u-padding-top-lg">
+        <h2 i18n="@@p2cu-headerDescription-plannedYearlyMileage" class="c-heading c-heading--subsection-medium u-text-center">
+            Planned yearly mileage
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip10,tooltip1popup10,$event)" (mouseout)="removeClassTooltip(tooltip10,tooltip1popup10,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip10></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup10>
+                    <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                </div>
+            </div>
+        </h2>
+        <div class="l-grid__column-large-4 l-grid__column-medium-5 l-grid__column-small-6 u-margin-auto">
+            <div class="c-select js-select ">
+                <select class="c-select__natural" name="select-1" aria-hidden="false">
+      <option value=" From 10,000 - 15,000 km" disabled="" selected="">
+         From 10,000 - 15,000 km
+      </option>
+      <option value="Private Usage">
+         From 15,001 - 20,000 km
+      </option>
+      <option value=" 5 - 10 THS KM">
+         From 20,001 - 30,000 km
+      </option>
+    
+      <option value=" 20 - 50 THS KM"> 20 - 50 THS KM</option>
+      <option value=" MORE THAN 50 THS KM"> MORE THAN 50 THS KM</option>
+   </select>
+                <div class="c-select__container" (click)="showDropDownPlannedMileage(dropDownPlanYearlyMileage,$event,dropDownPlanYearlyMileageSpan)" aria-hidden="true">
+                    <span class="c-select__placeholder" tabindex="0">{{selectedPlanedMileage}}</span>
+                    <span #dropDownPlanYearlyMileageSpan class="c-select__icon c-icon c-icon--chevron-down is-open" id="plannedMilage_arrow"></span>
+                    <ul class="c-select__option-list is-visible" style="display: none;" #dropDownPlanYearlyMileage id="planYearlyMileageDropdown" ngDefaultControl>
+                        <li class="c-select__option " *ngFor="let x of PlannedYearlyMileage" data-value="{{x}}" (clickOutside)="hideDropDowndropDownPlanYearlyMileage(dropDownPlanYearlyMileage, selectedPlanedMileage,dropDownPlanYearlyMileageSpan,$event);" (click)="hideDropDowndropDownPlanYearlyMileage(dropDownPlanYearlyMileage, x,dropDownPlanYearlyMileageSpan,$event);">{{x}}</li>
+                    </ul>
+                </div>
+                <div class="c-select__container">
+                    <error *ngIf="selPlanMileageNull == true" [errorMsg]="'noSelection'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="l-container l-container--full-width" *ngIf="consentsArr.length > 0">
+    <div class="l-grid u-padding-top-md u-padding-bottom-md">
+        <div class="l-grid__row u-margin-top-lg justify-content-center">
+            <div class="l-grid__column-10 l-grid__column-large-8">
+                <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" (onDataPicked)="setConsents($event)"></marketing-consents>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="l-grid l-grid--max-width">
+    <div class="l-grid__row justify-content-center u-margin-top-lg u-padding-top-lg u-margin-bottom-md u-padding-bottom-md">
+        <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+
+            <button id="btn_Back" i18n="@@p2cu-button-back" class="c-button c-button--icon c-icon c-icon--arrow-right c-icon-flip c-button--secondary" [disabled]="disabledNext" (click)="clickBackButton()">
+         BACK
+         </button>
+        </div>
+        <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+            <button id="btn_Next" i18n="@@p2cu-button-next" class="c-button c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA" (click)="clickNextButton()" [disabled]="disabledNext">NEXT</button>
+        </div>
+    </div>
+</div>
+<!-- <hotline-support></hotline-support> -->
+<validation-error *ngIf="hasErrors" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+<ng-template error-factory></ng-template>
+<footer-root></footer-root>

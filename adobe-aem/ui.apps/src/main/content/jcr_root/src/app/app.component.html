@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div style="text-align:center">
+ <!-- <h1>
+    Welcome to {{title}}!!
+  </h1>-->
+</div>
+<!--<nav>
+      <button class="c-button c-button u-margin-top-md" routerLink="/landingpage" routerLinkActive="active">Start</button>
+</nav>-->
+<header-root></header-root>
+<router-outlet></router-outlet>
+<logout-confirm *ngIf="logoutConfirm"></logout-confirm>
+<save-email-consent-pop-up *ngIf='showSaveEmailConsentPopup'></save-email-consent-pop-up>
+<save-ok-pop-up *ngIf='showSaveOkPopup'></save-ok-pop-up>

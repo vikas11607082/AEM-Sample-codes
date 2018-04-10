@@ -1,0 +1,9 @@
+<div #refDropDown class="c-select js-select u-text-center" (click)="openDropDown($event,refDropDown,refUl,refArrow)" (clickOutside)="hideDropDown($event,refDropDown,refUl,refArrow,placeholder)">
+    <div class="c-select__container">
+    <span class="c-poland-form-select__placeholder">{{placeholder}}</span>
+    <span id ="{{dropDownName}}_arrow" #refArrow class="c-select__icon c-icon c-icon--chevron-down"></span>
+        <ul #refUl class="c-select__option-list" id="{{dropDownName}}" style="visibility:hidden">              
+            <li id = "select_{{x}}" class="c-select__option"*ngFor="let x of dropDownItems" data-value="{{x}}" (click)="hideDropDown($event,refDropDown,refUl,refArrow,x)">{{x}}</li>            
+        </ul>        
+    </div>    
+</div>

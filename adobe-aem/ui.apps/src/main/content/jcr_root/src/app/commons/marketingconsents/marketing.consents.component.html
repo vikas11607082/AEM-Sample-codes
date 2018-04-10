@@ -1,0 +1,65 @@
+<div class="justify-content-center">
+    <div *ngIf="page == 'cardetails'" class="c-poland-terms-and-conditions ">
+        <ng-container *ngFor="let n of consentsArr;  let i = index" [attr.data-index]="i">
+            <div class="checkbox_lable">
+                <div class="c-checkbox u-margin-bottom-sm checkbox_div">
+                    <input id="chk_termsCondition_{{n.self}}" type="checkbox" name="{{n.self}}" aria-labelledby="terms-and-conditions-checkbox-2-label" tabindex="0" class="c-checkbox__input" />
+                    <label for="chk_termsCondition_{{n.self}}" class="c-icon disclaimer_cardetails ">
+                                <span id="{{n.self}}">{{n.text}}</span>
+                        </label>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="page != 'cardetails'" class="c-poland-terms-and-conditions ">
+        <div *ngIf="typeFlag != 0" ng-change="selectAllConsent()" class="c-checkbox u-margin-bottom-sm u-text-weight-bold">
+
+            <input id="chk_termsCondition_header_{{typeFlag}}" type="checkbox" name="terms-and-conditions-checkbox-1" aria-labelledby="terms-and-conditions-checkbox-1-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="selectedAllConsent" (change)="selectAllConsent();"
+            />
+            <label for="chk_termsCondition_header_{{typeFlag}}" class="c-checkbox__label c-icon c-icon--check label-header">
+                    
+                    <span i18n = "@@allpages-span-marketingConsents" id="terms-and-conditions-checkbox-1-label label-span-concents">
+                      Accept marketing consents
+                    </span>
+                   
+                </label>
+            <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip(tooltip1,tooltip1popup1,$event)" (mouseout)="removeClassTooltip(tooltip1,tooltip1popup1,$event)">
+                <a aria-expanded="true" class="c-link fa fa-question-circle-o js-toggle-tooltip__link concents-tooltip" aria-expanded="false" #tooltip1></a>
+                <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup1>
+                    <p i18n="@@markting-consents-tooltip" class="c-copy">Selecting the consents will enable us to contact you for better and faster service.</p>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngFor="let n of consentsArr;  let i = index" [attr.data-index]="i">
+            <div *ngIf="!subQuestionsFlag[i]" class="c-checkbox u-margin-bottom-sm subquestion-div">
+                <input *ngIf="n.answer!=undefined" id="chk_termsCondition_{{n.self}}" type="checkbox" name="{{n.self}}" aria-labelledby="terms-and-conditions-checkbox-2-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="n.answer.value" (change)="selectConsent();"
+                />
+                <label for="chk_termsCondition_{{n.self}}" class="{{answers[i]==true?'c-checkbox__label c-icon c-icon--check c-checkbox__marketing-consents answer-label':'c-icon'}}">
+                        <span id="{{n.text}}" [ngClass]="{'consent-error':n.showError==true && nextClicked == true}" class="span-answer">{{n.text}}</span>
+                        <error *ngIf="n.showError==true && nextClicked == true" [errorMsg]="'mandatoryConsent'"></error>
+                </label>
+            </div>
+            <div *ngIf="subQuestionsFlag[i]" class="l-grid__column-12 l-grid__column-large-12">
+                <div class="c-poland-terms-and-conditions ">
+                    <div class="checkbox_lable">
+                        <div class="add-div">
+                            <div class="add1-div">
+                                <ng-container *ngFor="let m of n.subQuestions;  let j = index" [attr.data-index]="j">
+                                    <div class="c-checkbox u-margin-bottom-sm add2-div">
+                                        <input *ngIf="m.answer!=undefined" id="chk_termsCondition_{{n.self}}_{{j}}" type="checkbox" name="{{n.self}}_{{j}}" aria-labelledby="terms-and-conditions-checkbox-2-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="m.answer.value" (change)="selectSubConsent(i);"
+                                        />
+                                        <label for="chk_termsCondition_{{n.self}}_{{j}}" class="c-checkbox__label c-icon c-icon--check c-checkbox__marketing-consents label-add1-concents">
+                                    <span id="{{m.text}}" [ngClass]="{'consent-error':m.showError==true && nextClicked == true}">{{m.text}}</span>
+                                    <error *ngIf="m.showError==true && nextClicked == true" [errorMsg]="'mandatoryConsent'"></error>
+                                </label>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

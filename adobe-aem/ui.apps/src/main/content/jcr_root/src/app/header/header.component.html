@@ -1,0 +1,583 @@
+<div class="c-header-spacer">
+    <header class="c-header">
+        <div class="c-header-metabar">
+            <div class="c-header-metabar__content c-header__wrapper">
+                <div class="c-header-metabar__language">
+                </div>
+
+                <div *ngIf="ccUserName && ccUserName!=='null'" class="c-header-metabar__item c-header-metabar__item--poland " (clickOutside)="closeLogoutDD($event)">
+                    <div class="c-tooltip js-toggle-tooltip ">
+                        <a href="javascript:void();" #userName class="c-link c-user-login-info__link js-toggle-tooltip__link" (click)="clickUserName()" aria-expanded="false" aria-describedby="tooltipID3">
+    {{ccUserName}}
+    <span class="fa fa-angle-down c-button__icon"></span>
+  </a>
+                        <div role="tooltip" #logoutDiv class="c-user-login-info c-tooltip__item l-grid__column-small-12 l-grid__column-medium-6 l-grid__column-large-4" aria-hidden="true">
+                            <div id="tooltipID3" class="u-aria-only">Your user data</div>
+
+                            <h3 class="c-heading c-user-login-info__header u-text-center">
+                            </h3>
+
+
+                            <button i18n="@@Logout-button-txt" class="c-button c-user-login-info__button" type="" (click)="clickLogout()">Logout</button>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="c-header-metabar__item c-header-metabar__item--poland {{ccUserName!='null'?'c-header-metabar__item--poland--separator':''}}">
+
+                    <!-- <span aria-hidden="true" class="c-link__icon c-icon c-icon--phone-o"></span>
+          <span class="u-hidden-medium-down">Hotline Support</span>
+          <em class="u-text-weight-semibold">&nbsp;&nbsp;223 853 853</em>-->
+                    <a href="javascript:void();" class="c-header__logo js-header__logo">
+                        <figure class="c-image">
+                            <img alt="Allianz Online logo" src="{{'/assets/images/allianz-online.png' | imagepathresolver}}" class="c-image__img">
+                        </figure>
+                    </a>
+                </div>
+
+                <!--     <div class="c-header-metabar__item c-header-metabar__item--poland c-header-metabar__item--poland--separator">
+    <div class="c-tooltip js-toggle-tooltip ">
+  <a href="javascript:void();" class="c-link c-user-login-info__link js-toggle-tooltip__link" aria-expanded="false" aria-describedby="tooltipID3">
+    Welcome, Janina K.
+    <span class="fa fa-angle-down c-button__icon"></span>
+  </a>
+  <div role="tooltip" class="c-user-login-info c-tooltip__item l-grid__column-small-12 l-grid__column-medium-6 l-grid__column-large-4" aria-hidden="true">
+
+    <div id="tooltipID3" class="u-aria-only">Your user data</div>
+
+    <h3
+  class="c-heading c-user-login-info__header u-text-center"
+  
+  
+  >
+
+   Your data, Janina K.
+   
+
+</h3>
+
+
+    <div class="c-user-login-info__section">
+      <div class="c-user-login-info__label" role="heading" aria-describedby="textID1">
+        Email Address
+      </div>
+      <div class="c-user-login-info__data">
+        <p class="c-copy c-copy--large" id="textID1">
+  
+    Janina.k@gmail.com
+    
+  
+</p>
+
+      </div>
+    </div>
+    <button
+  class="c-button c-user-login-info__button"
+  type=""
+  >
+  Logout
+</button>
+
+
+  </div>
+</div>
+
+</div> -->
+
+            </div>
+        </div>
+
+        <div class="c-three-level-navigation js-search js-three-level-nav">
+            <div class="c-navigation">
+                <div class="c-navigation--extended js-nav-extended">
+                    <div class="c-navigation__bar c-header__wrapper js-header__wrapper">
+                        <a href="javascript:void();" class="c-header__logo js-header__logo">
+                            <figure class="c-image">
+                                <img alt="Allianz Online logo" src="{{'/assets/images/allianz-logo.png' | imagepathresolver}}" class="c-image__img">
+                            </figure>
+                        </a>
+                        <div class="c-main-navbar">
+                            <!-- <ul role="menu" class="c-main-navbar__list">
+        <li role="menuitem"  class="c-main-navbar__item">
+          <a aria-expanded="false" aria-label="Products" id="nav1"  class="c-main-navbar__link js-main-navigation-link">
+            <span id="nav1" class="c-main-navbar__title js-main-navigation-link">Products</span>
+          </a>
+        </li>
+        <li role="menuitem"  class="c-main-navbar__item">
+          <a aria-expanded="false" aria-label="Advice" id="nav2"  class="c-main-navbar__link js-main-navigation-link">
+            <span id="nav2" class="c-main-navbar__title js-main-navigation-link">Advice</span>
+          </a>
+        </li>
+        <li role="menuitem"  class="c-main-navbar__item">
+          <a aria-expanded="false" aria-label="Contact" id="nav3"  class="c-main-navbar__link js-main-navigation-link">
+            <span id="nav3" class="c-main-navbar__title js-main-navigation-link">Contact</span>
+          </a>
+        </li>
+  </ul>-->
+                        </div>
+
+                        <div class="c-header__quote-info">
+                            <a class="c-link u-margin-right-lg hide" id="savebtn">
+                                <span class="c-icon c-icon--poland c-icon--poland--save c-icon--middle"></span>
+                                <span>SAVE</span>
+                            </a>
+                            <span class="hide" id="quoteId">
+    <span class="c-icon c-icon--poland c-icon--poland--quote c-icon--middle"></span>
+                            <span>QUOTE ID {{quoteId}}</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="c-navigation--compact">
+                    <div class="c-mobilebar">
+                        <a class="c-mobilebar__logo">
+                            <figure class="c-image c-mobilebar__image">
+                                <img alt="Allianz Online logo" src="{{'/assets/images/allianz-online.png' | imagepathresolver}}" class="c-image__img">
+                            </figure>
+                        </a>
+
+                        <a class="c-mobilebar__action c-mobilebar__action--service-teaser">
+                            <span class="c-icon c-icon--phone c-mobilebar__service-teaser"></span>
+                        </a>
+
+                        <a class="c-mobilebar__action c-mobile__action--quote-info js-quote-link-mobile">
+                            <span class="c-icon c-icon--poland c-icon--poland--quote c-mobilebar__quote-info"></span>
+                        </a>
+
+
+
+                        <div class="c-mobilebar__action">
+                            <a class="c-mobilebar__action c-mobilebar__open js-opener-link-mobile">
+                                <i aria-hidden="true" class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="c-flyout">
+                <div class="c-flyout__layout">
+                    <div class="c-flyout__content">
+                        <div class="l-grid__row">
+                            <div class="l-grid__column-12">
+                                <div class="c-navigation__quote js-quote-mobile" style="display: none;">
+                                    <div class="c-quote-info-card">
+                                        <div class="c-quote-info-card__links">
+                                            <p class="c-copy c-copy--large c-copy--large--negative u-margin-bottom-0 c-agent-card__footer-link-icon c-icon c-icon--poland c-icon--poland--quote">
+
+
+                                                QUOTE ID 123456
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-flyout c-flyout--sub-navigation js-flyout--sub-navigation">
+                <div class="c-flyout__layout">
+                    <div class="c-flyout__content">
+                        <!-- Desktop -->
+                        <div data-parent-id="nav1" class="c-subnavigation js-sub-navigation" style="display: none;">
+                            <div class="c-subnavigation__content">
+                                <div class="l-grid l-grid--max-width ">
+                                    <div class="l-grid__row">
+                                        <div class="l-grid__column-12">
+                                            <div class="c-subnavbar">
+                                                <ul role="menu" class="c-subnavbar__list">
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Car" id="nav1sub1" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav1sub1" class="c-subnavbar__icon fa fa-car js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav1sub1" class="c-subnavbar__title js-sub-navigation-link">Car</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Home" id="nav1sub2" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav1sub2" class="c-subnavbar__icon fa fa-home js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav1sub2" class="c-subnavbar__title js-sub-navigation-link">Home</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Pension" id="nav1sub3" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav1sub3" class="c-subnavbar__icon fa fa-money js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav1sub3" class="c-subnavbar__title js-sub-navigation-link">Pension</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Travel" id="nav1sub4" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav1sub4" class="c-subnavbar__icon fa fa-plane js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav1sub4" class="c-subnavbar__title js-sub-navigation-link">Travel</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Health" id="nav1sub5" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav1sub5" class="c-subnavbar__icon fa fa-medkit js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav1sub5" class="c-subnavbar__title js-sub-navigation-link">Health</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div data-parent-id="nav1sub1" class="c-navcontent js-navcontent">
+                                                <div class="l-grid">
+                                                    <div class="l-grid__row">
+                                                        <div class="l-grid__column-medium-5 l-grid__column-large-6">
+                                                            <div class="l-grid__row">
+                                                                <div class="l-grid__column-4">
+                                                                    <div class="c-navcontent__links">
+                                                                        <h3 class="c-navcontent__headline">
+                                                                            Car
+                                                                        </h3>
+                                                                        <ul role="menu" class="c-navcontent__list">
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Car insurance" href="#" class="c-navcontent__links">Car insurance</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Classic car insurance" href="#" class="c-navcontent__links">Classic car insurance</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Motorbike insurance" href="#" class="c-navcontent__links">Motorbike insurance</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Legal protection" href="#" class="c-navcontent__links">Legal protection</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Classic House" href="#" class="c-navcontent__links">Classic House</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Lorel protection" href="#" class="c-navcontent__links">Lorel protection</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#" class="c-link">Overview</a></div>
+                                                                </div>
+                                                                <div class="l-grid__column-4">
+                                                                    <div class="c-navcontent__links">
+                                                                        <h3 class="c-navcontent__headline">
+                                                                            Mobility
+                                                                        </h3>
+                                                                        <ul role="menu" class="c-navcontent__list">
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Legal protection" href="#" class="c-navcontent__links">Legal protection</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Lorel protection" href="#" class="c-navcontent__links">Lorel protection</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#" class="c-link">Overview</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="l-grid__column-medium-7 l-grid__column-large-6">
+                                                            <h3 class="c-heading--subsection-xsmall">Car</h3>
+                                                            <div class="c-navcontent__teaser">
+                                                                <h2 class="c-navcontent__teaser-headline">Car insurance</h2>
+                                                                <a class="c-navcontent__teaser-link c-link">Top worrying, get a quote</a>
+                                                            </div>
+                                                            <div class="c-navcontent__teaser">
+                                                                <h2 class="c-navcontent__teaser-headline">Classic car insurance</h2>
+                                                                <a class="c-navcontent__teaser-link c-link">Get a quote now</a>
+                                                            </div>
+                                                            <div class="c-navcontent__teaser">
+                                                                <h2 class="c-navcontent__teaser-headline">Private health car insurance</h2>
+                                                                <a class="c-navcontent__teaser-link c-link">Top worrying, get a quote</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-parent-id="nav1sub2" class="c-navcontent js-navcontent">
+                                                <div class="l-grid">
+                                                    <div class="l-grid__row">
+                                                        <div class="l-grid__column-medium-5 l-grid__column-large-6">
+                                                            <div class="l-grid__row">
+                                                                <div class="l-grid__column-4">
+                                                                    <div class="c-navcontent__links">
+                                                                        <h3 class="c-navcontent__headline">
+                                                                            Home
+                                                                        </h3>
+                                                                        <ul role="menu" class="c-navcontent__list">
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Legal protection" href="#" class="c-navcontent__links">Legal protection</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Classic House" href="#" class="c-navcontent__links">Classic House</a>
+                                                                            </li>
+                                                                            <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                                <a aria-label="Home protection" href="#" class="c-navcontent__links">Home protection</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#" class="c-link">Overview</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="l-grid__column-medium-7 l-grid__column-large-6">
+                                                            <h3 class="c-heading--subsection-xsmall">Home</h3>
+                                                            <div class="c-navcontent__teaser">
+                                                                <h2 class="c-navcontent__teaser-headline">Private health home insurance</h2>
+                                                                <a class="c-navcontent__teaser-link c-link">Top worrying, get a quote</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Desktop -->
+                        <!-- Mobile -->
+                        <div class="c-navigation__accordion js-navigation-mobile" style="display: none;">
+                            <ul role="menu" class="c-accordion c-accordion--level-0">
+                                <li role="menuitem" class="c-accordion__item c-accordion__item--level-0">
+                                    <a id="nav1" class="c-accordion__button js-main-navigation-link-mobile">
+                                        <span id="nav1" class="c-accordion__title js-main-navigation-link-mobile">Products</span>
+                                        <div class="c-accordion__indicator">
+                                            <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                        </div>
+                                    </a>
+                                    <div data-parent-id="nav1" class="accordion__content js-sub-navigation-mobile" style="display: none;">
+                                        <ul role="menu" class="c-accordion c-accordion--level-1">
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav1sub1" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav1sub1" aria-hidden="true" class="c-accordion__icon fa fa-car js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav1sub1" class="c-accordion__title js-sub-navigation-link-mobile">Car</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                                <div data-parent-id="nav1sub1" class="accordion__content js-navcontent-mobile" style="display: none;">
+                                                    <div>
+                                                        <div class="c-navcontent__links">
+                                                            <h3 class="c-navcontent__headline">
+                                                                Car
+                                                            </h3>
+                                                            <ul role="menu" class="c-navcontent__list">
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Car insurance" href="#" class="c-navcontent__links">Car insurance</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Classic car insurance" href="#" class="c-navcontent__links">Classic car insurance</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Motorbike insurance" href="#" class="c-navcontent__links">Motorbike insurance</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Legal protection" href="#" class="c-navcontent__links">Legal protection</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Classic House" href="#" class="c-navcontent__links">Classic House</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Lorel protection" href="#" class="c-navcontent__links">Lorel protection</a>
+                                                                </li>
+                                                            </ul> <a class="c-link">Overview</a>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="c-navcontent__links">
+                                                            <h3 class="c-navcontent__headline">
+                                                                Mobility
+                                                            </h3>
+                                                            <ul role="menu" class="c-navcontent__list">
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Legal protection" href="#" class="c-navcontent__links">Legal protection</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Lorel protection" href="#" class="c-navcontent__links">Lorel protection</a>
+                                                                </li>
+                                                            </ul> <a class="c-link">Overview</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav1sub2" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav1sub2" aria-hidden="true" class="c-accordion__icon fa fa-home js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav1sub2" class="c-accordion__title js-sub-navigation-link-mobile">Home</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                                <div data-parent-id="nav1sub2" class="accordion__content js-navcontent-mobile" style="display: none;">
+                                                    <div>
+                                                        <div class="c-navcontent__links">
+                                                            <h3 class="c-navcontent__headline">
+                                                                Home
+                                                            </h3>
+                                                            <ul role="menu" class="c-navcontent__list">
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Legal protection" class="c-navcontent__links">Legal protection</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Classic House" class="c-navcontent__links">Classic House</a>
+                                                                </li>
+                                                                <li role="menuitem" aria-describedby="levelID3" class="c-navcontent__list-item">
+                                                                    <a aria-label="Home protection" class="c-navcontent__links">Home protection</a>
+                                                                </li>
+                                                            </ul> <a class="c-link">Overview</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav1sub3" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav1sub3" aria-hidden="true" class="c-accordion__icon fa fa-money js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav1sub3" class="c-accordion__title js-sub-navigation-link-mobile">Pension</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav1sub4" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav1sub4" aria-hidden="true" class="c-accordion__icon fa fa-plane js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav1sub4" class="c-accordion__title js-sub-navigation-link-mobile">Travel</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav1sub5" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav1sub5" aria-hidden="true" class="c-accordion__icon fa fa-medkit js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav1sub5" class="c-accordion__title js-sub-navigation-link-mobile">Health</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END Mobile -->
+                        <div data-parent-id="nav2" class="c-subnavigation js-sub-navigation" style="display: none;">
+                            <div class="c-subnavigation__content">
+                                <div class="l-grid l-grid--max-width ">
+                                    <div class="l-grid__row">
+                                        <div class="l-grid__column-12">
+                                            <div class="c-subnavbar">
+                                                <ul role="menu" class="c-subnavbar__list">
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="FAQS" id="nav2sub1" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav2sub1" class="c-subnavbar__icon  js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav2sub1" class="c-subnavbar__title js-sub-navigation-link">FAQS</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="Help" id="nav2sub2" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav2sub2" class="c-subnavbar__icon  js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav2sub2" class="c-subnavbar__title js-sub-navigation-link">Help</span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" aria-describedby="levelID2" class="c-subnavbar__item">
+                                                        <a aria-expanded="false" aria-label="About" id="nav2sub3" href="#" class="c-subnavbar__link js-sub-navigation-link">
+                                                            <span aria-hidden="true" id="nav2sub3" class="c-subnavbar__icon  js-sub-navigation-link"></span>
+                                                            <span aria-hidden="true" id="nav2sub3" class="c-subnavbar__title js-sub-navigation-link">About</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Desktop -->
+                        <!-- Mobile -->
+                        <div class="c-navigation__accordion js-navigation-mobile" style="display: none;">
+                            <ul role="menu" class="c-accordion c-accordion--level-0">
+                                <li role="menuitem" class="c-accordion__item c-accordion__item--level-0">
+                                    <a id="nav2" class="c-accordion__button js-main-navigation-link-mobile">
+                                        <span id="nav2" class="c-accordion__title js-main-navigation-link-mobile">Advice</span>
+                                        <div class="c-accordion__indicator">
+                                            <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                        </div>
+                                    </a>
+                                    <div data-parent-id="nav2" class="accordion__content js-sub-navigation-mobile" style="display: none;">
+                                        <ul role="menu" class="c-accordion c-accordion--level-1">
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav2sub1" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav2sub1" aria-hidden="true" class="c-accordion__icon  js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav2sub1" class="c-accordion__title js-sub-navigation-link-mobile">FAQS</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav2sub2" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav2sub2" aria-hidden="true" class="c-accordion__icon  js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav2sub2" class="c-accordion__title js-sub-navigation-link-mobile">Help</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="c-accordion__item c-accordion__item--level-1">
+                                                <a id="nav2sub3" class="c-accordion__button js-sub-navigation-link-mobile">
+                                                    <span id="nav2sub3" aria-hidden="true" class="c-accordion__icon  js-sub-navigation-link-mobile"></span>
+                                                    <span id="nav2sub3" class="c-accordion__title js-sub-navigation-link-mobile">About</span>
+                                                    <div class="c-accordion__indicator">
+                                                        <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END Mobile -->
+                        <div data-parent-id="" class="c-subnavigation js-sub-navigation" style="display: none;">
+                            <div class="c-subnavigation__content">
+                                <div class="l-grid l-grid--max-width ">
+                                    <div class="l-grid__row">
+                                        <div class="l-grid__column-12">
+                                            <div class="c-subnavbar">
+                                                <ul role="menu" class="c-subnavbar__list">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Desktop -->
+                        <!-- Mobile -->
+                        <div class="c-navigation__accordion js-navigation-mobile" style="display: none;">
+                            <ul role="menu" class="c-accordion c-accordion--level-0">
+                                <li role="menuitem" class="c-accordion__item c-accordion__item--level-0">
+                                    <a id="nav3" class="c-accordion__button js-main-navigation-link-mobile">
+                                        <span id="nav3" class="c-accordion__title js-main-navigation-link-mobile">Contact</span>
+                                        <div class="c-accordion__indicator">
+                                            <span aria-hidden="true" class="fa fa-chevron-down"></span>
+                                        </div>
+                                    </a>
+                                    <div data-parent-id="" class="accordion__content js-sub-navigation-mobile" style="display: none;">
+                                        <ul role="menu" class="c-accordion c-accordion--level-1">
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END Mobile -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+</div>

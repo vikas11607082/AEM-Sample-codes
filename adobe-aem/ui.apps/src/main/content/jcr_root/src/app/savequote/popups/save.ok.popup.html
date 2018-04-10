@@ -1,0 +1,19 @@
+    <div class="c-modal">
+        <div class="c-modal__backdrop" (click)="saveConfirm();"></div>
+        <div class="c-modal__container">
+            <div class="c-modal__content">
+                <button aria-label="close" id="savedclosebtn" class="c-modal__close" (click)="saveConfirm();"><span aria-hidden="true" class="fa fa-close"></span></button>
+                <div class="c-popup">
+                    <div class="l-grid__column-12 u-padding-bottom-sm">
+                        <h3 id="saveokpopupheading" i18n = "@@save-quotation-success-heading" class="c-heading u-text-center u-text-weight-semibold">Your quotation has been saved</h3>
+                    </div>
+                    <div class="l-grid__column-12 u-text-center">
+                        <p id="saveokpopupinfotext" i18n = "@@save-quotation-success-subtext" class="c-copy c-copy--xlarge u-margin-bottom-0">You can return to quotation via link you will find in email.</p>    
+                    </div>
+                    <div class="l-grid__column-12 u-text-center u-margin-top-lg">
+                        <button id="savequoteokbtn" i18n = "@@save-quotation-success-ok" class="c-button c-button--direct-cta" type="" (click)="saveConfirm();">OK</button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

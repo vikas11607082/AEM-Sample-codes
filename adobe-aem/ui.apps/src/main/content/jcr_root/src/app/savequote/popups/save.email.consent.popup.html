@@ -1,0 +1,50 @@
+<div class="c-modal">
+    <div class="c-modal__backdrop" (click)="hideEmailConsentPopup();"></div>
+    <div class="c-modal__container">
+        <div class="c-modal__content">
+            <button aria-label="close" id="savequoteclosebtn" class="c-modal__close" (click)="hideEmailConsentPopup();"><span aria-hidden="true" class="fa fa-close" ></span></button>
+            <div class="c-popup">
+                <div class="l-grid__column-12 u-padding-bottom-sm">
+                    <h3 id="savequoteheading" i18n = "@@save-quotation-text" class="c-heading u-text-center u-text-weight-semibold">Save Your quotation no. ID{{quotationNumber}}</h3>
+                </div>
+                <div class="l-grid__column-12">
+                    <div class="l-grid__row justify-content-center">
+                        <div class="l-grid__column-9">
+                            <p i18n = "@@save-quotation-subtext1" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center">Save the quotation by sending link to it, to your email address.</p>
+                            <p i18n = "@@save-quotation-subtext2" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center">Writing quotes does not oblige you to pay a premium.</p>
+                        </div>
+                    </div>
+                    <div class="l-grid__row justify-content-center">
+                        <div class="l-grid__column-5">
+                            <div class="c-textfield js-floating u-margin-top-0">
+                                <input id="savequoteemail" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="100" [input]="email" dpp-input [ngModel]="email" (ngModelChange)="email=$event" (keyup)="removeMailError();" (keypress)="removeSpace($event)" (blur)="emailValidation();"/>
+                                <label i18n = "@@save-quotation-email" for="savequoteemail" class="c-textinput__label c-textinput__label--floating"><span class="c-textinput__label--optional"></span>Email</label>
+                                <p class="c-textinput__label--bottom"></p>
+                            </div>
+                            <error *ngIf="isEmailBlank" [errorMsg]="'noInput'"></error>
+                            <error *ngIf="!isEmailValid" [errorMsg]="'dataInvalid'"></error>
+                        </div>
+                        <div class="l-grid__column-5">
+                                <div class="c-textfield js-floating u-margin-top-0">
+                                    <input id="savequotephone" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="12" minlength="9" [input]="phone" dpp-input [ngModel]="phone" (ngModelChange)="phone=$event" (keypress)="acceptNumbersAndPlus($event)" (blur)="phoneValiation()"/>
+                                    <label i18n = "@@save-quotation-phone" for="savequotephone" class="c-textinput__label c-textinput__label--floating"><span class="c-textinput__label--optional"></span>Phone</label>
+                                    <p class="c-textinput__label--bottom"></p>
+                                </div>
+                                <error *ngIf="!isPhoneValid" [errorMsg]="'dataInvalid'"></error>
+                            </div>
+                    </div>
+                    <div class="l-container l-container--full-width">
+                        <div class="l-grid u-padding-top-md u-padding-bottom-md" id="savequoteconsents">
+                            <marketing-consents-save-popup #consentComp [saveConsentsArray]="consentsArr" [saveSelectedAll]="selectedAllConsent" [savePage]= "pageId" [nextClicked]="saveClicked" (onDataPickedSavePopup)="setConsents($event)"></marketing-consents-save-popup>                            
+                        </div>                                              
+                    </div>                                 
+                </div>        
+                   
+                <div class="l-grid__column-12 u-text-center clear-float">
+                    <button id="savequotesavebutton" i18n = "@@save-quotation-save" class="c-button c-button--direct-cta" type="" (click)="saveConfirm();">SAVE</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

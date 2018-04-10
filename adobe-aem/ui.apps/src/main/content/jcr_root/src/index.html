@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebApp</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+    <!--
+    <script type="text/javascript">
+    window.targetGlobalSettings = {
+      globalMboxAutoCreate:false
+    }
+  </script>
+ <script src="//assets.adobedtm.com/ee301448383b9382cc815c03b4d88357831ef743/satelliteLib-b3824baae26bd3ceb9e87bcb9fea34fed53aaf08-staging.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+/** oneMarketing managed code  **/
+    
+        var siteRoot = "";
+        var digitalData = {
+            "page": {
+                "pageInfo": {
+                    "pageName": " ",
+                    "pageID": " "
+                },
+                
+                "attributes": {
+                    "runmode": "dev,acl\u002Ddev,dev03,emea",
+                    "authoring": "author",
+                    "organisationalEntity": "azcddp",
+                    "reportSuite": "azcddp"
+                }
+            },
+            "component": [],
+            "product": [],
+            "event": []
+
+        };
+    
+  
+    /**
+  * API tracking call. Pushes an event to the tracking datalayer.
+  * This Method is provided by oneMarketing
+  *
+  * @param ename
+  * @param etype
+  * @param edetails
+  */
+  var om = new function() {
+    this.core = new function() {
+      this.tracking = new function() {
+        this.addSPAEvent = function(eventName, eventType, eventValue) {
+          if (typeof digitalData !== 'undefined') {
+            var v = {
+              eventInfo : {
+                eventName : eventName,
+                type : eventType,
+                eventValue : eventValue
+              }
+            };
+            digitalData.eventspa.push(v);
+
+            return true;
+          } else {
+            return false;
+          }
+        };
+      };
+    };
+  };
+
+  </script>-->
+
+  <!-- Hotjar Tracking Code for ALiianz Q&B Application -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:729266,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+</head>
+
+<body ondrop="return false">
+    <app-root></app-root>
+    <script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+
+</html>

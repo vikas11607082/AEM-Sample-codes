@@ -1,0 +1,27 @@
+ <div class="c-modal">
+  <div class="c-modal__backdrop"></div>
+  <div class="c-modal__container">
+      <div class="c-modal__content">
+          <button aria-label="close" id="quoteexpiredclosebtn" class="c-modal__close" (click)="clickGoToHomePage();"><span aria-hidden="true" class="fa fa-close"></span></button>
+          <div class="c-popup">
+              <div class="l-grid__column-12 u-padding-bottom-lg">
+                  <h4 id="quoteexpiredpopupheading" i18n="@@quote-expired-heading" class="c-heading u-text-center u-text-weight-semibold">Your quotation has expired.</h4>
+              </div>
+              <div class="l-grid__column-12 u-text-center u-padding-bottom-lg">
+                   <p id="quoteexpiredinfotext" i18n="@@quote-expired-info-text" class="c-copy c-copy--xlarge u-margin-bottom-0">Your quotation has expired. Please start a new quotation.</p>
+              </div>
+              <div class="l-grid">
+                <div class="l-grid__row">
+                  <div class="l-grid__column-small-6">
+                    <button id="quoteexpiredhomepagebtn" i18n="@@quote-expired-home-page-button"  class="c-button  c-button--secondary c-button--block c-popup__button" (click)="clickGoToHomePage();" type="">Go to Homepage</button>
+          
+                  </div>
+                  <div class="l-grid__column-small-6">
+                    <button id="quoteexpirednewquotebtn" i18n="@@quote-expired-new-quote-button" class="c-button c-button_redhover c-button--block c-popup__button c-button--redCTA" (click)="clickNewQuote();" type="">New quotation</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

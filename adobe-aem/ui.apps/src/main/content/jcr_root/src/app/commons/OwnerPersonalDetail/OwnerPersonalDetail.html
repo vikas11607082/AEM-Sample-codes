@@ -1,0 +1,60 @@
+<div class="l-grid__row justify-content-center">
+    <div class="l-grid__column l-grid__column-12 l-grid__column-medium-8">
+        <div class="l-gird__row u-padding-md c-poland-summary-info js-poland-summary-info c-poland-summary-info--collapsible" #carOwnerDiv>
+            <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                <span class="u-font-size-lg u-padding-right-md">{{fieldName}}</span>
+                <i (click)="carOwnerEditOptions()" class="c-icon c-icon--poland c-icon--poland--pencil t-primary-action-darker c-poland-summary-info__edit-icon"></i>
+                <span class="c-icon c-icon--chevron-down c-poland-summary-info__collapsible-icon" (click)="showAndHideCarOwnerInfo(carOwnerDiv)"></span>
+            </div>
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md " *ngIf="showNameSurname">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-NameandSurname">Name and Surname</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_NameAndSurname" class="u-text-bold">{{Owner.nameAndSurname}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  " *ngIf="showCompanyName">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-companyName">Company Name</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_companyName" class="u-text-bold">{{Owner.companyName}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  " *ngIf="showLeasing">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-leasingName">Leasing Name</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_leasingName" class="u-text-bold">{{Owner.leasingName}}</span> </div>
+            </div>
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  " *ngIf="showBank">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-bankName">Bank Name</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_bankName" class="u-text-bold">{{Owner.bankName}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  c-poland-summary-info__collapse-point" *ngIf="showBankRegon">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-bankRegon">Bank Regon</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_babkRegOn" class="u-text-bold">{{Owner.bankRegOn}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  c-poland-summary-info__collapse-point" *ngIf="showLeasingRegon">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-leaseRegon">Leasing Regon</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_leaseRegOn" class="u-text-bold">{{Owner.leasingRegon}}</span> </div>
+            </div>
+
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md  c-poland-summary-info__collapse-point" *ngIf="showCompanyRegon">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-companyRegon">Company Regon</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_companyRegOn" class="u-text-bold">{{Owner.companyRegOn}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showPesel">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-pesel">PESEL</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_pesel" class="u-text-bold">{{Owner.pesel}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showRegon">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-regon">REGON</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_regon" class="u-text-bold">{{Owner.regon}}</span> </div>
+            </div>
+
+            <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point">
+                <div class="l-grid__column-6"><span i18n="@@OwnerPersonalDetail-span-address">Address</span></div>
+                <div class="l-grid__column-6"> <span id="span_{{fieldName}}_address" class="u-text-bold">{{Owner.address}}</span> </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="c-poland-form-select js-poland-form-select u-margin-top-lg u-margin-bottom-lg c-poland-form-select--negative is-filled" [formGroup]="formGroup" [ngClass]="{'is-opened': isOpen}" clickOutside (clickOutside)="onOutsideClick()">
+  <label class="c-poland-form-select__label">{{label}}</label>
+  <span class="c-poland-form-select__placeholder" (click)="onToggleOpen()" >{{displayValue}}<input type="text" formControlName="value" hidden></span>
+  <span class="c-poland-form-select__icon c-icon c-icon--chevron-down" (click)="onToggleOpen()"></span>
+  <div class="c-poland-form-select__option-container" >
+    <div class="c-poland-form-select__filter" *ngIf="filterPlaceholder">
+      <input id = "txt_filterPlaceholder" type="text" placeholder="{{filterPlaceholder}}"  i18n-placeholder = "@@commonsFormSelect-placeholder-formSelect" (keyup)="onFilterChange($event)">
+    </div>
+    <div class="c-poland-form-select__option-list">
+      <ul class="c-poland-form-select__option-group with-icon" *ngFor="let options of currentOptionGroups">
+        <li class="c-poland-form-select__option" *ngFor="let option of options" (click)="onSelectOption(option)">
+          <span class="c-icon c-icon--poland {{option.icon}}" *ngIf="option.icon"></span>
+          {{option.value}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="c-modal">
+  <div class="c-modal__backdrop" (click)="clickClosePopup();"></div>
+  <div class="c-modal__container">
+      <div class="c-modal__content">
+          <button aria-label="close" id="offerresendclosebtn" class="c-modal__close" (click)="clickClosePopup();"><span aria-hidden="true" class="fa fa-close"></span></button>
+          <div class="c-popup">
+              <div class="l-grid__column-12 u-padding-bottom-sm">
+                  <h3 class="c-heading u-text-center u-text-weight-semibold"></h3>
+              </div>
+              <div class="l-grid__column-12 u-text-center">
+                  <p id="offerresensinfotext" i18n = "@@restore-quotation-offer-resend-subtext" class="c-copy c-copy--xlarge u-margin-bottom-0">Email with the offer was resent to the address provided during the calculation.</p>    
+              </div>
+              <div class="l-grid__column-12 u-text-center u-margin-top-lg">
+                  <button id="offerresendokbtn" i18n = "@@restore-quotation-offer-resend-ok" class="c-button c-button--direct-cta" type="" (click)="clickClosePopup();">OK</button>    
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

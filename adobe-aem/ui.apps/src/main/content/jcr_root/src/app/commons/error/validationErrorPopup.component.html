@@ -1,0 +1,29 @@
+<div id="ValErrorPopup" class="c-modal c-modal--poland-call-center">
+    <div class="c-modal__backdrop"></div>
+    <div class="c-modal__container t-bg-soft-blue-light">
+        <div class="c-modal__content">
+            <button id="btn_callcenterpopup_close" aria-label="close" (click)="hidePopup();" class="c-modal__close"><span aria-hidden="true" class="fa fa-close"></span></button>
+            <div class="c-popup">
+                <div class="l-grid__column-12 u-padding-bottom-sm">
+                    <h3 i18n="@@ValErrPopup-headerDescription-errorMessage" class="c-heading u-text-center u-text-weight-semibold">
+                        Correct the form
+                    </h3>
+
+                </div>
+                <div class="l-grid__column-12 u-padding-bottom-sm">
+                    <p i18n="@@ValErrPopup-paragraph-errorMessage" class="c-copy c-copy--xlarge u-text-center u-margin-bottom-0">
+                        Not all fields have been filled out properly. Please correct the form and try again.
+                    </p>
+                </div>
+                <br>
+                <div class="l-grid__column-12 u-text-center">
+                    <button id="btn_UWPopupCC_OK" class="c-button c-button--direct-cta" type="" (click)="hidePopup();">
+  OK
+</button>
+
+                </div>
+                <!--img class="c-modal--poland-popup-call-center__image" alt="useful description of image if informative and not decoration only." src="../assets/images/operator2.png"-->
+            </div>
+        </div>
+    </div>
+</div>

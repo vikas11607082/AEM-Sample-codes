@@ -1,0 +1,762 @@
+<!-- <header-root></header-root>-->
+
+<div>
+<!-- --------------------------------------------------------Progress Bar------------------------------------------------------------ -->
+
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+
+            Step 2/4: Upload documents
+
+
+        </h6>
+
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item " #progressbarActive #progressbarLinear>
+      <p i18n = "@@p1cd-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text">
+  
+    Vehicle Data
+    
+  
+</p>
+
+    </span>
+            <span class="c-progress-bar__item ">
+      <p i18n = "@@p1cd-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text">
+  
+    Personal Data
+    
+  
+</p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p1cd-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text">
+  
+    Insurance Details
+    
+  
+</p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p1cd-progressBar-applicaton" class="c-copy c-copy--large c-progress-bar__text">
+  
+    Application
+    
+  
+</p>
+
+    </span>
+        </div>
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------------Progress Bar------------------------------------------------------------ -->
+
+<!-- 	<div class="pl-container "> -->
+
+<!-- 		<div class="sg-main" role="main"> -->
+
+<!-- -----------------------------------------------------------------------Car Selection---------------------------------------------------------------- -->
+<div class="u-text-center c-sale-funnel c-sale-funnel--bg-poland-light-gray ">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p i18n="@@p1cd-paragraph-5Minutes" class="c-copy c-copy--large t-rich-grey">
+
+                in 5 minutes your offer will be ready
+
+
+            </p>
+
+        </div>
+
+        <h1 i18n="@@p1cd-headerDescription-tailoredInsurance" class="c-heading  l-grid__column-large-10 offset-large-1">
+
+            Tailored insurance in just a few steps
+
+
+        </h1>
+
+
+        <h6 i18n="@@p1cd-headerDescription-indicidualOffer" class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2">
+
+            Your individual offer will be ready after filling few data
+        </h6>
+
+    </div>
+
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image ">
+            <img class="c-sale-funnel__image c-sale-funnel--image" alt="useful description of image if informative and not decoration only." src="{{'/assets/images/sale-funnel-bg-car-detail.png' | imagepathresolver}}" />
+
+        </figure>
+
+        <div class="c-sale-funnel__image__footer--center c-sale-funnel--bg-poland-light-gray"></div>
+        <div class="c-sale-funnel__image__footer t-bg-poland-blue"></div>
+    </div>
+
+    <div class="u-padding-bottom-lg t-bg-poland-blue">
+          
+        <div class="u-padding-top-lg c-sale-funnel__form">
+            <div class="c-sale-funnel__form__group">
+                <label i18n="@@p1cd-formlabel-carBrand" class="font-size-md c-sale-funnel__form__label" for="select-1"> Car brand </label>
+                <div class="c-poland-form-select js-poland-form-select u-margin-top-lg u-margin-bottom-lg c-poland-form-select--negative" #dropDownCarBrand (click)="showDropDownCarBrand(dropDownCarBrand)">
+                    <span *ngIf="selectedCarBrand===NO_VAL" id="carBrandIcon" class="c-poland-form-select__placeholder" tabindex="0" style="outline:none" i18n="@@p1cd-span-chooseCarBrand">Choose</span>
+                    <span *ngIf="selectedCarBrand!==NO_VAL" id="carBrandIcon" class="c-poland-form-select__placeholder" tabindex="0" style="outline:none">{{selectedCarBrand}}</span>
+                    <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                    <div class="c-poland-form-select__option-container">
+                        <div class="c-poland-form-select__filter">
+                            <input id="txt_carBrandType" type="text" placeholder="Type car brand" i18n-placeholder="@@p1cd-placeholder-carBrand" (keyup)="onKeyCarBrand($event)" (keypress)="acceptOnlyChar($event)" maxlength="36" [(ngModel)]="carBrandInputValue" />
+                        </div>
+                        <div class="c-poland-form-select__option-list">
+                            <ul class="c-poland-form-select__option-group with-icon" id="carBrandDropdown" (clickOutside)="hideDDCarBrandClickOutside(dropDownCarBrand, $event)" ngDefaultControl>
+                                <li class="c-poland-form-select__option" *ngFor="let x of showCarBrandPopular;let i=index" id="select_carBrandPop_{{i}}" value="{{x}}" (keyup)="select(x)" (click)="hideDropDownCarBrand(dropDownCarBrand, x, $event)">
+                                    <span ngClass={{className+x.toLowerCase()}}></span> {{x}}
+                                </li>
+                                <hr *ngIf="showCarBrandPopular.length>0 && showCarBrandNonPopular.length >0" />
+                                <li class="c-poland-form-select__option" *ngFor="let y of showCarBrandNonPopular;let i=index" id="select_carBrandNonPop_{{i}}" value="{{y}}" (click)="hideDropDownCarBrand(dropDownCarBrand, y, $event)">
+                                    <span ngClass="c-icon c-icon--poland"></span> {{y}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-sale-funnel__form__group">
+                <label i18n="@@p1cd-formlabel-productionYear" class="font-size-md c-sale-funnel__form__label" for="select-1"> Production year </label>
+                <div class="c-poland-form-select js-poland-form-select u-margin-top-lg u-margin-bottom-lg c-poland-form-select--negative" #dropDownProdYear (click)="showDropDownProdYear(dropDownProdYear)">
+                    <span *ngIf="selectedProdYear===NO_VAL" id="prodYearIcon" class="c-poland-form-select__placeholder" tabindex="0" style="outline:none" i18n="@@p1cd-span-chooseProdYear">Choose</span>
+                    <span *ngIf="selectedProdYear!==NO_VAL" id="prodYearIcon" class="c-poland-form-select__placeholder" tabindex="0" style="outline:none">{{selectedProdYear}}</span>
+                    <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                    <div class="c-poland-form-select__option-container">
+                        <div class="c-poland-form-select__filter">
+                            <input id="txt_productionYear" type="text" placeholder="Type production year" i18n-placeholder="@@p1cd-placeholder-productionYear" (keyup)="onKeyProdYear($event)" (keypress)="acceptOnlyNumber($event)" maxlength="4" [(ngModel)]="prodYearInputValue" />
+                        </div>
+                        <div #prodYearList class="c-poland-form-select__option-list">
+                            <ul class="c-poland-form-select__option-group with-icon" id="prodYearDropDown" (clickOutside)="hideDDProdYearClickOutside(dropDownProdYear, $event)" ngDefaultControl>
+                                <li class="c-select__option" style="text-align:left" *ngFor="let x of showProdYear;let i=index" id="select_prodYear_{{i}}" value="{{x}}" data-value="{{x}}" (click)="hideDropDownProdYear(dropDownProdYear, x, $event)">{{x}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------Car Fuel Type ------------------------------------------------------- -->
+<div *ngIf="showFuelType == true">
+    <h3 i18n="@@p1cd-text-findYourCar" class="c-heading u-text-center u-margin-top-lg u-margin-bottom-lg">
+        Let's find your car
+    </h3>
+    <div class="c-poland-radio-circle-group u-margin-bottom-lg">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h3 i18n="@@p1cd-text-fuelType" class="c-heading u-text-center">
+                        Fuel type
+                    </h3>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-12 c-poland-radio-circle-group__item" *ngFor="let ftype of fuelTypes;let i=index">
+                    <div *ngIf="ftype.key == 'O'">
+                        <input *ngIf="ftype.key == fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" checked name="radio-icon-group-1" type="radio">
+                        <input *ngIf="ftype.key != fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" name="radio-icon-group-1" type="radio">
+                        <label for="radio-icon-group-1-items-2" class="c-radio-circle__label
+                            c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--diesel" (click)="fuelTypeCheck(ftype.key,ftype.value)">
+                            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                            <span class="c-radio-circle__label-text">{{ftype.value}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="ftype.key == 'H'">
+                        <input *ngIf="ftype.key == fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" checked name="radio-icon-group-1" type="radio">
+                        <input *ngIf="ftype.key != fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" name="radio-icon-group-1" type="radio">
+                        <label for="radio-icon-group-1-items-5" class="c-radio-circle__label
+                            c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--hybrid" (click)="fuelTypeCheck(ftype.key,ftype.value)">
+                            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                            <span class="c-radio-circle__label-text">{{ftype.value}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="ftype.key == 'E'">
+                        <input *ngIf="ftype.key == fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" checked name="radio-icon-group-1" type="radio">
+                        <input *ngIf="ftype.key != fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" name="radio-icon-group-1" type="radio">
+                        <label for="radio-icon-group-1-items-1" class="c-radio-circle__label
+                            c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--benzene" (click)="fuelTypeCheck(ftype.key,ftype.value)">
+                            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                            <span class="c-radio-circle__label-text">{{ftype.value}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="ftype.key == 'G'">
+                        <input *ngIf="ftype.key == fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" checked name="radio-icon-group-1" type="radio">
+                        <input *ngIf="ftype.key != fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" name="radio-icon-group-1" type="radio">
+                        <label for="radio-icon-group-1-items-1" class="c-radio-circle__label
+                            c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--benzene" (click)="fuelTypeCheck(ftype.key,ftype.value)">
+                            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                            <span class="c-radio-circle__label-text">{{ftype.value}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="ftype.key == 'P'">
+                        <input *ngIf="ftype.key == fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" checked name="radio-icon-group-1" type="radio">
+                        <input *ngIf="ftype.key != fuelType" id="rdo_fuelType_{{i}}" class="c-radio-circle__input" name="radio-icon-group-1" type="radio">
+                        <label for="radio-icon-group-1-items-4" class="c-radio-circle__label
+                            c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--electric" (click)="fuelTypeCheck(ftype.key,ftype.value)">
+                            <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                            <span class="c-radio-circle__label-text">{{ftype.value}}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------------------------------------------------------------------------------------Car Fuel Type------------------------------------------------------------------------------------- -->
+
+
+<!-- ------------------------------------------------------------------------------------- Car Body----------------------------------------------------------------------------------------- -->
+
+<div class="c-poland-radio-circle-group u-padding-top-lg u-padding-bottom-lg t-bg-soft-beige-lightest" *ngIf="showCarBody == true">
+    <div class="l-grid l-grid--max-width">
+        <div class="l-grid__row">
+            <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                <h3 i18n="@@p1cd-text-carBody" class="c-heading u-text-center">
+                    Car body
+                </h3>
+            </div>
+        </div>
+        <div class="c-radio-circle l-grid__row justify-content-center">
+
+            <div class="{{bsCarBodyType}} c-poland-radio-circle-group__item" *ngFor="let carBodyType of carBodyTypes">
+                <div *ngIf="carBodyType.key === 'SED'">
+                    <input id="rdo_carBodyType_1" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_1" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-1" class="c-radio-circle__label
+                      c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--sedan" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                    </label>
+                </div>
+                <div *ngIf="carBodyType.key === 'KB'">
+                    <input id="rdo_carBodyType_2" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_2" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-2" class="c-radio-circle__label
+                      c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--kombi" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                    </label>
+                </div>
+                <div *ngIf="carBodyType.key === 'HB'">
+                    <input id="rdo_carBodyType_3" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_3" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-3" class="c-radio-circle__label
+                      c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--hatchback" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                    </label>
+                </div>
+                <div *ngIf="carBodyType.key === 'OS'">
+                    <input id="rdo_carBodyType_4" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_4" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-4" class="c-radio-circle__label
+                        c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--kombi" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                    </label>
+                </div>
+                <div *ngIf="carBodyType.key === 'O'">
+                    <input id="rdo_carBodyType_5" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_5" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-5" class="c-radio-circle__label
+                      c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--crossover" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                    </label>
+                </div>
+                <div *ngIf="carBodyType.key === 'D'">
+                    <input id="rdo_carBodyType_6" *ngIf="carBody == carBodyType.key" checked class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <input id="rdo_carBodyType_6" *ngIf="carBody != carBodyType.key" class="c-radio-circle__input" name="radio-icon-group-2" type="radio">
+                    <label for="radio-icon-group-2-items-6" class="c-radio-circle__label
+                        c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--pickup" (click)="carBodyCheck(carBodyType.key,carBodyType.value)">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span class="c-radio-circle__label-text">{{carBodyType.value}}</span>
+                      </label>
+                </div>
+            </div>
+
+            <br/>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------- Car Body----------------------------------------------------------------------------------------- -->
+
+<!-- ------------------------------------------------------------------------------------- Car Model---------------------------------------------------------------------------------------- -->
+<div *ngIf="showCarModel == true">
+    <h3 i18n="@@p1cd-text-carModel" class="c-heading u-text-center u-margin-top-lg u-margin-bottom-lg">
+        Car model
+    </h3>
+    <div class="l-grid l-grid--max-width">
+        <div class="l-grid__row {{bsJustifyCenter}}">
+            <div class="l-grid__column-large-4 l-grid__column-medium-4 l-grid__column-12 u-margin-bottom-lg padding-left-15" *ngFor="let cModel of carModels;let in=index">
+                <div class="c-radio">
+                    <input *ngIf="cModel.value == carModelSelected" id="{{cModel.value}}" checked class="c-radio__input" name="car-model" type="radio" (click)="carModelCheck(cModel.value)">
+                    <input *ngIf="cModel.value != carModelSelected" id="{{cModel.value}}" class="c-radio__input" name="car-model" type="radio" (click)="carModelCheck(cModel.value)">
+                    <label for="{{cModel.value}}" class="c-radio__label">
+                <span class="c-radio__label--text" style="color:#414141;">{{cModel.value}}</span>
+            </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------- Car Engine---------------------------------------------------------------------------------------- -->
+
+<div *ngIf="showCarEngine == true">
+    <div class="l-container l-container--full-width t-bg-soft-beige-lightest u-padding-top-lg u-padding-bottom-lg">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row justify-content-center">
+                <div class="l-grid__column-12">
+                    <h3 i18n="@@p1cd-text-carEngine" class="c-heading u-text-center">
+                        Car engine
+                    </h3>
+                </div>
+                <div class="l-grid__column-12">
+                      <p i18n="@@p1cd-label-carengine-description" class="c-copy u-text-center c-copy--large u-padding-top-sm u-margin-bottom-0">explanation goes here</p>
+                </div>
+                <div class="l-grid__column-12 l-grid__column-medium-4 u-padding-top-lg" *ngIf="showcarEngineSize.length > 0" (clickOutside)="hideDDCarEngineSizeClickOutside($event)">
+                    <div #dropDownCarEngineSize class="{{carEngineSizeClass}}" (click)="showDropDownCarEngineSize()"  aria-hidden="true">
+                        <label class="c-poland-form-select__label" i18n="@@p1cd-label-EngineSizeLabel" >Engine size</label>
+                        <span *ngIf="selectedCarEngineSize===NO_VAL" class="c-poland-form-select__placeholder"></span>
+                        <span *ngIf="selectedCarEngineSize!==NO_VAL" class="c-poland-form-select__placeholder">{{selectedCarEngineSize}}</span>
+                        <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                        <div class="c-poland-form-select__option-container">
+                            <div class="c-poland-form-select__option-list">
+                                <ul class="c-poland-form-select__option-group" id="carEngineDropdown">
+                                    <li class="c-poland-form-select__option" *ngFor="let x of showcarEngineSize;let i=index" id="select_carEngineSize-{{i}}" data-value="{{x.cubicCapacity}}" (click)="hideDropDownCarEngineSize(x.cubicCapacity, $event)">{{x.cubicCapacity}} </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-grid__column-12 l-grid__column-medium-4 u-padding-top-lg" (clickOutside)="hideDDCarEnginePowerClickOutside($event)">
+                    <div #dropDownCarEnginePower class="{{carEnginePowerClass}}" (click)="showDropDownCarEnginePower()" aria-hidden="true">
+                        <label class="c-poland-form-select__label" i18n="@@p1cd-label-EnginehorsepowerLabel">Engine horsepower</label>
+                        <span *ngIf="selectedCarEnginePower===NO_VAL" class="c-poland-form-select__placeholder"></span>
+                        <span *ngIf="selectedCarEnginePower!==NO_VAL" class="c-poland-form-select__placeholder">{{selectedCarEnginePower}}</span>
+                        <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                        <div class="c-poland-form-select__option-container">
+                            <div class="c-poland-form-select__option-list">
+                                <ul class="c-poland-form-select__option-group">
+                                    <li class="c-poland-form-select__option" *ngFor="let x of showcarEnginePower; let i=index" id="select_carEnginePower-{{i}}" ngDefaultControl data-value="{{x.power}}" (click)="hideDropDownCarEnginePower(x.power, $event)">{{x.power}} </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------- Car Version-------------------------------------------------------------------------------------- -->
+<!-- Not Ready yet   -->
+
+<!--
+  <div *ngIf="showCarVersion == true">
+	
+		<h3 class="c-heading u-text-center u-margin-top-lg u-margin-bottom-lg">
+ 				  Car Version
+		</h3>
+		
+		<div class="l-grid l-grid--max-width">
+  <div class="l-grid__row">
+      <div class="l-grid__column-12 l-grid__column-large-4 l-grid__column-medium-6 u-margin-bottom-lg">
+        <div class="c-radio ">
+    <input id="car-version-item-1" class="c-radio__input" name="car-version-group" type="radio" tabindex="0" (click)="carVersionCheck()" >
+    <label for="car-version-item-1" class="c-radio__label">
+      <span class="c-radio__label--text">TDI-CR Active</span>
+    </label>
+</div>
+      </div>
+      <div class="l-grid__column-12 l-grid__column-large-4 l-grid__column-medium-6 u-margin-bottom-lg">
+        <div class="c-radio ">
+  <input id="car-version-item-2" class="c-radio__input" name="car-version-group" type="radio" tabindex="0" (click)="carVersionCheck()">
+  <label for="car-version-item-2" class="c-radio__label">
+    <span class="c-radio__label--text">TSI Laurin &amp; Klement</span>
+  </label>
+</div>
+
+      </div>
+      <div class="l-grid__column-12 l-grid__column-large-4 l-grid__column-medium-6 u-margin-bottom-lg">
+        <div class="c-radio ">
+  <input id="car-version-item-3" class="c-radio__input" name="car-version-group" type="radio" tabindex="0" (click)="carVersionCheck()">
+  <label for="car-version-item-3" class="c-radio__label">
+    <span class="c-radio__label--text">4X4</span>
+  </label>
+</div>
+
+      </div>
+      <div class="l-grid__column-12 l-grid__column-large-4 l-grid__column-medium-6 u-margin-bottom-lg">
+        <div class="c-radio ">
+  <input id="car-version-item-4" class="c-radio__input" name="car-version-group" type="radio" tabindex="0" (click)="carVersionCheck()">
+  <label for="car-version-item-4" class="c-radio__label">
+    <span class="c-radio__label--text">TSI Ambition</span>
+  </label>
+</div>
+
+      </div>
+      <div class="l-grid__column-12 l-grid__column-large-4 l-grid__column-medium-6 u-margin-bottom-lg">
+        <div class="c-radio ">
+  <input id="car-version-item-5" class="c-radio__input" name="car-version-group" type="radio" tabindex="0" (click)="carVersionCheck()">
+  <label for="car-version-item-5" class="c-radio__label">
+    <span class="c-radio__label--text">TSI Joy</span>
+  </label>
+</div>
+
+      </div>
+  </div>
+</div>
+-->
+
+
+
+<!-- ------------------------------------------------------------------------------------- Car Version-------------------------------------------------------------------------------------- -->
+
+
+
+<!-- -------------------------------------------------------------------------------------Car versions if Not known by Customer----------------------------------------------------------------- -->
+
+
+<div class="t-bg-soft-beige-lightest u-padding-lg" *ngIf="showCarVersionTable == true">
+    <div class="l-grid__row l-grid__row--no-gutters">
+        <div class="l-grid__column-12 t-bg-white">
+            <h1 i18n="@@p1cd-headerDescription-foundCarVersion" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-center u-margin-top-lg">
+                We have found {{carVersionSize}} versions of {{carModelDetail}} <br/> Please choose your model
+            </h1>
+            <div class="c-table__container">
+                <div class=" l-scroll__container">
+                    <table class="c-table js-list-table js-table-sortable c-list-table__table-single-select" [mfData]="carVersionModels" #mf="mfDataTable">
+                        <colgroup>
+                            <col style="width:30px">
+                        </colgroup>
+
+                        <thead class="c-table__header">
+                            <tr class="c-table__header__row">
+                                <th class="c-table__header__cell c-table__header__cell--checkbox">
+                                    <div class="c-table__header__title--block">
+                                    </div>
+                                </th>
+                                <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable">
+                                    <mfDefaultSorter by="version">
+                                        <div class="c-table__header__title--block">
+                                            <span class="c-table__sort-indicator ">
+                                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                                            </span>
+                                            <span i18n="@@p1cd-span-modelandVersion" class="c-table__header__title"> Model and version</span>
+                                        </div>
+                                    </mfDefaultSorter>
+                                </th>
+                                <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable">
+                                    <mfDefaultSorter by="power">
+                                        <div class="c-table__header__title--block">
+                                            <span class="c-table__sort-indicator ">
+                                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                                            </span>
+                                            <span i18n="@@p1cd-span-power" class="c-table__header__title"> Power (KW)</span>
+                                        </div>
+                                    </mfDefaultSorter>
+                                </th>
+                                <th class="c-table__header__cell c-table__header__cell--sortable js-column-sortable">
+                                    <mfDefaultSorter by="body">
+                                        <div class="c-table__header__title--block">
+                                            <span class="c-table__sort-indicator ">
+                                                <i class="c-icon c-icon--chevron-up" aria-hidden="true"></i>
+                                                <i class="c-icon c-icon--chevron-down u-line-height-0 " aria-hidden="true"></i>
+                                            </span>
+                                            <span i18n="@@p1cd-span-numberOfDoors" class="c-table__header__title"> Number of doors</span>
+                                        </div>
+                                    </mfDefaultSorter>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="c-table__row" *ngFor="let item of mf.data; let i=index" (click)="highLightAllRow($event);carVersionTableCheck(item.id, item.version, item.body, item.cubicCapacity,item.power)" [ngClass]="{'c-table__row--highlighted':item.id===carVersionId}">
+                                <td class="c-table__cell c-table__cell--checkbox">
+                                    <div class="c-radio--small">
+                                        <input *ngIf="item.id == carVersionId" id="rdo_version_table_{{item.id}}" checked class="c-radio__input js-list-table--single-select__checkbox--event-handler" name="single-select" type="radio" (click)="carVersionTableCheck(item.id, item.version, item.body,item.cubicCapacity,item.power);">
+                                        <input *ngIf="item.id !== carVersionId" id="rdo_version_table_{{item.id}}" class="c-radio__input js-list-table--single-select__checkbox--event-handler" name="single-select" type="radio" (click)="carVersionTableCheck(item.id, item.version, item.body,item.cubicCapacity,item.power);">
+                                        <label [for]="carVersionId" class="c-radio__label u-margin-none"></label>
+                                    </div>
+                                </td>
+                                <td class="c-table__cell">{{item.version}}</td>
+                                <td class="c-table__cell">{{item.power}}</td>
+                                <td class="c-table__cell">{{item.body }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------------- Help me Choose --------------------------------------------------------------------  -->
+<!-- Not Ready yet   -->
+<!--
+<div class="l-grid l-grid--max-width">
+  <div class="l-grid__row justify-content-center">
+    <div class="c-checkbox ">
+  <input type="checkbox" name="helpmechoose" id="helpmechoose" aria-labelledby="helpmechoose-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="showStandardEquip">
+  <label for="helpmechoose" class="c-checkbox__label icons-oneweb-allianz-Icon_Check_Mark" >
+    <span id="helpmechoose-label" >
+      Help me choose
+    </span>   
+  </label>
+</div>
+
+  </div>
+</div>
+-->
+
+<!-- -------------------------------------------------------------------------------------Standard Equipment-------------------------------------------------------------------------------- -->
+
+<div class="l-container l-container--full-width u-margin-top-lg" *ngIf="showStandardEquip == true">
+    <div class="l-grid l-grid--max-width">
+        <div class="l-grid__row">
+            <div class="l-grid__column-12">
+                <h3 i18n="@@p1cd-headerDescription-standardEquipment" class="c-heading u-text-center">
+                    Standard equipment
+                </h3>
+            </div>
+            <div class="l-grid__column-12">
+            </div>
+            <div class="l-grid__column-12">
+            </div>
+            <div #standardEquip tabindex=-1 class="l-grid__column-4 l-grid__column-medium-4 offset-medium-1 u-padding-top-lg" style="padding-left:15%;outline:none" *ngFor="let standardEqui of standardEquipmentModels;let i=index">
+                <div class="c-checkbox ">
+                    <!--<label for="equipment1" for="standard-equipment-1" (click)="standarEquipCheck()" >
+    <span id="equipment1-label">
+       {{StandardEqui.value}}
+    </span>
+  </label>-->
+                    <ul>
+                        <li style="font-size: 16px" id="select_standardEquip_{{i}}">{{standardEqui.value}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="l-grid__column-12" *ngIf="showMoreStndEquip" style="padding-left:12%;">
+                <div class="l-grid__row justify-content-center u-padding-top-lg">
+                    <div class="l-grid__column-12 l-grid__column-medium-4" *ngIf="enableMoreStndEq">
+                        <button i18n="@@p1cd-button-moreOption" (click)="showMoreStandardEquip($event)" class="c-button " id="btn_moreStandardEquip" type="">
+                            MORE OPTIONS
+                        </button>
+                    </div>
+                    <div class="l-grid__column-12 l-grid__column-medium-4" *ngIf="enableLessStndEq">
+                        <button i18n="@@p1cd-button-lessOption" (click)="showLessStandardEquip($event)" class="c-button " id="btn_lessStandardEquip" type="">
+                            LESS OPTIONS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- -------------------------------------------------------------------------------------Standard Equipment-------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------------Car versions if Not known by Customer----------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------------Anti Theft Security------------------------------------------------------------------------------- -->
+
+<div class="l-gird__row justify-content-center u-padding-sm u-margin-top-lg u-margin-bottom-lg" *ngIf="carVersionId != '' && isStdEquipment">
+    <div class="l-grid__column-large-12 l-grid__column-medium-4 l-grid__column-small-12 justify-content-center u-margin-auto u-text-center">
+        <h3 i18n="@@p1cd-headerDescription-antiTheft" class="c-heading ">
+            Anti-theft security
+        </h3>
+    </div>
+    <div class="l-grid__column-12">
+        <div class="l-grid__row u-padding-sm justify-content-center c-checkbox__row">
+            <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 u-text-center c-checkbox__item" *ngFor="let antiTheftData of antiTheftModels">
+                <div *ngIf="flagTheft && antiTheftData.value == 'Immobilizer'">
+                    <span class="c-checkbox-configurator ">
+                  <input *ngIf="antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_1"  class="c-checkbox-configurator__input" name="anti-theft-security-1" aria-labelledby="anti-theft-security-1-label" type="checkbox"  value="Immobilizer" [(ngModel)]="modelImmobilize" (change)="unSelectNone();">
+                  <input *ngIf="!antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_1" class="c-checkbox-configurator__input" name="anti-theft-security-1" aria-labelledby="anti-theft-security-1-label" type="checkbox"  value="Immobilizer" [(ngModel)]="modelImmobilize" (change)="unSelectNone();">
+                  <label class="c-checkbox-configurator__label icons-oneweb-allianz-Icon_Check" for="chk_anti_theft_security_1" (click)="antiTheftCheck(antiTheftData.value, antiTheftData.key)" >
+                    <span class="c-checkbox-configurator__icon c-icon c-icon--poland c-icon--poland--immo"></span>
+                    <span id="anti-theft-security-1-label">
+                      {{antiTheftData.value}}
+                    </span>
+                    </label>
+                    </span>
+                </div>
+                <div *ngIf="flagTheft && antiTheftData.value == 'Alarm'">
+                    <span class="c-checkbox-configurator ">
+                  <input *ngIf="antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_2"  class="c-checkbox-configurator__input" name="anti-theft-security-2" aria-labelledby="anti-theft-security-2-label" type="checkbox"  [(ngModel)]="modelAlarm" (change)="unSelectNone();">
+                  <input *ngIf="!antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_2" class="c-checkbox-configurator__input" name="anti-theft-security-2" aria-labelledby="anti-theft-security-2-label" type="checkbox"  [(ngModel)]="modelAlarm" (change)="unSelectNone();">
+                  <label class="c-checkbox-configurator__label icons-oneweb-allianz-Icon_Check" for="chk_anti_theft_security_2" (click)="antiTheftCheck(antiTheftData.value, antiTheftData.key)" >
+                    <span class="c-checkbox-configurator__icon c-icon c-icon--poland c-icon--poland--alarm"></span>
+                    <span id="anti-theft-security-2-label">
+                      {{antiTheftData.value}}
+                    </span>
+                    </label>
+                    </span>
+                </div>
+                <div *ngIf="flagTheft && antiTheftData.value == 'Blokada skrzyni biegów'">
+                    <span class="c-checkbox-configurator ">
+                  <input *ngIf="antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_3" class="c-checkbox-configurator__input" name="anti-theft-security-3" aria-labelledby="anti-theft-security-3-label" type="checkbox"  [(ngModel)]="modelGearLock" (change)="unSelectNone();">
+                  <input *ngIf="!antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_3" class="c-checkbox-configurator__input" name="anti-theft-security-3" aria-labelledby="anti-theft-security-3-label" type="checkbox"  [(ngModel)]="modelGearLock" (change)="unSelectNone();">
+                  <label class="c-checkbox-configurator__label icons-oneweb-allianz-Icon_Check" for="chk_anti_theft_security_3" (click)="antiTheftCheck(antiTheftData.value, antiTheftData.key)">
+                    <span class="c-checkbox-configurator__icon c-icon c-icon--poland c-icon--poland--gear-lock"></span>
+                    <span id="anti-theft-security-3-label">
+                      {{antiTheftData.value}}
+                    </span>
+                    </label>
+                    </span>
+                </div>
+                <div *ngIf="flagTheft && antiTheftData.value == 'Monitoring GPS'">
+                    <span class="c-checkbox-configurator ">
+                  <input *ngIf="antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_4" class="c-checkbox-configurator__input" name="anti-theft-security-4" aria-labelledby="anti-theft-security-4-label" type="checkbox"   [(ngModel)]="modelGps" (change)="unSelectNone();">
+                  <input *ngIf="!antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_4" class="c-checkbox-configurator__input" name="anti-theft-security-4" aria-labelledby="anti-theft-security-4-label" type="checkbox"  [(ngModel)]="modelGps" (change)="unSelectNone();">
+                  <label class="c-checkbox-configurator__label icons-oneweb-allianz-Icon_Check" for="chk_anti_theft_security_4" (click)="antiTheftCheck(antiTheftData.value, antiTheftData.key)">
+                    <span class="c-checkbox-configurator__icon c-icon c-icon--poland c-icon--poland--gps"></span>
+                    <span id="anti-theft-security-4-label">
+                     {{antiTheftData.value}}
+                    </span>
+                    </label>
+                    </span>
+                </div>
+                <div *ngIf="flagTheft && antiTheftData.value == 'Inne'">
+                    <span class="c-checkbox-configurator ">
+                    <input *ngIf="antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_5" class="c-checkbox-configurator__input" name="anti-theft-security-5" aria-labelledby="anti-theft-security-5-label" type="checkbox"  [(ngModel)]="modelOther" (change)="unSelectNone();">
+                    <input *ngIf="!antiTheftSecurity.includes(antiTheftData.value)" id="chk_anti_theft_security_5" class="c-checkbox-configurator__input" name="anti-theft-security-5" aria-labelledby="anti-theft-security-5-label" type="checkbox"  [(ngModel)]="modelOther" (change)="unSelectNone();">
+                    <label class="c-checkbox-configurator__label icons-oneweb-allianz-Icon_Check" for="chk_anti_theft_security_5" (click)="antiTheftCheck(antiTheftData.value, antiTheftData.key)">
+                      <span class="c-checkbox-configurator__icon c-icon c-icon--poland c-icon--poland--shield"></span>
+                    <span id="anti-theft-security-5-label">
+                        {{antiTheftData.value}}
+                      </span>
+                    </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-grid__row justify-content-center" style="margin-top:3%">
+        <div class="c-checkbox " *ngIf="!optionSelected">
+            <input type="checkbox" name="checkbox1" id="chk_deselectAll" aria-labelledby="checkbox1-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="deSelectedAllAnti" (change)="deselectAll();" important style="
+                    background-color:#3da556;
+                    ">
+            <label for="chk_deselectAll" class="c-checkbox__label c-icon c-icon--check">
+                    <span i18n = "@@p1cd-span-none" id="checkbox1-label">
+                      None
+                    </span>
+                  </label>
+        </div>
+    </div>
+    <div class="c-checkbox ">
+        <error *ngIf="(anthiTheftValues == '' && deSelectedAllAnti == false) && nextClicked == true" [errorMsg]="'noSelection'"></error>
+    </div>
+    <!--<div class="l-grid__row justify-content-center" *ngIf="showOtherAntiTheftDesc">
+        <div class="l-grid__column-xsmall-10 l-grid__column-small-6 l-grid__column-medium-4 u-padding-top-lg">
+            <div i18n="@@p1cd-text-Description" class="c-heading u-text-center other-anti-theft-desc">Description</div>
+            <div class="c-textfield js-floating u-margin-top-0">
+                <input id="txt_otherAntiTheftDesc" class="c-textinput__field c-textinput__field--floating js-floating__input" type="text" maxlength="49" [(ngModel)]="otherAntiTheftDesc">
+                <label for="" class="c-textinput__label c-textinput__label--floating">
+                        <span class="c-textinput__label--optional"></span>
+                </label>
+                <p class="c-textinput__label--bottom"></p>
+            </div>
+        </div>
+    </div>-->
+</div>
+<!-- -------------------------------------------------------------------------------------Anti Theft Security------------------------------------------------------------------------------- -->
+
+<!---------------------------------------------------------------------------------Side of wheel ------------------------------------------------------------------>
+
+
+<div class="c-poland-radio-circle-group u-margin-bottom-lg" *ngIf="showSideOfWheel == true && isStdEquipment">
+    <div class="l-grid l-grid--max-width">
+        <div class="l-grid__row">
+            <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                <h3 i18n="@@p1cd-headerDescription-sideOfWheel" class="c-heading u-text-center">
+                    Side of wheel
+                </h3>
+            </div>
+        </div>
+
+        <div class="c-radio-circle l-grid__row">
+
+            <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item" *ngFor="let sideofwheel of sideofWheelData">
+
+                <div *ngIf="sideofwheel == 'Left'">
+                    <input *ngIf="sideofwheel == sideofWheelSelected" id="rdo_side_of_wheel_1" checked class="c-radio-circle__input" name="radio-icon-side-of-wheel" type="radio">
+                    <input *ngIf="sideofwheel != sideofWheelSelected" id="rdo_side_of_wheel_1" class="c-radio-circle__input" name="radio-icon-side-of-wheel" type="radio">
+                    <label for="radio-icon-side-of-wheel-1" class="c-radio-circle__label
+                    c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--left-wheel" (click)="sideofWheelCheck(sideofwheel);trackSideOfWheel(sideofwheel);">
+                    <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                    <span i18n = "@@p1cd-span-left" class="c-radio-circle__label-text">Left</span>
+                  </label>
+                </div>
+                <div *ngIf="sideofwheel == 'Right'">
+                    <input *ngIf="sideofwheel == sideofWheelSelected" id="rdo_side_of_wheel_2" checked class="c-radio-circle__input" name="radio-icon-side-of-wheel" type="radio">
+                    <input *ngIf="sideofwheel != sideofWheelSelected" id="rdo_side_of_wheel_2" class="c-radio-circle__input" name="radio-icon-side-of-wheel" type="radio">
+                    <label for="radio-icon-side-of-wheel-2" class="c-radio-circle__label
+                    c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--right-wheel" (click)="sideofWheelCheck(sideofwheel);trackSideOfWheel(sideofwheel);">
+                    <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                    <span i18n = "@@p1cd-span-right" class="c-radio-circle__label-text">Right</span>
+                  </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------------------------------------------Side of wheel ------------------------------------------------------------------>
+
+
+<div *ngIf="showSideOfWheel == true">
+    <div class="l-container l-container--full-width">
+        <div class="l-grid u-padding-top-md u-padding-bottom-md">
+            <div class="l-grid__row u-margin-top-lg justify-content-center">
+                <div class="l-grid__column-10 l-grid__column-large-8">
+                    <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" (onDataPicked)="setConsents($event)" [page]="'cardetails'"></marketing-consents>
+                </div>
+            </div>
+        </div>
+        <div class="l-grid l-grid--max-width u-margin-bottom-lg">
+            <div class="l-grid__row">
+                <!--Back button-->
+                <div class="l-grid__column u-text-center">
+                    <button class="c-button c-button--icon
+  c-icon c-icon--arrow-right
+  c-icon-flip c-button--secondary">
+  BACK
+</button>
+
+                </div>
+                <!--Back button end -->
+                <div class="l-grid__column u-text-center">
+                    <button i18n="@@p1cd-button-nextStep" class="c-button c-button_redhover c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA" type="" id="btn_nextStep" (click)="clickNext()" [disabled]="disabledNext">
+  NEXT
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------HotLine Support------------------------------------------------------------------------------------ -->
+
+    <!-- <hotline-support></hotline-support> -->
+    <!-- -------------------------------------------------------------------------------------HotLine Support----------------------------------------------------------------------------------- -->
+
+
+
+    <!-- ---------------------------------------------------------------------------------Footer------------------------------------------------------------------------------------------------ -->
+    <validation-error *ngIf="hasErrors" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+    <ng-template error-factory></ng-template>
+</div>
+    <footer-root></footer-root>
+    <!-- ---------------------------------------------------------Footer------------------------------------------------------------------------------------------------ -->

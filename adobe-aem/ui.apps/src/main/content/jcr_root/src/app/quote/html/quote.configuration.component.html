@@ -1,0 +1,451 @@
+<!-- <header-root></header-root>-->
+<!--progress bar-->
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p7cg-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text" >
+               Vehicle Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p7cg-progressBar-personalData"class="c-copy c-copy--large c-progress-bar__text" >
+               Personal Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p7cg-progressBar-Insurance-details" class="c-copy c-copy--large c-progress-bar__text" >
+               Insurance details
+            </p>
+         </span>
+            <span class="c-progress-bar__item  ">
+            <p i18n = "@@p7cg-progressBar-Application" class="c-copy c-copy--large c-progress-bar__text" >
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+<!--progress bar end-->
+<div class="u-text-center c-sale-funnel t-bg-soft-beige-lightest ">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p class="c-copy c-copy--large t-rich-grey" i18n="@@p7-text-cg-one-minute-offer">You need only 1 minute to get an offer for you</p>
+        </div>
+        <h1 class="c-heading  l-grid__column-large-10 offset-large-1" i18n="@@p7-text-cg-tailored-insurance">Tailored insurance to your needs at your hand</h1>
+        <h6 class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2" i18n="@@p7-text-cg-choose-your-cover">Choose your cover</h6>
+    </div>
+
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image  ">
+            <img class="c-sale-funnel__image " alt="useful description of image if informative and not decoration only." src="{{'/assets/images/configration-page-funnel-bg.png' | imagepathresolver}}" />
+        </figure>
+        <div class="c-sale-funnel__image__footer--center t-bg-soft-beige-lightest"></div>
+        <div class="c-sale-funnel__image__footer t-bg-soft-beige"></div>
+    </div>
+
+    <div class="u-padding-bottom-lg t-bg-soft-beige">
+        <h2 class="c-heading c-sale-funnel__form--title" i18n="@@p7-text-cg-Insurance-for-your">Insurance for your</h2>
+        <h2><span class="u-text-weight-semibold"> {{carBrand}} {{carModel}} {{carVersionName}}</span></h2>
+    </div>
+</div>
+<!--midle -->
+<div class="l-grid u-padding-md u-padding-left-lg">
+    <div class="l-grid__row u-justfiy-center">
+        <div class="l-grid__column-5 u-padding-sm">
+            <h1 class="c-heading c-heading--subsection-large c-heading--list-table-sub-headline" i18n="@@p7-text-cg-value-your-car">Value of your car</h1>
+        </div>
+        <div class="l-grid__column-6 u-padding-sm">
+            <h1 id="h1_CarValue" class="c-heading c-heading--subsection-large c-heading--list-table-sub-headline t-primary-action u-text-weight-semibold">
+                {{carValue }} {{curencyVar}}
+            </h1>
+        </div>
+    </div>
+
+    <div class="l-grid__row u-justfiy-center">
+        <div class="l-grid__column-5 u-padding-sm">
+            <h1 class="c-heading c-heading--subsection-large c-heading--list-table-sub-headline" i18n="@@p7-text-cg-start-date-insurance">Starting date of insurance</h1>
+        </div>
+        <div class="l-grid__column-6 u-padding-sm">
+            <h1 id="h1_StartDate" class="c-heading c-heading--subsection-large c-heading--list-table-sub-headline t-primary-action u-text-weight-semibold">
+                {{startDateOfInsurance | date:'dd MMMM yyyy'}}
+
+            </h1>
+        </div>
+    </div>
+
+    <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+    <div class="l-grid__row u-justfiy-center">
+        <div class="l-grid__column-11">
+            <h3 i18n="@@p7cg-text-Personalized-insurance" class="c-heading u-margin-top-md"><span class="t-primary-action c-icon c-icon--poland-stack--gears"><span class="c-icon c-icon--poland c-icon--poland--gear c-icon--poland--gear-1"></span><span class="c-icon c-icon--poland c-icon--poland--gear c-icon--poland--gear-2"></span></span>Configure
+                the offer according to your needs</h3>
+        </div>
+    </div>
+
+    <div class="l-grid__row u-justfiy-center" id="yourChoiceContainer">
+        <div class="l-grid__column-small-12 l-grid__column-medium-6 l-grid__column-large-6">
+
+            <div *ngFor="let personalizedModel of personalizedArr;let in1=index">
+                <div class="l-gird__row u-padding-md u-padding-bottom-none">
+                    <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                        <h3 class="c-heading ">
+                            {{personalizedModel[0].coverName?(personalizedModel[0].coverName.split("|").pop()):""}}
+                        </h3>
+                    </div>
+                    <!-- <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+              <p class="c-copy c-copy--large" >
+               {{personalizedModel[0].coverageItemDescription.split("|").pop()}}
+                 <span class="ellipsis">...</span> <span class="moreText u-display-none"> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span> <a class="t-primary-action" href="#">more info</a>
+              </p>
+           </div>-->
+                    <read-more [description]="personalizedModel[0].coverageItemDescription.split('|').pop()"></read-more>
+
+                    <div *ngFor="let optionModel of personalizedModel;let in2=index">
+                        <div class="l-grid__row u-padding-bottom-md u-font-size-md ">
+
+                            <div class="l-grid__column-large-7 l-grid__column-medium-8 l-grid__column-small-8 l-grid__column-xsmall-8">
+                                <div class="l-grid__row flex-nowrap">
+                                    <input type='radio' name='{{in1}}_radio' id='{{in1}}_{{in2}}_id' [checked]="optionModel.selection.selected" class='c-radio__input js-list-table--single-select__checkbox--event-handler' (click)="selectOption(optionModel,personalizedModel,in1)">
+
+                                    <label for="{{in1}}_{{in2}}_id" class='c-radio__label u-margin-none u-font-size-xl'>
+                             </label>
+                                    <!--     <label for="{{in1}}_{{in2}}_id" ><span  class="t-rich-grey u-font-size-lg">{{optionModel.self}}</span></label>
+                             <label for="{{in1}}_{{in2}}_id" ><span  class="t-rich-grey u-font-size-lg">{{optionModel.selection.selected}}</span></label>-->
+
+                                    <label for="{{in1}}_{{in2}}_id"><span  class="t-rich-grey u-font-size-lg">{{optionModel.name.split("|").pop()}}</span></label>
+                                </div>
+                            </div>
+                            <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-small-4 l-grid__column-xsmall-4 u-text-right">
+                                <span class="u-font-size-md u-font-size-lg"> {{optionModel.grossPremium.split("PLN ").pop().replace('.',',')}} {{curencyVar}}</span> </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+            <h3 i18n="@@p7cg-heading-payment" class="c-heading u-margin-top-md"><span class="t-primary-action font-size-xl c-icon c-icon--poland c-icon--poland--payment"></span> Payment</h3>
+
+            <div class="l-gird__row u-padding-md u-padding-bottom-none">
+                <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                    <h3 class="c-heading" i18n="@@p7-text-cg-how-many-installment">How many installment would you like to pay?</h3>
+                </div>
+                <div *ngFor="let pModel of installmentModel;let in=index">
+                    <div class="l-grid__row u-padding-bottom-md u-font-size-md ">
+                        <div class="l-grid__column-large-7 l-grid__column-medium-8 l-grid__column-small-8 l-grid__column-xsmall-8">
+                            <div class="l-grid__row flex-nowrap">
+                                <input type='radio' [ngModel]="selectedInstallment.value" (ngModelChange)="selectedInstallment.value" [value]="pModel.value" name='payment' id='{{pModel.label}}' (click)="addPaymentFrequencyJson(pModel,false)" class='c-radio__input js-list-table--single-select__checkbox--event-handler'
+                                />
+                                <label for="{{pModel.label}}" class='c-radio__label u-margin-none u-font-size-xl'>
+                     </label>
+                                <label for="{{pModel.label}}"><span class="t-rich-grey u-font-size-lg">{{pModel.label}}</span>
+                        <span class="t-rich-grey u-font-size-lg" *ngIf="selectedInstallment.value == pModel.value">{{pModel.value=='SEMI_ANNUAL'?totalAmount2:totalAmount}} </span></label>
+                            </div>
+                        </div>
+                        <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-small-4 l-grid__column-xsmall-4 u-text-right"> <span class="u-font-size-md u-font-size-lg"></span> </div>
+                    </div>
+                </div>
+                <div [style.visibility]="'hidden'" class="l-grid__row u-padding-bottom-md u-font-size-md ">
+                    <div class="l-grid__column-large-7 l-grid__column-medium-8 l-grid__column-small-8 l-grid__column-xsmall-8">
+                        <div class="l-grid__row flex-nowrap">
+                            <input type='radio' name='payment' id='rdo_Install2' class='c-radio__input js-list-table--single-select__checkbox--event-handler' />
+                            <label for='install2' class='c-radio__label u-margin-none u-font-size-xl'>
+                     </label>
+                            <label for='install2'><span class="t-rich-grey u-font-size-lg">2 installments 850 zł each</span></label>
+                        </div>
+                    </div>
+                    <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-small-4 l-grid__column-xsmall-4 u-text-right"> <span class="u-font-size-md u-font-size-lg"></span> </div>
+                </div>
+            </div>
+
+            <div class="l-gird__row u-padding-md u-padding-bottom-none">
+                <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                    <h3 class="c-heading" i18n="@@p7-text-cg-pay-your-policy">Pay for your Policy </h3>
+                </div>
+                <div *ngFor="let pModel of paymentTypeModel;let in=index">
+                    <div class="l-grid__row u-padding-bottom-md u-font-size-md " *ngIf="(pModel.value == 'BANK_TRANSFER' && showPayBank) || (pModel.value == 'ONLINE_PAYMENT')">
+
+                        <div class="l-grid__column-large-7 l-grid__column-medium-8 l-grid__column-small-8 l-grid__column-xsmall-8">
+                            <div class="l-grid__row flex-nowrap">
+                                <input type='radio' [ngModel]="selectedPaymentType.value" (ngModelChange)="selectedPaymentType.value" name='payat' value="{{pModel.value}}" id='{{pModel.label}}' (click)="addRemoveExtEntityJson(pModel)" class='c-radio__input js-list-table--single-select__checkbox--event-handler'
+                                />
+                                <label for='{{pModel.label}}' class='c-radio__label u-margin-none u-font-size-xl'>
+                     </label>
+                                <label for='{{pModel.label}}'><span class="t-rich-grey u-font-size-lg">{{pModel.label}}</span></label>
+                            </div>
+                        </div>
+                        <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-small-4 l-grid__column-xsmall-4 u-text-right"> <span class="u-font-size-md u-font-size-lg"></span> </div>
+                    </div>
+                </div>
+                <div [style.visibility]="'hidden'" class="l-grid__row u-padding-bottom-md u-font-size-md ">
+                    <div class="l-grid__column-large-7 l-grid__column-medium-8 l-grid__column-small-8 l-grid__column-xsmall-8">
+                        <div class="l-grid__row flex-nowrap">
+                            <input type='radio' name='payat' id='rdo_Payat2' class='c-radio__input js-list-table--single-select__checkbox--event-handler'>
+                            <label for='payat2' class='c-radio__label u-margin-none u-font-size-xl'>
+                     </label>
+                            <label for='payat2'><span class="t-rich-grey u-font-size-lg">Pay at your bank</span></label>
+                        </div>
+                    </div>
+                    <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-small-4 l-grid__column-xsmall-4 u-text-right"> <span class="u-font-size-md u-font-size-lg"></span> </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="l-grid__column-small-12 l-grid__column-medium-4 l-grid__column-large-5">
+            <div class="l-grid u-padding-lg c-your-choice t-bg-secondary-light-grey-gradation3 sticky" id="yourChoice">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-12">
+                        <h3 i18n="@@p7cg-heading-your-choice" class="c-heading u-text-center u-text-weight-semibold">Your choice</h3>
+                    </div>
+                </div>
+                <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+                <div class="l-grid__row u-padding-bottom-sm">
+                    <div class="l-grid__column-12">
+                        <h1 class="c-heading c-heading--subsection-small c-heading--list-table-sub-headline u-text-left t-primary-action u-text-weight-semibold">
+                            {{bundleData.selectedBundleName}}
+                        </h1>
+                    </div>
+                </div>
+
+                <!--<div *ngFor="let yorChoiceModel of yourChoiceArrayCollection;let in=index">
+
+                    <div class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                        <div class="l-grid__column-12">
+                            <div class="l-grid__row">
+                                <span class="c-icon c-icon--check t-rich-green u-line-height-xxlarge"></span>
+                                <p class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">
+
+                                    {{yorChoiceModel.coverName?(yorChoiceModel.coverName.split("|").pop()):""}}
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-grid__row u-padding-left-md">
+                        <div class="l-grid__column-6">
+                            <!--  <p class="c-copy c-copy--xlarge u-margin-bottom-0" >
+                              {{yorChoiceModel.self}}
+                          </p> 
+                          <p class="c-copy c-copy--xlarge u-margin-bottom-0" >
+                            {{yorChoiceModel.selection.selected}}
+                        </p>
+                <p class="c-copy c-copy--xlarge u-margin-bottom-0">
+
+                    {{yorChoiceModel.name?(yorChoiceModel.name.split("|").pop()):""}}
+
+                </p>
+
+            </div>
+            <div class="l-grid__column-6">
+                <p class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-right">
+                                {{yorChoiceModel.grossPremium?(yorChoiceModel.grossPremium.split("PLN ").pop().replace('.',',')):""}} {{curencyVar}}
+                </p>
+            </div>
+        </div>
+
+    </div>-->
+
+
+                <div *ngFor="let yorChoiceModel of yourChoiceArrayCollection;let in=index">
+
+                    <div class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                        <div class="l-grid__column-12">
+                            <div class="l-grid__row">
+                                <span class="c-icon c-icon--check t-rich-green u-line-height-xxlarge"></span>
+
+                                <p class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">
+
+                                    {{yorChoiceModel[0].coverName?(yorChoiceModel[0].coverName.split("|").pop()):""}}
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngFor="let yorChoiceModel1 of yorChoiceModel;let in=index">
+
+
+                        <div class="l-grid__row u-padding-left-md">
+                            <div class="l-grid__column-6">
+                                <p class="c-copy c-copy--xlarge u-margin-bottom-0">
+                                    {{yorChoiceModel1.name.split("|").pop()}}
+                                </p>
+                            </div>
+                            <div *ngIf="yorChoiceModel1.grossPremium != ''" class="l-grid__column-6">
+                                <p class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-right">
+                                    {{yorChoiceModel1.grossPremium?(yorChoiceModel1.grossPremium.split("PLN ").pop().replace('.',',')):""}} {{curencyVar}}
+
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="l-grid__row">
+                    <div class="l-grid__column-8">
+                        <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+                    </div>
+                </div>
+                <div class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                    <div class="l-grid__column-12">
+                        <p i18n="@@p7cg-p-Payment" class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">Payment</p>
+                    </div>
+                </div>
+                <div class="l-grid__row">
+                    <div class="l-grid__column-12">
+                        <p class="c-copy c-copy--xlarge u-margin-bottom-0">
+                            {{selectedInstallment.label}} {{selectedInstallment.value =='SEMI_ANNUAL'?totalAmount2:totalAmount}}
+                        </p>
+                    </div>
+                </div>
+                <div class="l-grid__row">
+                    <div class="l-grid__column-8">
+                        <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+                    </div>
+                </div>
+                <div [style.visibility]="'hidden'" class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                    <div class="l-grid__column-12">
+                        <p class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">
+                            I&#39;ll use discount for
+                        </p>
+                    </div>
+                </div>
+                <div class="l-grid__row">
+                    <div class="l-grid__column-8">
+                        <!-- <div class="c-select js-select u-margin-top-0">
+  <select  style="visibility:visible; overflow :visible"
+    name="select-1"
+    aria-hidden="true">
+    <option value="15% znizka online"
+    
+    >
+    15% znizka online</option>
+    <option value="15% for purchase on next policy purchase"
+    
+    >
+    15% for purchase on next policy purchase</option>
+  </select>
+</div>-->
+                        <div [style.visibility]="'hidden'" class="l-grid__column-large-8 l-grid__column-medium-12" (clickOutside)="hideDDDiscountOptions()">
+                            <div class="c-select js-select u-margin-none" style="width:100%" data-hj-suppress="" >
+                                <div class="c-select__container" aria-hidden="true" (click)="showDiscountOptions()">
+                                    <span class="c-select__placeholder" tabindex="0" style="outline:none;width:100%">{{selectedDiscountOpt}}</span>
+                                    <span class="c-select__icon c-icon c-icon--chevron-down is-open"></span>
+                                    <ul class="c-select__option-list" #discOptions style="top:97%; width:104%;">
+                                        <li class="c-select__option is-active" *ngFor="let discOpt of discountOptions" (click)="selectDiscountOption(discOpt)">{{discOpt}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div [style.visibility]="'hidden'" class="l-grid__column-4">
+                        <p class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-right">
+                            -191 zł
+                        </p>
+                    </div>
+                </div>
+                <div [style.visibility]="'hidden'" class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                    <div class="l-grid__column-12">
+                        <p class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">
+                            I have discount voucher
+                        </p>
+                    </div>
+                </div>
+                <div [style.visibility]="'hidden'" class="l-grid__row">
+                    <div class="l-grid__column-8">
+                        <div class="c-textfield js-floating u-background-inherit u-margin-top-0 u-padding-top-none c-your-choice-voucher">
+                            <input id="txt_Couponcode" class="c-textinput__field c-textinput__field--floating js-floating__input" value="AB110" data-hj-suppress="" />
+                            <label for="couponcode" class="c-textinput__label c-textinput__label--floating">
+                     <span class="c-textinput__label--optional"></span>
+                     </label>
+                            <p class="c-textinput__label--bottom"></p>
+                        </div>
+                        <span class="c-icon c-icon--check-circle c-icon--middle c-icon--2x t-rich-green c-your-choice-voucher-icon"></span>
+                    </div>
+                    <div class="l-grid__column-4">
+                        <p class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-right">
+                            -50 zł
+                        </p>
+                    </div>
+                </div>
+                <div class="l-grid__row u-padding-top-sm u-padding-bottom-sm">
+                    <div class="l-grid__column-12">
+                        <p i18n="@@p7cg-p-methodOfPayment" class="c-copy c-copy--xlarge u-text-weight-bold u-margin-bottom-0">Method of payment</p>
+                    </div>
+                </div>
+                <div class="l-grid__row">
+                    <div class="l-grid__column-6">
+                        <p class="c-copy c-copy--xlarge u-margin-bottom-0">
+                            {{selectedPaymentType.label}}
+                        </p>
+                    </div>
+                    <div class="l-grid__column-6">
+                    </div>
+                </div>
+                <div class="l-grid__row u-padding-top-lg">
+                    <div class="l-grid__column-12 u-text-center">
+                        <h1 i18n="@@p7cg-heading-Total" class="c-heading c-heading--subsection-small c-heading--list-table-sub-headline u-text-center">Total</h1>
+                    </div>
+                    <!-- <div class="l-grid__column-12 u-text-center u-padding-top-sm">
+                        <h2 class="c-heading t-rich-red u-text-decoration-strick">
+                            1277 zł
+                        </h2>
+                    </div>-->
+                    <div class="l-grid__column-12 u-text-center">
+                        <h2 class="c-heading t-primary-action"> {{totalAmount}}
+                        </h2>
+                    </div>
+                    <div class="l-grid__column-12 u-padding-top-sm">
+                        <div class="l-grid__row justify-content-center">
+                            <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12 u-text-center">
+                                <button i18n="@@p7cg-button-back" id="btn_Back" class="c-button c-button--icon c-icon c-icon--arrow-right c-icon-flip c-button--secondary" [disabled]="disabledNext" (click)="clickBackButton()">BACK</button>
+                            </div>
+                            <div id="btn_Next" class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12 u-text-center">
+                                <button i18n="@@p7cg-button-next" class="c-button c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA" [disabled]="disabledNext" (click)="clickNextButton()">NEXT</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <quote-restore-price-recalulation *ngIf="showPriceRecalculationPopup" (onRecalculateOkClick)="closeRecalculatePopup($event)"></quote-restore-price-recalulation>
+    <!---</div>
+</div>-->
+    <!--<div class="l-grid l-grid--max-width" style="padding-bottom:5%">
+   <div class="l-grid__row justify-content-center u-margin-top-md">
+      <div class="l-grid__column-3 u-text-center">
+         <button id="btn_Back"
+            class="c-button c-button--icon
+            c-icon c-icon--arrow-right
+            c-icon-flip"
+            [routerLink]="['/productbundle']"
+            >
+         BACK
+         </button>
+      </div>
+      <div class="l-grid__column-3 u-text-center">
+         <button id="btn_Next"
+            class="c-button c-button--icon
+            c-icon c-icon--arrow-right
+            c-button--icon-right"
+            [routerLink]="['/policyholder']">
+         NEXT
+         </button>
+      </div>
+   </div>
+</div>-->
+    <!--end -->
+    <!-- <hotline-support></hotline-support> -->
+    <footer-root></footer-root>

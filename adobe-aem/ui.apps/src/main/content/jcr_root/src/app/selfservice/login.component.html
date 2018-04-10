@@ -1,0 +1,116 @@
+<!-- <header-root></header-root>-->
+<div class="l-grid l-grid--full-width c-poland-login-form ">
+   <!-- <div class="l-grid__row justify-content-center">
+        <div class="l-grid__column">
+            <h3 i18n="@@PEO-headerDescription-Welcome" class="c-heading u-text-center">
+                Welcome Friend
+            </h3>
+        </div>
+    </div>-->
+    <div class="l-grid__row justify-content-center">
+        <div class="l-grid__column">
+            <h1 i18n="@@PEO-headerDescription-AllianzOnline" class="c-heading u-margin-top-lg u-text-weight-light u-text-center">
+                Login to my Allianz online
+            </h1>
+        </div>
+    </div>
+    <div class="l-grid__row c-poland-login-form__items">
+        <div class="l-grid__column">
+            <div class="l-grid__row c-poland-login-form__item justify-content-center">
+                <div class="l-grid__column l-grid__column-8 l-grid__column-medium-6 l-grid__column-large-4 u-padding-top-sm">
+                    <div class="c-textfield js-floating">
+                        <input #textbox id="txt_Email" class="c-textinput__field c-textinput__field--floating js-floating__input is-filled" type="text"
+                            [(ngModel)]="txtEmail" (paste)="removePolicyField()" (keyup)="btnEnable()" (blur)="removeSpace()" />
+                        <label i18n="@@PEO-formlabel-email" for="" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>
+                            PESEL &#x2F; Email
+                        </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isPolicyId">
+                <div class="l-grid__column l-grid__column-8 l-grid__column-medium-6 l-grid__column-large-4">
+                    <div class="c-textfield js-floating ">
+                        <input #textbox id="txt_PolicyId" class="c-textinput__field c-textinput__field--floating js-floating__input is-filled" value=""
+                            [(ngModel)]="txtPolicyId" (keyup)="btnEnableMultiPolicy()"/>
+                        <label i18n="@@PEO-formlabel-policyId" for="" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>
+                            Policy Id
+                        </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isOkClicked ==true">
+                <div class="l-grid__column l-grid__column-8 l-grid__column-medium-6 l-grid__column-large-4">
+                    <div class="c-textfield js-floating ">
+                        <input #textbox id="txt_Otp" type="password" class="c-textinput__field c-textinput__field--floating js-floating__input is-filled"
+                            value="" [(ngModel)]="txtOTP" />
+                        <label i18n="@@PEO-formlabel-OTP" for="" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>
+                            OTP
+                        </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isSinglePolicy">
+                <div class="l-grid__column l-grid__column-4 l-grid__column-medium-8 u-text-center u-margin-top-lg u-padding-top-lg" *ngIf="isOkClicked ==false">
+                    <button id="btn_ok" i18n="@@PEO-button-OK" class="c-button u-responsive-button-width c-button--direct-cta" type="" [disabled]="isOkDisabled"
+                        (click)="isOkCheckEmail()">
+                        Ok
+                    </button>
+                </div>
+                <div class="l-grid__column l-grid__column-4 l-grid__column-medium-8 u-text-center u-margin-top-lg u-padding-top-lg" *ngIf="isOkClicked ==true">
+                    <button id="btn_Login" i18n="@@PEO-button-Login" class="c-button u-responsive-button-width c-button--direct-cta" type=""
+                        (click)="isLoginClicked();setLoginOtpData()">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isMultiplePolicy">
+                <div class="l-grid__column l-grid__column-4 l-grid__column-medium-8 u-text-center u-margin-top-lg u-padding-top-lg" *ngIf="isOkClicked ==false">
+                    <button id="btn_ok_multi" i18n="@@PEO-button-OK" class="c-button u-responsive-button-width c-button--direct-cta" type=""
+                        [disabled]="isOkDisabled" (click)="isOkCheckEmailMulti()">
+                        Ok
+                    </button>
+                </div>
+                <div class="l-grid__column l-grid__column-4 l-grid__column-medium-8 u-text-center u-margin-top-lg u-padding-top-lg" *ngIf="isOkClicked ==true">
+                    <button id="btn_Login" i18n="@@PEO-button-Login" class="c-button u-responsive-button-width c-button--direct-cta" type=""
+                        (click)="isLoginClicked();setLoginOtpData()">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isOkClicked ==false">
+                <div class="l-grid__column l-grid__column-10 l-grid__column-medium-8 l-grid__column-large-8">
+                    <p i18n="@@PEO-button-GetOTP" class="c-copy c-copy--large u-text-center u-margin-top-md u-margin-bottom-0">
+                        Once you click OK you will get an OTP
+                    </p>
+                </div>
+            </div>
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isOkClicked ==true">
+                <div class="l-grid__column l-grid__column-10 l-grid__column-medium-8 l-grid__column-large-8">
+                    <p i18n="@@PEO-button-SentOTP" class="c-copy c-copy--large u-text-center u-margin-top-md u-margin-bottom-0">
+                        We have just sent you an OTP
+                    </p>
+                </div>
+            </div>
+            <div class="l-grid__row c-poland-login-form__item justify-content-center" *ngIf="isOkClicked ==true">
+                <div class="l-grid__column l-grid__column-10 l-grid__column-medium-8 l-grid__column-large-8">
+                    <p i18n="@@PEO-button-GetTheCode" class="c-copy c-copy--large u-text-center u-margin-bottom-0">
+                        If you did not get the code we can
+                        <a class="c-link c-copy font-size-inherit">
+                            <span class="c-link__text">resend</span>
+                        </a> it
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <hotline-support></hotline-support> -->
+<footer-root></footer-root>

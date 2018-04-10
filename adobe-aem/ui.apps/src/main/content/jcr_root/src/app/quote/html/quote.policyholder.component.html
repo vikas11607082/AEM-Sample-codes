@@ -1,0 +1,631 @@
+<!-- <header-root></header-root>-->
+<div id="pb-progress-container" class="c-progress-bar-container c-progress-bar-container--poland">
+    <div id="pb-progressbar" class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 id="pb-progress-step2-heading" class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div id="pb-progress-step" class="c-progress-bar--steps">
+            <span id="pb-progress-step1" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p6ph-progressBar-vehicleData" id="pb-progress-step1-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Vehicle Data
+            </p>
+         </span>
+            <span id="pb-progress-step2" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p6ph-progressBar-personalData" id="pb-progress-step2-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Personal Data
+            </p>
+         </span>
+            <span id="pb-progress-step3" class="c-progress-bar__item c-progress-bar__item--active ">
+            <p i18n = "@@p6ph-progressBar-insuranceDetails" id="pb-progress-step3-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Insurance Details
+            </p>
+         </span>
+            <span id="pb-progress-step4-title" class="c-progress-bar__item  ">
+            <p i18n = "@@p6ph-progressBar-application" id="pb-progress-step4-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+
+<div class="u-text-center c-sale-funnel t-bg-soft-rose-lightest ">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p i18n="@@p6ph-paragraph-3Minutes" class="c-copy c-copy--large t-rich-grey">
+                in 3 minutes....
+            </p>
+        </div>
+        <h1 i18n="@@p6ph-headerDescription-minimumEffort" class="c-heading  l-grid__column-large-10 offset-large-1">
+            Minimum effort - fast quotation
+        </h1>
+
+        <h6 i18n="@@p6ph-headerDescription-dataToConfigure" class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2">
+            We only need a few data to configure your offer
+        </h6>
+    </div>
+
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image  ">
+            <img class="c-sale-funnel__image " alt="useful description of image if informative and not decoration only." src="{{'/assets/images/graphic-policy.png' | imagepathresolver}}" />
+        </figure>
+
+        <div class="c-sale-funnel__image__footer--center t-bg-soft-rose-lightest"></div>
+        <div class="c-sale-funnel__image__footer t-bg-vibrant-orange-light"></div>
+    </div>
+
+    <div class="u-padding-bottom-lg t-bg-vibrant-orange-light">
+        <h6 i18n="@@p6ph-headerDescription-policyHolder" class="c-heading c-heading--subsection-small u-padding-top-lg u-margin-bottom-0 c-sale-funnel__form--title">
+            Who is the policy holder
+        </h6>
+        <div class="u-padding-top-lg c-sale-funnel__form">
+            <div class="c-sale-funnel__form__group" *ngIf="policyHolderTypes.driver">
+                <div class="c-radio c-radio--dark c-radio__sale-funnel">
+                    <input id="rdo_same_as_driver" class="c-radio__input" name="select-1" value="driver" type="radio" [(ngModel)]="policyHolderType" (change)="showSelectedHolder()" tabindex="0">
+                    <label for="rdo_same_as_driver" class="c-radio__label">
+                  <span i18n = "@@p6ph-span-sameAsDriver" class="c-radio__label--text">Same as driver <br><span class="u-text-weight-light">({{driver[0].value}}  {{driver[1].value}})</span></span>
+              </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden=”true” />
+            </div>
+            <div class="c-sale-funnel__form__group" *ngIf="policyHolderTypes.mainOwner">
+                <div class="c-radio c-radio--dark c-radio__sale-funnel">
+                    <input id="rdo_same_as_Owner" class="c-radio__input" name="select-1" type="radio" value="mainOwner" [(ngModel)]="policyHolderType" (change)="showSelectedHolder()" type="radio" tabindex="0">
+                    <label for="rdo_same_as_Owner" class="c-radio__label">
+                  <span i18n = "@@p6ph-span-sameAsOwner" class="c-radio__label--text">Same as owner <br><span class="u-text-weight-light">({{mainOwner[0].value}} {{mainOwner[1].key!='REGON'?mainOwner[1].value:''}})</span></span>
+              </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden=”true” />
+            </div>
+            <div class="c-sale-funnel__form__group" *ngIf="policyHolderTypes.coOwner1">
+                <div class="c-radio c-radio--dark c-radio__sale-funnel">
+                    <input id="rdo_2nd_co_Owner" class="c-radio__input" name="select-1" value="coOwner1" [(ngModel)]="policyHolderType" (change)="showSelectedHolder()" type="radio" tabindex="0">
+                    <label for="rdo_2nd_co_Owner" class="c-radio__label">
+                        <span i18n = "@@p6ph-span-1stCoOwner" class="c-radio__label--text">Co-owner 1 <br><span class="u-text-weight-light">({{coOwner1[0].value}} {{coOwner1[1].key!='REGON'?coOwner1[1].value:''}})</span></span>
+                    </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden=”true” />
+            </div>
+            <div class="c-sale-funnel__form__group" *ngIf="policyHolderTypes.coOwner2">
+                <div class="c-radio c-radio--dark c-radio__sale-funnel">
+                    <input id="rdo_3rd_co_Owner" class="c-radio__input" name="select-1" value="coOwner2" [(ngModel)]="policyHolderType" (change)="showSelectedHolder()" type="radio" tabindex="0">
+                    <label for="rdo_3rd_co_Owner" class="c-radio__label">
+                  <span i18n = "@@p6ph-span-2ndCoOwner" class="c-radio__label--text">Co-owner 2 <br><span class="u-text-weight-light">({{coOwner2[0].value}}  {{coOwner2[1].key!='REGON'?coOwner2[1].value:''}})</span></span>
+              </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden=”true” />
+            </div>
+            <div class="c-sale-funnel__form__group">
+                <div class="c-radio c-radio--dark c-radio__sale-funnel">
+                    <input id="rdo_other" class="c-radio__input" name="select-1" value="other" [(ngModel)]="policyHolderType" (change)="showSelectedHolder()" type="radio" tabindex="0">
+                    <label for="rdo_other" class="c-radio__label">
+                  <span i18n = "@@p6ph-span-other" class="c-radio__label--text">Other<br/><span class="u-text-weight-light">&nbsp;</span></span>
+              </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden=”true” />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-grid">
+    <div class="l-grid__row u-padding-bottom-lg">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h3 i18n="@@p6ph-headerDescription-policyHolderTitle" class="c-heading u-margin-top-lg u-text-center">
+                Policy holder
+            </h3>
+            <p i18n="@@p6ph-paragraph-residential" class="c-copy c-copy--xlarge u-text-center u-padding-top-sm u-margin-bottom-0">
+                Residential
+            </p>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <ng-container *ngFor="let policyHolder of selectedOwnerTypeData">
+                    <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                        <div class="c-textfield js-floating u-background-inherit">
+                            <input id="txt_{{policyHolder.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [readonly]="disabledInputFields" [ngModel]="(policyHolder.key == 'Nazwa banku' || policyHolder.key == 'Nazwa firmy')?(policyHolder.value):(policyHolder.value)"
+                                (ngModelChange)="policyHolder.value=$event" [input]="policyHolder.value" (blur)="validateSpace($event);titleCaseName($event);checkPesel(policyHolder.key, policyHolder.value)" dpp-input required (keypress)="validate($event, policyHolder.key);"
+                                (keyup)="checkValueKeyup($event, policyHolder)" (paste)="policyHolder.key!='PESEL'?false:true" data-hj-suppress="" />
+                            <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> {{policyHolder.key}}
+                        </label>
+                            <p class="c-textinput__label--bottom"></p>
+                            <error *ngIf="policyHolder.value == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                            <error *ngIf="policyHolder.key == 'PESEL' && phPeselInvalid" [errorMsg]="'dataInvalid'"></error>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngFor="let contact of selectedOwnerTypeContact">
+                    <div class="c-textfield js-floating u-background-inherit">
+                        <input id="txt_{{contact.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" (blur)="checkEmailBlur(contact.key, contact.value)" [(ngModel)]="contact.value" dpp-input [input]="contact.value" (keypress)="validate($event, contact.key)"
+                            (keyup)="checkValueKeyup($event, contact)" (paste)="false" required  data-hj-suppress="" />
+                        <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> {{contact.key}}
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="contact.value == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="(contact.key == 'Email' && emailInvalid == true) &&  contact.value != ''" [errorMsg]="'dataInvalid'"></error>
+                        <error *ngIf="(contact.key == 'Telefon' && phoneInvalid == true) && contact.value != ''" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+                <ng-container *ngFor="let address of selectedOwnerTypeAddrRes">
+                    <div class="{{(address.key=='House no.'||address.key=='Flat no.')?('l-grid__column-large-3 l-grid__column-medium-12 l-grid__column-small-12'):('l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12')}}">
+                        <div class="c-textfield js-floating u-background-inherit">
+                            <input id="txt_{{address.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="address.value | uppercase" (ngModelChange)="address.value=$event" dpp-input [input]="address.value | uppercase" (keypress)="validate($event, address.key)"
+                                (keyup)="checkValueKeyup($event, address);" (blur)="checkResZipBlur(address.key, address.value)" (paste)="false" required data-hj-suppress="" />
+                            <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span> {{address.key}}
+                            <span i18n = "@@p6ph-span-streetPlaceholder" class="c-textinput__label--optional" *ngIf="address.key == 'Ulica' || address.key == 'Street'">(Fill town name if there is no street)</span>
+                        </label>
+                            <p class="c-textinput__label--bottom"></p>
+                            <error *ngIf="(address.value == '' && address.key!='Nr mieszkania') && nextClicked == true" [errorMsg]="'noInput'"></error>
+                            <error *ngIf="address.key == 'Kod pocztowy' && resZipInvalid == true" [errorMsg]="'dataInvalid'"></error>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="c-poland-radio-circle-group ">
+        <div class="l-grid l-grid--max-width" [ngClass]="{'u-padding-bottom-lg':isMailingAddSame == 'true' || isMailingAddSame == ''}">
+            <div class="l-grid__row u-padding-bottom-lg">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h3 i18n="@@p6ph-headerDescription-mailingAddresSameAsAbove" class="c-heading u-text-center">
+                        Does the mailing address is the same as above?
+                    </h3>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_car_damaged_mailing_add_items_1" class="c-radio-circle__input" [(ngModel)]="isMailingAddSame" value="true" name="radio-icon-mailing-1" type="radio" data-hj-suppress="" />
+                    <label for="rdo_car_damaged_mailing_add_items_1" class="c-radio-circle__label">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span i18n = "@@p6ph-span-mailingAddressYes" class="c-radio-circle__label-text">Yes</span>
+                  </label>
+                </div>
+                <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_car_damaged_mailing_add_items_2" class="c-radio-circle__input" [(ngModel)]="isMailingAddSame" value="false" name="radio-icon-mailing-1" type="radio" data-hj-suppress="" />
+                    <label for="rdo_car_damaged_mailing_add_items_2" class="c-radio-circle__label">
+                      <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                      <span i18n = "@@p6ph-span-mailingAddressNo" class="c-radio-circle__label-text">No</span>
+                  </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="l-grid__row u-padding-bottom-lg" *ngIf="isMailingAddSame == 'false'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h3 i18n="@@p6ph-headerDescription-policyHolderTitle2" class="c-heading u-text-center u-margin-top-lg">
+            Policy holder
+        </h3>
+        <p i18n="@@p6ph-paragraph-mailingAddress" class="c-copy c-copy--xlarge u-text-center u-padding-top-sm u-margin-bottom-0">
+            Mailing address
+        </p>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngFor="let selectedOwnerData of selectedOwnerTypeData">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_{{selectedOwnerData.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="(selectedOwnerData.key == 'Nazwa firmy' || selectedOwnerData.key == 'Nazwa banku')?(selectedOwnerData.value):(selectedOwnerData.value)"
+                        readonly (ngModelChange)="selectedOwnerData.value=$event" dpp-input [input]="selectedOwnerData.value" (keypress)="validate($event, selectedOwnerData.key)" (keyup)="checkValueKeyup($event, selectedOwnerData)" [attr.required]="isMailingAddSame == 'true'"
+                    data-hj-suppress=""  />
+                    <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                      <span class="c-textinput__label--optional"></span> {{selectedOwnerData.key}}
+                  </label>
+                    <p class="c-textinput__label--bottom"></p>
+                </div>
+            </div>
+
+            <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngFor="let selectedOwnerContact of selectedOwnerTypeContact">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_Owner_contact" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="selectedOwnerContact.value" (ngModelChange)="selectedOwnerContact.value=$event" dpp-input [input]="selectedOwnerContact.value" [attr.required]="isMailingAddSame == 'true'"
+                        (keypress)="validate($event,selectedOwnerContact.key)" (keyup)="checkValueKeyup($event,selectedOwnerContact)" (paste)="false" data-hj-suppress="" />
+                    <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                      <span class="c-textinput__label--optional"></span> {{selectedOwnerContact.key}}
+                  </label>
+                    <p class="c-textinput__label--bottom"></p>
+                </div>
+            </div>
+
+            <ng-container *ngFor="let selectedOwnerAddrMail of selectedOwnerTypeAddrMail">
+                <div class="{{(selectedOwnerAddrMail.key=='House no.'||selectedOwnerAddrMail.key=='Flat no.')?'l-grid__column-large-3 l-grid__column-medium-12 l-grid__column-small-12':'l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12'}}">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_Owner_Add" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="selectedOwnerAddrMail.value | uppercase" (ngModelChange)="selectedOwnerAddrMail.value=$event" dpp-input [input]="selectedOwnerAddrMail.value | uppercase"
+                            (keypress)="validate($event,selectedOwnerAddrMail.key)" (blur)="checkMailZipBlur(selectedOwnerAddrMail.key, selectedOwnerAddrMail.value)" (keyup)="checkValueKeyup($event,selectedOwnerAddrMail)" (paste)="false" data-hj-suppress="" />
+                        <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                        <span class="c-textinput__label--optional"></span> {{selectedOwnerAddrMail.key}}
+                        <span i18n = "@@p6ph-span-streetPlaceholder" class="c-textinput__label--optional" *ngIf="selectedOwnerAddrMail.key == 'Ulica' || selectedOwnerAddrMail.key == 'Street'">(Fill town name if there is no street)</span>
+                        </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="selectedOwnerAddrMail.value == '' && nextClicked == true && selectedOwnerAddrMail.key !== 'Nr mieszkania'" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="selectedOwnerAddrMail.key == 'Kod pocztowy' && mailZipInvalid == true" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<ng-container *ngFor="let owner of ownerDetailsToGet">
+    <policy-holder [ownerData]="owner" [nextClicked]="nextClicked" (emitContact)="setContactData($event)" (emitAddress)="setAddrData($event)" (emitClickEvent)="setAddressCheck($event)"></policy-holder>
+</ng-container>
+<div class="l-container l-container--full-width u-padding-bottom-lg">
+    <div class="l-grid">
+        <div class="u-margin-top-lg u-padding-bottom-lg">
+            <div class="l-grid__row justify-content-center">
+                <div class="l-grid__column-10">
+                    <h3 i18n="@@p6ph-headerDescription-ExtraCarDetails" class="c-heading u-text-center u-margin-top-lg">
+                        Extra Car Details
+                    </h3>
+                    <p i18n="@@p6ph-paragraph-shortDescription" class="c-copy c-copy--xlarge u-text-center u-padding-top-sm u-margin-bottom-0">
+                    </p>
+                </div>
+            </div>
+            <div *ngIf="licensePlate==false" class="l-grid__row justify-content-center">
+                <div class="l-grid__column-xsmall-10 l-grid__column-small-6 l-grid__column-medium-4">
+                    <h1 i18n="@@p6ph-headerDescription-LicensePlateNumer" class="c-heading c-heading--subsection-xsmall u-margin-bottom-0 u-text-center u-margin-top-lg">
+                        License plate number
+                    </h1>
+                    <div class="c-textfield js-floating u-margin-top-0 u-background-inherit u-text-center">
+                        <input id="txt_licensePlate" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="licensePlateNo | uppercase" (ngModelChange)="licensePlateNo=$event" dpp-input [input]="licensePlateNo" [readonly]="licensePlate" [attr.required]="!licensePlate"
+                            data-hj-suppress="" maxlength="10" (focus)="addClass($event)" (blur)="removeClass($event);" (keypress)="validate($event,'license')" (keyup)="validateLicPlate($event)" />
+                        <label i18n="@@p6ph-label-fillLicensePlateNumber" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Fill your license plate number
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="licensePlateNo == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row justify-content-center u-margin-top-lg">
+                <div class="c-checkbox ">
+                    <input type="checkbox" name="checkbox1" id="chk_licensePlate" aria-labelledby="checkbox1-label" tabindex="0" class="c-checkbox__input" [(ngModel)]="licensePlate" />
+                    <label for="chk_licensePlate" class="c-checkbox__label c-icon c-icon--check">
+                      <span i18n = "@@p6ph-span-donthaveLicensePlate" id="checkbox1-label">
+                        I don't have the license plate yet.
+                      </span>
+                  </label>
+                </div>
+            </div>
+            <div class="l-grid__row justify-content-center">
+                <div class="l-grid__column-xsmall-10 l-grid__column-small-6 l-grid__column-medium-4">
+                    <h1 i18n="@@p6ph-headerDescription-VIN" class="c-heading c-heading--subsection-xsmall u-margin-top-lg u-margin-bottom-0 u-text-center">
+                        VIN
+                    </h1>
+                    <div class="c-textfield js-floating u-margin-top-0 u-background-inherit u-text-center">
+                        <input id="txt_VIN" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="vin" dpp-input (blur)="removeClass($event)" [ngModel]="vin | uppercase" (ngModelChange)="vin=$event" maxlength="17" (focus)="addClass($event)" (keypress)="validate($event,'vin')"
+                            (keyup)="validateVin($event)" required data-hj-suppress="" />
+                        <label i18n="@@p6ph-label-fillYourVIN" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Fill your VIN
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="vin == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-poland-radio-circle-group ">
+            <div class="l-grid l-grid--max-width" [ngClass]="{'u-padding-bottom-lg':isCarDamaged == 'damagedNo' || isCarDamaged == ''}">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                        <h3 i18n="@@p6ph-headerDescription-isCarDamaged" class="c-heading u-text-center">
+                            Is your car damaged?
+                        </h3>
+                    </div>
+                </div>
+                <div class="c-radio-circle l-grid__row">
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_car_damaged_1_items_1" class="c-radio-circle__input" name="radio-icon-car-damaged-1" type="radio" value="damagedYes" [(ngModel)]="isCarDamaged" (click)="trackcardamage($event)" data-hj-suppress=""/>
+                        <label for="rdo_car_damaged_1_items_1" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@p6ph-span-carDamagedYes" class="c-radio-circle__label-text">Yes</span>
+                      </label>
+                    </div>
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_car_damaged_1_items_2" class="c-radio-circle__input" name="radio-icon-car-damaged-1" type="radio" value="damagedNo" [(ngModel)]="isCarDamaged " (click)="trackcardamage($event)" data-hj-suppress="" />
+                        <label for="rdo_car_damaged_1_items_2" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@p6ph-span-carDamagedNo" class="c-radio-circle__label-text">No</span>
+                      </label>
+                    </div>
+                </div>
+                <error *ngIf="isCarDamaged == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+            </div>
+        </div>
+
+        <div class="l-grid__row justify-content-center" *ngIf="isCarDamaged == 'damagedYes'">
+            <div class="l-grid__column-xsmall-10 l-grid__column-small-6 l-grid__column-medium-4">
+                <h1 i18n="@@p6ph-headerDescription-moreAbtCarDamaged" class="c-heading c-heading--subsection-xsmall u-margin-top-lg u-margin-bottom-0 u-text-center">
+                    Tell us more about the damage of your car
+                </h1>
+                <div class="c-textarea js-floating u-background-inherit u-margin-bottom-lg">
+                    <textarea data-hj-suppress="" id="textarea01" class="c-textarea__input c-textinput__field c-textinput__field--floating js-floating__input" role="textbox" rows=3 aria-multiline="true" [(ngModel)]="damagedDesc" maxlength="500">
+                  </textarea>
+                    <label class="c-textinput__label c-textinput__label--floating " for="textarea01">
+                      <span class="c-textinput__label--optional"></span>
+                  </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="damagedDesc == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                </div>
+
+            </div>
+        </div>
+        <div class="c-poland-radio-circle-group ">
+            <div class="l-grid l-grid--max-width">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                        <h3 i18n="@@p6ph-headerDescription-keySets" class="c-heading u-text-center">
+                            How many key sets do you have?
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="c-radio-circle l-grid__row">
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_keys_1_items_1" class="c-radio-circle__input" name="radio-icon-keys-1" type="radio" value="1" [(ngModel)]="noOfKeys" />
+                        <label for="rdo_keys_1_items_1" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@p6ph-span-keySet1" class="c-radio-circle__label-text">1</span>
+                      </label>
+                    </div>
+
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_keys_1_items_2" class="c-radio-circle__input" name="radio-icon-keys-1" type="radio" value="2" [(ngModel)]="noOfKeys" />
+                        <label for="rdo_keys_1_items_2" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@p6ph-span-keySet2" class="c-radio-circle__label-text">2</span>
+                      </label>
+                    </div>
+
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_keys_1_items_3" class="c-radio-circle__input" name="radio-icon-keys-1" type="radio" value="3" [(ngModel)]="noOfKeys" />
+                        <label for="rdo_keys_1_items_3" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@p6ph-span-keySet3" class="c-radio-circle__label-text">3+</span>
+                      </label>
+                    </div>
+                </div>
+                <error *ngIf="noOfKeys == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<h3 i18n="@@p6ph-headerDescription-cessionSetup" class="c-heading u-text-center u-margin-top-lg">
+    Do you need to setup a cession?
+</h3>
+<p i18n="@@p6ph-paragraph-shortDescriptonAbtCession" class="c-copy c-copy--xlarge u-text-center u-padding-top-sm u-margin-bottom-0">
+    Short description about the cession goes here
+</p>
+
+<div class="c-poland-radio-circle-group u-margin-bottom-lg">
+    <div class="l-grid l-grid--max-width">
+        <div class="c-radio-circle l-grid__row">
+            <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                <input id="rdo_cession_1_items_1" class="c-radio-circle__input" name="radio-icon-cession-1" type="radio" value="cessionYes" [(ngModel)]="setupSession" (click)="getAllBankList()" />
+                <label for="rdo_cession_1_items_1" class="c-radio-circle__label">
+                  <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                  <span i18n = "@@p6ph-span-cessionYes" class="c-radio-circle__label-text">Yes</span>
+              </label>
+            </div>
+
+            <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                <input id="rdo_cession_1_items_2" class="c-radio-circle__input" name="radio-icon-cession-1" type="radio" value="cessionNo" [(ngModel)]="setupSession" />
+                <label for="rdo_cession_1_items_2" class="c-radio-circle__label">
+                  <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                  <span i18n = "@@p6ph-span-cessionNo" class="c-radio-circle__label-text">No</span>
+              </label>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="l-grid">
+    <!--<div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row" *ngIf="setupSession == 'cessionYes'">
+                <div class="l-grid__column l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <h1 i18n="@@p6ph-headerDescription-cessionCity" class="c-heading c-heading--subsection-xsmall u-margin-top-lg u-margin-bottom-0">
+                        City
+                    </h1>
+                    <div #bankListDropDown class="c-poland-form-select js-poland-form-select u-margin-top-md">
+                        <span i18n="@@p6ph-span-cessionCityChoose" class="c-poland-form-select__placeholder" (click)="openDropDown(bankListDropDown)">Choose</span>
+                        <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                        <div class="c-poland-form-select__option-container">
+                            <div class="c-poland-form-select__filter">
+                                <input id="txt_city_name" type="text" placeholder="Type city name" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.city">
+                            </div>
+                            <div class="c-poland-form-select__option-list">
+                                <ul class="c-poland-form-select__option-group">
+                                    <li id="select_{{city.city}}" class="c-poland-form-select__option" *ngFor="let city of bankList " (click)="selectCity">
+                                        {{city.city}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <h1 i18n="@@p6ph-headerDescription-cessionBank" class="c-heading c-heading--subsection-xsmall u-margin-top-lg u-margin-bottom-0">
+
+                        Bank
+
+                    </h1>
+
+                    <div class="c-poland-form-select js-poland-form-select u-margin-top-md">
+                        <span i18n="@@p6ph-span-cessionBankChoose" class="c-poland-form-select__placeholder">Choose</span>
+                        <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                        <div class="c-poland-form-select__option-container">
+                            <div class="c-poland-form-select__filter">
+                                <input id="txt_bank_name" type="text" placeholder="Type bank name" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.bankname">
+                            </div>
+                            <div class="c-poland-form-select__option-list">
+                                <ul class="c-poland-form-select__option-group">
+                                    <li id="select_bank_1" class="c-poland-form-select__option">
+
+                                        Bank1
+                                    </li>
+                                    <li id="select_bank_2" class="c-poland-form-select__option">
+
+                                        Bank2
+                                    </li>
+                                    <li id="select_bank_3" class="c-poland-form-select__option">
+
+                                        Bank3
+                                    </li>
+                                    <li id="select_bank_4" class="c-poland-form-select__option">
+
+                                        Bank4
+                                    </li>
+                                    <li id="select_bank_5" class="c-poland-form-select__option">
+
+                                        Bank5
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <h1 i18n="@@p6ph-headerDescription-BankBranch" class="c-heading c-heading--subsection-xsmall u-margin-top-lg u-margin-bottom-0">
+
+                        Branch
+
+                    </h1>
+
+                    <div class="c-poland-form-select js-poland-form-select u-margin-top-md">
+                        <span i18n="@@p6ph-span-bankBranchChoose" class="c-poland-form-select__placeholder">Choose</span>
+                        <span class="c-poland-form-select__icon c-icon c-icon--chevron-down"></span>
+                        <div class="c-poland-form-select__option-container">
+                            <div class="c-poland-form-select__filter">
+                                <input id="txt_branch_name" type="text" placeholder="Type branch name" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.branch">
+                            </div>
+                            <div class="c-poland-form-select__option-list">
+                                <ul class="c-poland-form-select__option-group">
+                                    <li id="select_branch_1" class="c-poland-form-select__option">
+
+                                        Branch1
+                                    </li>
+                                    <li id="select_branch_2" class="c-poland-form-select__option">
+
+                                        Branch2
+                                    </li>
+                                    <li id="select_branch_3" class="c-poland-form-select__option">
+
+                                        Branch3
+                                    </li>
+                                    <li id="select_branch_4" class="c-poland-form-select__option">
+
+                                        Branch4
+                                    </li>
+                                    <li id="select_branch_5" class="c-poland-form-select__option">
+
+                                        Branch5
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                </div>
+
+                <div class="l-grid__column-12">
+                    <h1 i18n="@@p6ph-headerDescription-BankAddress" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0 u-text-left">
+
+                        Bank address
+
+                    </h1>
+
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_bank_zipcode" class="c-textinput__field c-textinput__field--floating js-floating__input" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.zip" dpp-input [input]="cessionData.zip" maxlength="6" />
+                        <label i18n="@@p6ph-label-bankZipcode" for="bank-zipcode" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Zipcode
+
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_bank_prefix" class="c-textinput__field c-textinput__field--floating js-floating__input" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.prefix" dpp-input [input]="cessionData.prefix" />
+                        <label i18n="@@p6ph-label-prefix" for="bank-prefix" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Prefix
+
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_bank_street" class="c-textinput__field c-textinput__field--floating js-floating__input" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.street" dpp-input [input]="cessionData.street" maxlength="100" />
+                        <label i18n="@@p6ph-label-street" for="bank-street" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Street
+
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_bank_house_no" class="c-textinput__field c-textinput__field--floating js-floating__input" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.houseno" dpp-input [input]="cessionData.houseno" maxlength="10" />
+                        <label i18n="@@p6ph-label-HouseNo" for="bank-house-no" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> House No.
+
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-xsmall-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_bank_flat_no" class="c-textinput__field c-textinput__field--floating js-floating__input" [attr.required]="setupSession == 'cessionYes'" [(ngModel)]="cessionData.flatno" dpp-input [input]="cessionData.flatno" maxlength="10" />
+                        <label i18n="@@p6ph-label-FlatNo" for="bank-flat-no" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Flat No.
+
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="l-container l-container--full-width">
+        <div class="l-grid u-padding-top-md u-padding-bottom-md">
+            <div class="l-grid__row u-margin-top-lg justify-content-center">
+                <div class="l-grid__column-10 l-grid__column-large-8">
+                    <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" [nextClicked]="nextClicked" (onDataPicked)="setConsents($event)"></marketing-consents>
+                </div>
+            </div>
+            <div class="l-grid l-grid--max-width">
+                <div class="l-grid__row justify-content-center u-margin-top-lg u-padding-top-lg u-margin-bottom-md u-padding-bottom-md">
+                    <!--back button added-->
+                    <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+
+                        <button id="btn_Back" i18n="@@p2cu-button-back" class="c-button c-button--icon c-icon c-icon--arrow-right c-icon-flip c-button--secondary" [disabled]="disabledNext" (click)="clickBackButton()"> 
+         BACK
+         </button>
+                    </div>
+                    <!--back button html structure end-->
+                    <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+                        <button id="btn_continue" i18n="@@p6ph-button-continue" class="c-button c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA u-padding-bottom-0 " type="" [disabled]="disabledNext"  (mousedown)="validateAll();">
+              Next
+          </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <hotline-support></hotline-support> -->
+            <validation-error *ngIf="hasErrors==true" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+            <ng-template error-factory></ng-template>
+            <footer-root></footer-root>

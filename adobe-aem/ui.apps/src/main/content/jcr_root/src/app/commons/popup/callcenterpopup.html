@@ -1,0 +1,45 @@
+<div id="callcenterpopup" class="c-modal c-modal--poland-call-center">
+    <div class="c-modal__backdrop"></div>
+    <div class="c-modal__container t-bg-soft-blue-light">
+        <div class="c-modal__content">
+            <button id="btn_callcenterpopup_close" aria-label="close" (click)="hideSuccessPopup();" class="c-modal__close"><span aria-hidden="true" class="fa fa-close"></span></button>
+            <div class="c-popup">
+                <div class="l-grid__column-12 u-padding-bottom-sm">
+                    <h3 i18n="@@UWPopupCC-headerDescription-errorMessage" class="c-heading u-text-center u-text-weight-semibold">
+                        Please contact AZ Online via phone
+
+
+                    </h3>
+
+                </div>
+                <div class="l-grid__column-12 u-padding-bottom-sm">
+                    <p i18n="@@UWPopupCC-paragraph-errorMessage" class="c-copy c-copy--xlarge u-text-center u-margin-bottom-0">
+                        The data you have entered requires consultation with our customer service. Call our call centre to finalize policy purchase process
+
+                    </p>
+
+                </div>
+                <br>
+                <div class="l-grid__column-12">
+                    <div class="l-grid__row justify-content-center align-items-end">
+                        <p class="c-heading c-heading--section u-text-medium-center-down u-text-center">
+
+                            <i class="fa fa-phone c-phone-link__icon" aria-hidden="true"></i>
+                            <a i18n="@@UWPopupCC-href-phoneNumber" class="c-phone-link__number" href="tel:+48223853853">
+    223 853 853
+  </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="l-grid__column-12 u-text-center">
+                    <button i18n="@@UWPopupCC-button-OK" id="btn_UWPopupCC_OK" class="c-button c-button--direct-cta" type="" (click)="hideSuccessPopup();">
+  OK
+</button>
+
+                </div>
+                <!--img class="c-modal--poland-popup-call-center__image" alt="useful description of image if informative and not decoration only." src="../assets/images/operator2.png"-->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<quote-restore-security-question *ngIf="showSecurityQuestionPopup" [email]="email" [quoteId]="quoteId" [pageSaved]="lastSavePage" (onValidAnswers)="serializeRetrieveData($event)"></quote-restore-security-question>
+<quote-restore-offer-unpaid *ngIf="showOfferUnpaidPopup" (onClickSendOfferAgain)="sendOfferAgain($event)" (onClickPayNow)="navigateToThankYou($event)"></quote-restore-offer-unpaid>
+<quote-restore-offer-send-again *ngIf="showOfferResendPopup" (onClickCloseSendOfferAgain)="navigateToThankYou($event)"></quote-restore-offer-send-again>
+<quote-restore-expired-quote *ngIf="showQuoteExpiredPopup" (onClickNewQuote)="loadNewQuote($event)"></quote-restore-expired-quote>
+
+
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar"
+        aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">Step 2/4: Upload documents</h6>
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item " #progressbarActive #progressbarLinear>
+                <p i18n = "@@p1cd-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text">Vehicle Data</p>
+            </span>
+            <span class="c-progress-bar__item ">
+                <p i18n = "@@p1cd-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text">Personal Data</p>
+            </span>
+            <span class="c-progress-bar__item  ">
+                <p i18n = "@@p1cd-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text">Insurance Details</p>
+            </span>
+            <span class="c-progress-bar__item  ">
+                <p i18n = "@@p1cd-progressBar-applicaton" class="c-copy c-copy--large c-progress-bar__text">Application</p>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="u-text-center c-sale-funnel c-sale-funnel--bg-poland-light-gray ">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p class="c-copy c-copy--large t-rich-grey"></p>
+        </div>
+        <h1 class="c-heading  l-grid__column-large-10 offset-large-1"></h1>
+        <h6 class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2"></h6>
+    </div>
+
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image ">
+            <img class="c-sale-funnel__image c-sale-funnel--image" alt="useful description of image if informative and not decoration only."
+                src="{{'/assets/images/sale-funnel-bg-car-detail.png' | imagepathresolver}}" />
+
+        </figure>
+
+        <div class="c-sale-funnel__image__footer--center c-sale-funnel--bg-poland-light-gray"></div>
+        <div class="c-sale-funnel__image__footer t-bg-poland-blue"></div>
+    </div>
+    <div class="u-padding-bottom-lg t-bg-poland-blue">
+        <div class="u-padding-top-lg c-sale-funnel__form">
+        </div>
+    </div>
+</div>

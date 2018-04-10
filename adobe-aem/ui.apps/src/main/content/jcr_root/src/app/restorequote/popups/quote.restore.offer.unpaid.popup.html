@@ -1,0 +1,27 @@
+ <div class="c-modal">
+  <div class="c-modal__backdrop"></div>
+  <div class="c-modal__container">
+      <div class="c-modal__content">
+          <button aria-label="close" id="restoreofferunpaidclosebtn" class="c-modal__close" (click)="clickPayNow();"><span aria-hidden="true" class="fa fa-close"></span></button>
+          <div class="c-popup">
+              <div class="l-grid__column-12 u-padding-bottom-lg">
+                  <h4 id="restoreofferunpaidheading" i18n = "@@offer-unpaid-heading" class="c-heading u-text-center u-text-weight-semibold">Twoja oferta jest gotowa i czeka na opłacenie.</h4>
+              </div>
+              <!-- <div class="l-grid__column-12 u-text-center">
+                   <p id="restoreofferinfotext" class="c-copy c-copy--xlarge u-margin-bottom-0">Twoja oferta jest gotowa i czeka na opłacenie.</p>
+              </div> -->
+              <div class="l-grid">
+                <div class="l-grid__row">
+                  <div class="l-grid__column-small-6">
+                    <button style="font-size:13px" id="restoreofferunpaidagainbtn" i18n = "@@offer-unpaid-offer-send-button"  class="c-button  c-button--secondary c-button--block c-popup__button" (click)="clickSendOfferAgain();" type="">Send me the offer once again</button>
+          
+                  </div>
+                  <div class="l-grid__column-small-6">
+                    <button style="font-size:13px"  id="restoreofferunpaidpaynowbtn" i18n = "@@offer-unpaid-pay-now-button" class="c-button c-button_redhover c-button--block c-popup__button c-button--redCTA" (click)="clickPayNow();" type="">Pay now</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

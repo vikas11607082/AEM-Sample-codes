@@ -1,0 +1,95 @@
+<div class="c-modal c-modal__max-height">
+    <div class="c-modal__backdrop"></div>
+    <div class="c-modal__container">
+       <div class="c-modal__content">
+          <button id="security-popup-close" aria-label="close" class="c-modal__close" (click)="closeSecurityPopup();"><span aria-hidden="true" class="fa fa-close"></span></button>
+          <div class="c-popup">
+             <div class="l-grid__column-12 u-padding-bottom-sm">
+                <h3 id="security-popup-heading" i18n = "@@restore-quote-security-question-heading" class="c-heading u-text-center u-text-weight-semibold u-margin-bottom-lg">Answer two questions to load the quotations:</h3>
+             </div>             
+             <div *ngIf="questionArray[0] == 3 || questionArray[1] == 3" class="l-grid__column-12">
+                <div class="l-grid__row justify-content-center">
+                   <div class="l-grid__column-12 l-grid__column-small-9">
+                      <p id="security-popup-qustion1" i18n = "@@restore-quote-security-question-1" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center">Type in vehicle’s year of first registration you have provided in this quotation last time:</p>
+                   </div>
+                </div>
+                <div class="l-grid__row justify-content-center">
+                   <div class="l-grid__column-small-8 l-grid__column-medium-6">
+                      <div class="c-textfield js-floating u-text-center c-textfield--center u-margin-top-0 u-margin-bottom-lg">
+                         <input id="security-popup-qustion1-ans" class="c-textinput__field c-textinput__field--floating js-floating__input"
+                           [input]="firstRegistrationDate" dpp-input [ngModel]="firstRegistrationDate" (ngModelChange)="firstRegistrationDate=$event" maxlength="4" (keypress)="acceptOnlyNumbers($event)"/>
+                            <label i18n = "@@restore-quote-security-question-1-placeholder" for="" class="c-textinput__label c-textinput__label--floating"><span id="security-popup-qustion1-placeholder" class="c-textinput__label--optional"></span>Enter 4 digits</label>
+                         <p class="c-textinput__label--bottom"></p>
+                      </div>
+                      <!-- <error *ngIf="showError" [errorMsg]="'securityQuestion'"></error> -->
+                   </div>
+                </div>
+             </div>
+             <div *ngIf="questionArray[0] == 1 || questionArray[1] == 1" class="l-grid__column-12">
+                <div class="l-grid__row justify-content-center">
+                   <div class="l-grid__column-12 l-grid__column-small-9">
+                      <p id="security-popup-qustion2" i18n = "@@restore-quote-security-question-2" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center">Provide production year provided in this quotation previously:</p>
+                   </div>
+                </div>
+                <div class="l-grid__row justify-content-center">
+                   <div class="l-grid__column-small-8 l-grid__column-medium-6">
+                      <div class="c-textfield js-floating u-text-center c-textfield--center u-margin-top-0 u-margin-bottom-lg">
+                         <input id="security-popup-qustion2-ans" class="c-textinput__field c-textinput__field--floating js-floating__input"
+                           [input]="buildYear" dpp-input [ngModel]="buildYear" (ngModelChange)="buildYear=$event" maxlength="4" (keypress)="acceptOnlyNumbers($event)" />
+                            <label for="" i18n = "@@restore-quote-security-question-2-placeholder" class="c-textinput__label c-textinput__label--floating"><span id="security-popup-qustion2-placeholder" class="c-textinput__label--optional"></span>Enter 4 digits</label>
+                         <p class="c-textinput__label--bottom"></p>
+                      </div>
+                      <!-- <error *ngIf="showError" [errorMsg]="'securityQuestion'"></error>                      -->
+                   </div>
+                </div>
+             </div>
+             <div *ngIf="questionArray[0] == 2 || questionArray[1] == 2" class="l-grid__column-12">
+                <div class="l-grid__row justify-content-center">
+                   <div class="l-grid__column-12 l-grid__column-small-9">
+                      <p id="security-popup-qustion3" i18n = "@@restore-quote-security-question-3" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center">Type in car brand you have provided in this quotation last time:</p>
+                   </div>
+                </div>
+                <div class="l-grid__row justify-content-center">
+                  <div class="l-grid__column-small-8 l-grid__column-medium-6">
+                    <div class="c-textfield js-floating u-text-center c-textfield--center u-margin-top-0 u-margin-bottom-lg">
+                       <input id="security-popup-qustion4-ans" class="c-textinput__field c-textinput__field--floating js-floating__input"
+                         [input]="vehicleBrand" dpp-input [ngModel]="vehicleBrand" (ngModelChange)="vehicleBrand=$event" />
+                          <label id="security-popup-qustion4-placeholder" for="" class="c-textinput__label c-textinput__label--floating"><span class="c-textinput__label--optional"></span></label>
+                       <p class="c-textinput__label--bottom"></p>
+                    </div>
+                    <!-- <error *ngIf="showError" [errorMsg]="'securityQuestion'"></error> -->
+                 </div>
+                </div>
+             </div>
+             <div *ngIf="questionArray[0] == 4 || questionArray[1] == 4" class="l-grid__column-12">
+              <div class="l-grid__row justify-content-center">
+                 <div class="l-grid__column-12 l-grid__column-small-9">
+                    <p id="security-popup-qustion4" i18n = "@@restore-quote-security-question-4" class="c-copy c-copy--xlarge u-margin-bottom-0 u-text-center" >Type in vehicle’s license plate number you have provided in this quotation:</p>
+                 </div>
+              </div>
+              <div class="l-grid__row justify-content-center">
+                 <div class="l-grid__column-small-8 l-grid__column-medium-6">
+                    <div class="c-textfield js-floating u-text-center c-textfield--center u-margin-top-0 u-margin-bottom-lg">
+                       <input id="security-popup-qustion4-ans" class="c-textinput__field c-textinput__field--floating js-floating__input"
+                         [input]="licensePlateNumber" dpp-input [ngModel]="licensePlateNumber" (ngModelChange)="licensePlateNumber=$event" maxlength="7"/>
+                          <label id="security-popup-qustion4-placeholder" i18n = "@@restore-quote-security-question-4-placeholder" for="" class="c-textinput__label c-textinput__label--floating"><span class="c-textinput__label--optional"></span>Enter 7 signs</label>
+                       <p class="c-textinput__label--bottom"></p>
+                    </div>                   
+                 </div>
+              </div>
+           </div>
+          <div class="l-grid__column-12">
+            <div class="l-grid__row justify-content-center">
+              <div class="l-grid__column-small-8 l-grid__column-medium-6">
+                <error *ngIf="showError" [errorMsg]="'securityQuestion'"></error>
+              </div>
+            </div>
+          </div>
+           
+             <div class="l-grid__column-12 u-text-center">
+                <button id="security-popup-recover-quote" i18n = "@@restore-quote-security-question-recover-btn" class="c-button c-button--direct-cta" [disabled]="disabledRestore" (click)="recoverQuotation();" type="">RECOVER QUOTATION</button>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

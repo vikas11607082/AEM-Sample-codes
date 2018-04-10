@@ -1,0 +1,80 @@
+<div class="l-container l-container--full-width t-bg-soft-grey-lightest u-padding-bottom-lg u-padding-top-lg">
+    <div class="l-grid">
+        <div class="c-poland-radio-circle-group ">
+            <div class="l-grid l-grid--max-width">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                        <h3 i18n="@@Address-headerDescription-residential" id="ph-qust-{{ownerTypeData.key}}" class="c-heading u-text-center">
+                            Does the {{ownerTypeData.key=="main owner"?"głównego właściciela":(ownerTypeData.key=="owner 1"?"współwłaściciela":"drugiego współwłaściciela")}} residential is the same as policy holder residential?
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="c-radio-circle l-grid__row">
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_{{ownerTypeData.key}}_1" class="c-radio-circle__input" [(ngModel)]="showAddress" value="yes" name="radio-icon-{{ownerTypeData.key}}" (click)="sendClickEvent('yes')" type="radio" />
+                        <label for="rdo_{{ownerTypeData.key}}_1" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@Address-span-residentialYes" class="c-radio-circle__label-text">Yes</span>
+                      </label>
+                    </div>
+                    <div class="l-grid__column-large-2 l-grid__column-medium-2 l-grid__column-12 c-poland-radio-circle-group__item">
+                        <input id="rdo_{{ownerTypeData.key}}_2" class="c-radio-circle__input" [(ngModel)]="showAddress" value="no" name="radio-icon-{{ownerTypeData.key}}" (click)="sendClickEvent('no')" type="radio" />
+                        <label for="rdo_{{ownerTypeData.key}}_2" class="c-radio-circle__label">
+                          <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                          <span i18n = "@@Address-span-residentialNo" class="c-radio-circle__label-text">No</span>
+                      </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="l-grid__column l-grid__column-8 offset-2" *ngIf="showAddress == 'no'">
+            <h3 id="ph-titl-{{ownerTypeData.key}}" class="c-heading u-text-center u-margin-top-lg">
+                {{ownerTypeData.key=="main owner"?"Główny właściciel":(ownerTypeData.key=="owner 1"?"Współwłaściciel":"Drugi współwłaściciel")}}
+            </h3>
+            <p i18n="@@Address-paragraph-residential" class="c-copy c-copy--xlarge u-text-center u-padding-top-sm u-margin-bottom-0">
+                Residential
+            </p>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2" *ngIf="showAddress == 'no'">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngFor="let ownerData of ownerTypeData.value">
+                    <div class="c-textfield js-floating u-background-inherit">
+                        <input id="txt_{{ownerData.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="(ownerData.key == 'Nazwa firmy' || ownerData.key == 'Nazwa banku')?(ownerData.value):(ownerData.value)" (ngModelChange)="ownerData.value=$event"
+                            dpp-input [input]="ownerData.value | uppercase" maxlength="30" [required]="showAddress == 'no'" readonly/>
+                        <label for="ph-textfield-name-{{ownerData.key}}" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> {{ownerData.key}}
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+                <div class="l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngFor="let contact of ownerTypeContact">
+                    <div class="c-textfield js-floating u-background-inherit">
+                        <input id="txt_{{contact.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [(ngModel)]="contact.value" dpp-input [input]="contact.value" [required]="showAddress == 'no'" (blur)="emitContactData()" (keypress)="validate($event, contact.key)"
+                            (keyup)="checkValueKeyup($event,contact)" (paste)="false" />
+                        <label for="ph-textfield-phone-{{contact.key}}" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> {{contact.key}}
+                      </label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+                <ng-container *ngFor="let address of ownerTypeAddr">
+                    <div class="{{(address.key=='House no.'||address.key=='Flat no.')?('l-grid__column-large-3 l-grid__column-medium-12 l-grid__column-small-12'):('l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12')}}">
+                        <div class="c-textfield js-floating u-background-inherit">
+                            <input id="txt_{{address.key}}" class="c-textinput__field c-textinput__field--floating js-floating__input" [ngModel]="address.value | uppercase" (ngModelChange)="address.value=$event" dpp-input [input]="address.value" [required]="showAddress == 'no'"
+                                (blur)="emitAddr()" (keypress)="validate($event,address.key)" (keyup)="checkValueKeyup($event, address)" (paste)="false" />
+                            <label for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span> {{address.key}}
+                            <span i18n = "@@p6ph-span-streetPlaceholder" class="c-textinput__label--optional" *ngIf="address.key == 'Ulica' || address.key == 'Street'">(Fill town name if there is no street)</span>
+                        </label>
+                            <p class="c-textinput__label--bottom"></p>
+                            <error *ngIf="address.value == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                        </div>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+</div>

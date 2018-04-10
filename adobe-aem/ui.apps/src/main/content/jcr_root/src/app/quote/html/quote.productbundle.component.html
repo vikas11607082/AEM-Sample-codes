@@ -1,0 +1,355 @@
+<!-- <header-root></header-root> -->
+<div id="pb-progress-container" class="c-progress-bar-container c-progress-bar-container--poland">
+    <div id="pb-progressbar" class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 id="pb-progress-step2-heading" class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div id="pb-progress-step" class="c-progress-bar--steps">
+            <span id="pb-progress-step1" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p5pb-progressBar-vehicleData" id="pb-progress-step1-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Vehicle Data
+            </p>
+         </span>
+            <span id="pb-progress-step2" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p5pb-progressBar-personalData" id="pb-progress-step2-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Personal Data
+            </p>
+         </span>
+            <span id="pb-progress-step3" class="c-progress-bar__item c-progress-bar__item--active ">
+            <p i18n = "@@p5pb-progressBar-InsuranceDetails" id="pb-progress-step3-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Insurance Details
+            </p>
+         </span>
+            <span id="pb-progress-step4-title" class="c-progress-bar__item  ">
+            <p i18n = "@@p5pb-progressBar-application" id="pb-progress-step4-title" class="c-copy c-copy--large c-progress-bar__text" >
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+
+<!-- bodysection -->
+<div class="l-container l-container--full-width t-bg-soft-blue-light">
+    <div class="c-poland-comparison-table-stage l-grid l-grid--max-width">
+        <div class="u-text-center c-sale-funnel c-sale-funnel--poland-lightweight t-bg-soft-blue-light c-sale-funnel--poland-comparison-table">
+            <div class="u-padding-md">
+                <div>
+                    <div id="pb-clock" class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+                    <p i18n="@@p5pb-paragraph-5Minutes" id="pb-minutes-text" class="c-copy c-copy--large t-rich-grey">
+                        In 5 minutes your offer will be ready
+                    </p>
+                </div>
+                <h1 i18n="@@p5pb-headerDescription-tailoredInsuranceHeading" id="pb-insurance-heading" class="c-heading  l-grid__column-large-10 offset-large-1">
+                    Tailored car insurance
+                </h1>
+                <h6 i18n="@@p5pb-headerDescription-tailoredInsuranceSubHeading" id="pb-insurance-subheading" class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2">
+                    Your individual insurance tailored to your car and your needs
+                </h6>
+            </div>
+        </div>
+
+        <div class="l-grid t-bg-soft-blue-light c-poland-comparison-table-banner">
+            <div class="l-grid__row justify-content-center">
+                <div class="l-grid__column-8 u-text-center u-margin-top-md u-margin-bottom-lg">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="c-promotional-element c-promotional-element--circle c-promotional-element--rotate c-promotional-element--circle--bordered t-border-rich-red">
+            <div class="c-promotional-element--circle__inner t-rich-red u-text-center">
+                <h3 id="pb-promotional-heading" class="c-heading c-heading--subsection-large c-heading--promo-large c-heading--promo-large--bold">
+                    {{offOnNewPoliciesOnline}}<span class="c-heading--promo-large__small-text">%</span>
+                </h3>
+                <p i18n="@@p5pb-paragraph-offNewPoliciesOnline" class="c-promotional-element__text-small c-promotional-element__text-bold">off new policies online</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="c-poland-comparison-table-container t-bg-soft-beige-light">
+    <div class="c-poland-comparison-table-container__scroll-wrapper">
+        <div class="c-poland-comparison-table js-poland-comparison-table c-poland-comparison-table--4-cols c-poland-comparison-table--highlight-at-3">
+            <div class="c-poland-comparison-table__section c-poland-comparison-table__section--recommended">
+                <div class="c-poland-comparison-table__row">
+                    <div class="c-poland-comparison-table__col">
+                    </div>
+                    <div class="c-poland-comparison-table__col c-poland-comparison-table__col--image" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="basicCoverData">
+                        <figure class="c-image c-poland-comparison__image-cat ">
+                            <img id="pb-cover-img1" class="c-image__img" alt="useful description of image if informative and not decoration only." src="{{'/assets/images/product-page/cat-with-plant.png' | imagepathresolver}}"   />
+                        </figure>
+
+                    </div>
+                    <div class="c-poland-comparison-table__col" style="visibility:visible !important;" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="optimalCoverData">
+                        <div class="c-poland-comparison-table__recommend">
+                            <h2 i18n="@@p5pb-headerDescription-recommondedText" id="pb-recommonded-text" class="c-heading c-heading--comparison-table-col-headline u-margin-bottom-0">
+                                Rekomenowanedla Ciebie
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="c-poland-comparison-table__col c-poland-comparison-table__col--image" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="maximumCoverData">
+                        <figure class="c-image  ">
+                            <img id="pb-cover-img2" class="c-image__img" alt="useful description of image if informative and not decoration only." src="{{'/assets/images/product-page/volks-classic.png' | imagepathresolver}}"   />
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+
+            <div #originalTableHeader id="bundleTableHeader" class="c-poland-comparison-table__section c-poland-comparison-table__section--header js-sticky-header">
+                <div class="c-poland-comparison-table__row c-poland-comparison-table__row--header js-sticky-header-row">
+                    <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header">
+                    </div>
+                    <ng-container *ngFor="let offer of productOfferingData">
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MIN'">
+                            <h2 id="pb-cover-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums == 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'OPT'">
+                            <h2 id="pb-optimal-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MAX'">
+                            <h2 id="pb-maximum-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="c-poland-comparison-table__section u-margin-bottom-sm" *ngIf="productOfferingData.length > 0">
+                <div class="c-poland-comparison-table__section-body c-poland-comparison-table__section--collapsible__body js-collapsible-body">
+                    <div class="c-poland-comparison-table__row">
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--fullwidth">
+                            <p i18n="@@p5pb-paragraph-bundleTextSummary" id="pb-bundle-text-summary" class="c-copy c-copy--no-margin c-copy--xlarge">
+                                We have prepared {{productOfferingData.length}} insurance packages that you can further customize to your needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Table Repeate -->
+            <ng-container *ngFor="let table of tablesArray;">
+                <div #personalProtectionRef class="c-poland-comparison-table__section c-poland-comparison-table__section--collapsible js-collapsible is-collapse">
+                    <div id="pb-personal-protection" [ngClass]="{'c-poland-comparison-table__section--collapsible__header':table.tableItems.length > 1}" class="c-poland-comparison-table__section-header js-collapsible-header" (click)="clickCollapsable($event,personalProtectionRef)">
+                        <h2 id="pb-personal-protection-protectionheading" class="c-heading c-heading--comparison-table-section-headline">
+                            {{table.tableHeading}}
+                        </h2>
+                    </div>
+                    <div class="c-poland-comparison-table__section-body ">
+                        <div class="c-poland-comparison-table__row" *ngIf="table.tableDescription">
+                            <div class="c-poland-comparison-table__col c-poland-comparison-table__col--fullwidth">
+                                <p id="pb-personal-protection-summary" class="c-copy c-copy--no-margin c-copy--xlarge">
+                                    {{table.tableDescription}}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- ng repeatation for personal protection -->
+                        <div *ngFor="let item of table.tableItems; let i=index;">
+                            <div class="c-poland-comparison-table__row" *ngIf="i == 0">
+                                <div class="c-poland-comparison-table__col ">
+                                    <h3 [attr.id]="'pb-personal-protection-' + item.heading + i" class="c-heading " style="font-size:25px">{{item.heading}}</h3>
+                                    <p class="c-copy c-copy--no-margin">{{item.subheading}}</p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.basiccover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.basiccover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.coversubheading + i" *ngIf="item.basiccover" class="c-copy c-copy--no-margin">{{item.coversubheading}}</p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.coversubheading + i" *ngIf="item.basiccover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.basicovercontent}}
+                                    </p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="item.dataRow == 2 || item.dataRow == 3">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.optimalcover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.optimalcover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.optimalcoversubheading + i" *ngIf="item.optimalcover" class="c-copy c-copy--no-margin">{{item.optimalcoversubheading}}</p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.optimalcoversubheading + i" *ngIf="item.optimalcover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.optimalcovercontent}}
+                                    </p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="item.dataRow == 3">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.maximumcover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.maximumcover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.maximumcoverheading + i" *ngIf="item.maximumcover" class="c-copy c-copy--no-margin">
+                                        {{item.maximumcoverheading}}
+                                    </p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.maximumcoverheading + i" *ngIf="item.maximumcover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.maximumcovercontent}}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Change for fold unfold behaviour -->
+                            <div class="c-poland-comparison-table__row c-poland-comparison-table__section--collapsible__body js-collapsible-body" *ngIf="i > 0">
+                                <div class="c-poland-comparison-table__col ">
+                                    <h3 [attr.id]="'pb-personal-protection-' + item.heading + i" class="c-heading " style="font-size:25px">{{item.heading}}</h3>
+                                    <p class="c-copy c-copy--no-margin">{{item.subheading}}</p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.basiccover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.basiccover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.coversubheading + i" *ngIf="item.basiccover" class="c-copy c-copy--no-margin">{{item.coversubheading}}</p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.coversubheading + i" *ngIf="item.basiccover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.basicovercontent}}
+                                    </p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="item.dataRow == 2 || item.dataRow == 3">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.optimalcover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.optimalcover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.optimalcoversubheading + i" *ngIf="item.optimalcover" class="c-copy c-copy--no-margin">{{item.optimalcoversubheading}}</p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.optimalcoversubheading + i" *ngIf="item.optimalcover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.optimalcovercontent}}
+                                    </p>
+                                </div>
+                                <div class="c-poland-comparison-table__col" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="item.dataRow == 3">
+                                    <span class="c-icon c-icon--check c-icon--2x t-rich-green" *ngIf="item.maximumcover"></span>
+                                    <span class="t-rich-action-grey fa fa-2x fa-minus" *ngIf="!item.maximumcover"></span>
+                                    <p [attr.id]="'pb-personal-protection-' + item.maximumcoverheading + i" *ngIf="item.maximumcover" class="c-copy c-copy--no-margin">
+                                        {{item.maximumcoverheading}}
+                                    </p>
+                                    <p [attr.id]="'pb-personal-protection-content' + item.maximumcoverheading + i" *ngIf="item.maximumcover" class="c-copy c-copy--no-margin t-rich-action-grey">
+                                        {{item.maximumcovercontent}}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </ng-container>
+
+            <!-- Div for sticky header -->
+            <div sticky-header [header]="originalTableHeader" [footer]="buttonsContainer" class="c-poland-comparison-table__section c-poland-comparison-table__section--header js-sticky-header">
+                <div class="c-poland-comparison-table__row c-poland-comparison-table__row--header js-sticky-header-row">
+                    <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header">
+                    </div>
+                    <ng-container *ngFor="let offer of productOfferingData">
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MIN'">
+                            <h2 id="pb-cover-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'OPT'">
+                            <h2 id="pb-optimal-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--header" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MAX'">
+                            <h2 id="pb-maximum-title" class="c-heading c-heading--comparison-table-col-headline">
+                                {{offer.name}}
+                            </h2>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+
+            
+             <!-- Table Repeate -->
+
+            <div #buttonsContainer class="c-poland-comparison-table__section c-poland-comparison-table__section--footer">
+                <div class="c-poland-comparison-table__row c-poland-comparison-table__row--footer">
+                    <div class="c-poland-comparison-table__col c-poland-comparison-table__col--footer">
+                         <!--Back button-->
+                         <div class="l-grid__row c-custom-bundle">
+                    <div class="l-grid__column u-text-center">
+                    <button i18n="@@p5PB-button-back" class="c-button c-button--icon c-icon c-icon--arrow-right  c-icon-flip c-button--secondary" (click)="clickBackButton()">BACK</button>
+                   </div></div>
+                    <!--Back button end -->
+
+
+                    </div>
+
+
+                          <ng-container *ngFor="let offer of productOfferingData">
+                         
+                         
+                
+
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--footer" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MIN'">
+                            <h2 i18n="@@p5pb-headerDescription-recommandFooterText1" id="pb-recommand-footer-text1" class="c-heading c-heading--comparison-table-col-headline t-rich-action-grey">
+                                Rocznie od
+                            </h2>
+                            <h2 id="pb-basic-cover-actual-text" *ngIf="basicCoverActual !== basicCoverOffered" class="c-heading c-heading--comparison-table-col-headline u-text-decoration-strick t-rich-red">
+                                {{basicCoverActual}}
+                            </h2>
+                            <h2 id="pb-basic-cover-offered-text" class="c-heading c-heading--comparison-table-col-headline">
+                                {{basicCoverOffered}}
+                            </h2>
+                            <button id="btn_Custmize_1" i18n="@@p5pb-button-customize" id="pb-basic-cover-button" [disabled]="isMarketingConsentChecked" class="c-button c-button--medium c-button--redCTA" type="" (click)="navigateToCustomize ($event,'basic','MIN', offer.name)">
+                                CUSTOMIZE
+                            </button>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--footer" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'OPT'">
+                            <h2 i18n="@@p5pb-headerDescription-recommandFooterText2" id="pb-recommand-footer-text2" class="c-heading c-heading--comparison-table-col-headline t-rich-action-grey">
+                                Rocznie od
+                            </h2>
+                            <h2 id="pb-basic-optimal-actual-text" *ngIf="optimalCoverActual !== optimalCoverOffered" class="c-heading c-heading--comparison-table-col-headline u-text-decoration-strick t-rich-red">
+                                {{optimalCoverActual}}
+                            </h2>
+                            <h2 id="pb-basic-optimal-actual-text" class="c-heading c-heading--comparison-table-col-headline">
+                                {{optimalCoverOffered}}
+                            </h2>
+
+                            <button id="btn_Custmize_2" i18n="@@p5pb-button-customize2" id="pb-basic-optimal-button" [disabled]="isMarketingConsentChecked" class="c-button c-button--medium c-button--redCTA" type="" (click)="navigateToCustomize ($event,'optimal','OPT',offer.name)">
+                                CUSTOMIZE
+                            </button>
+                        </div>
+                        <div class="c-poland-comparison-table__col c-poland-comparison-table__col--footer" [ngClass]="{'bundle-table-col-1':noOfColoums === 1, 'bundle-table-col-2':noOfColoums === 2}" *ngIf="offer.id == 'MAX'">
+                            <h2 i18n="@@p5pb-headerDescription-recommandFooterText3" id="pb-recommand-footer-text3" class="c-heading c-heading--comparison-table-col-headline t-rich-action-grey">
+                                Rocznie od
+                            </h2>
+                            <h2 id="pb-basic-maximum-actual-text" *ngIf="maximumCoverActual !== maximumCoverOffered" class="c-heading c-heading--comparison-table-col-headline u-text-decoration-strick t-rich-red">
+                                {{maximumCoverActual}}
+                            </h2>
+                            <h2 id="pb-basic-maximum-offered-text" class="c-heading c-heading--comparison-table-col-headline">
+                                {{maximumCoverOffered}}
+                            </h2>
+                            <button id="btn_Custmize_3" i18n="@@p5pb-button-customize3" id="pb-maximum-cover-button" [disabled]="isMarketingConsentChecked" class="c-button c-button--medium c-button--redCTA" type="" (click)="navigateToCustomize ($event,'maximum','MAX',offer.name)">                            
+                                CUSTOMIZE
+                            </button>
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="c-stage c-stage--text c-product-comparison u-padding-top-none u-margin-bottom-0" style="display:none;">
+    <div class="c-stage__content u-padding-top-none u-padding-bottom-none">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-medium-10 offset-medium-1">
+                    <a class="c-link c-link--block" style="color: #006192;" href='#'>
+                        <span aria-hidden="true" class="c-link__icon c-icon c-icon--arrow-right"></span>
+                        <span i18n="@@p5pb-span-clickToFindSuitablePackage" class="c-link__text">Click here to find suitable package for you</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="l-container l-container--full-width">
+    <div class="l-grid__column-medium-10 offset-medium-1">
+           <div class="l-grid__row u-margin-top-lg justify-content-center">
+    <div class="l-grid__column-10 l-grid__column-large-8">
+        <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" (onDataPicked)="setConsents($event)"></marketing-consents>
+    </div>
+           </div>
+    </div>
+</div>
+
+<!-- <hotline-support></hotline-support> -->
+<ng-template error-factory></ng-template>
+<footer-root></footer-root>

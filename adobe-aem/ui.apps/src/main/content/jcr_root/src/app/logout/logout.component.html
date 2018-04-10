@@ -1,0 +1,29 @@
+<div class="c-modal">
+    <div class="c-modal__backdrop"></div>
+    <div class="c-modal__container ">
+        <div class="c-modal__content">
+            <button aria-label="close" class="c-modal__close" (click)="closeLogoutPopup(false)" ><span aria-hidden="true" class="fa fa-close"></span></button>
+            <div class="c-popup">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-12 u-padding-bottom-sm">
+                        <h3 i18n="@@Logout-confirm" class="c-heading u-text-center u-text-weight-semibold">Confirmation</h3>
+
+                    </div>
+                    <div class="l-grid__column-12 u-padding-bottom-sm">
+                        <p i18n="@@Logout-confirm-msg" class="c-copy c-copy--xlarge u-text-center u-margin-bottom-0">Are you sure you want to logout ?</p>
+                    </div>
+                </div>
+                <div class="l-grid__row justify-content-center u-margin-top-lg">
+                    <div class="l-grid__column-10 l-grid__column-medium-3 u-text-center">
+                        <button i18n="@@Cancel-button-txt-Logout" class="c-button c-button--block c-button--direct-cta" type="" (click)="closeLogoutPopup(false)">CANCEL</button>
+
+                    </div>
+                    <div class="l-grid__column-10 l-grid__column-medium-3 u-text-center flex-xsmall-first flex-medium-unordered">
+                        <button  class="c-button c-button--block c-button--direct-cta" type="" (click)="processLogout()">OK</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

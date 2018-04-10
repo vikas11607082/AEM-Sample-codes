@@ -1,0 +1,7 @@
+<div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+    <p class="c-copy c-copy--large more-description-text" id="readmore">{{storeText}}
+        <span class="ellipsis" *ngIf="showMoreInfo">...</span>
+          <a i18n="@@p7ps-td-moreInfo" class="t-primary-action"  *ngIf="showMoreInfo" (click)="clickMoreInfo()">more info</a>
+            <a i18n="@@p7ps-td-lessInfo" class="t-primary-action"  *ngIf="showLessInfo" (click)="clickLessInfo()">less info</a></p>
+            
+</div>

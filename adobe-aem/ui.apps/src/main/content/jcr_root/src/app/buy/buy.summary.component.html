@@ -1,0 +1,329 @@
+<!-- <header-root></header-root> -->
+<!-- --------------------------------------------------------Progress Bar------------------------------------------------------------ -->
+<div id="pb-progress-container" class="c-progress-bar-container c-progress-bar-container--poland">
+    <div id="pb-progressbar" class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 id="pb-progress-step2-heading" class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div id="pb-progress-step" class="c-progress-bar--steps">
+            <span id="pb-progress-step1" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p7ps-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text">
+               Vehicle Data
+            </p>
+         </span>
+            <span id="pb-progress-step2" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p7ps-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text">
+               Personal Data
+            </p>
+         </span>
+            <span id="pb-progress-step3" class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p7ps-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text">
+               Insurance Details
+            </p>
+         </span>
+            <span id="pb-progress-step4-title" class="c-progress-bar__item c-progress-bar__item--active ">
+      <p i18n = "@@p7ps-progressBar-application" class="c-copy c-copy--large c-progress-bar__text">
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+<!-- -----------------------------------------------------------------------Progress Bar------------------------------------------------------------ -->
+<div class="u-text-center c-sale-funnel t-bg-soft-green-light ">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p i18n="@@p7ps-paragraph-lastStep" class="c-copy c-copy--large t-rich-grey">
+                last step and you offer will be ready
+            </p>
+        </div>
+        <h1 i18n="@@p7ps-headerDescription-fewSeconds" class="c-heading  l-grid__column-large-10 offset-large-1">
+            Offer and purchase in a few steps </h1>
+
+    </div>
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image  ">
+            <img class="c-sale-funnel__image c-sale-funnel--image" alt="useful description of image if informative and not decoration only." src="{{'/assets/images/graphic-summary.png' | imagepathresolver}}" />
+        </figure>
+        <div class="c-sale-funnel__image__footer--center t-bg-soft-green-light"></div>
+        <div class="c-sale-funnel__image__footer t-bg-soft-green"></div>
+    </div>
+    <div class="u-padding-bottom-lg t-bg-soft-green">
+        <h2 i18n="@@p7ps-headerDescription-description" class="c-heading c-heading--negative c-sale-funnel__form--title">
+            Description goes here
+        </h2>
+    </div>
+</div>
+
+<div class="l-grid l-grid--max-width">
+    <div class="l-grid__row justify-content-center">
+        <div class="l-grid__column l-grid__column-12 l-grid__column-medium-8">
+            <h1 i18n="@@p7ps-h1-summary" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0 u-text-center">
+                Summary
+            </h1>
+
+        </div>
+    </div>
+    <div class="l-grid__row justify-content-center">
+        <div class="l-grid__column l-grid__column-12 l-grid__column-medium-8">
+            <div class="l-gird__row u-padding-md c-poland-summary-info js-poland-summary-info ">
+                <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                    <span i18n="@@p7ps-span-yourCar" class="u-font-size-lg u-padding-right-md">Your Car</span>
+                    <i class="c-icon c-icon--poland c-icon--poland--pencil t-primary-action-darker c-poland-summary-info__edit-icon" (click)="editYourCar()"></i>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md ">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-registrationPlates">Registration plate</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PlateNo" class="u-text-bold" data-hj-suppress="">{{plateNo}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md ">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-VIN">Number of car body (VIN)</span></div>
+                    <div class="l-grid__column-6"> <span id="span_VIN" class="u-text-bold" data-hj-suppress="">{{vin}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md ">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-carBrandVersion">Car brand&#x2F;model&#x2F;version</span></div>
+                    <div class="l-grid__column-6"> <span id="span_CarVersion" class="u-text-bold" data-hj-suppress="">{{carBodyModelVersion}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md ">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-productionYear">Production year</span></div>
+                    <div class="l-grid__column-6"> <span id="span_ProdYear" class="u-text-bold"data-hj-suppress="" >{{productionYear}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md ">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-engineCapacity">Engine capacity</span></div>
+                    <div class="l-grid__column-6"> <span id="span_EngineCapacity" class="u-text-bold" data-hj-suppress="">{{engineCapacity}} cm3</span> </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="l-grid__row justify-content-center">
+        <div class="l-grid__column l-grid__column-12 l-grid__column-medium-8">
+            <div class="l-gird__row u-padding-md c-poland-summary-info js-poland-summary-info c-poland-summary-info--collapsible" #policyHolderDiv>
+                <div class="l-grid__column-12 u-margin-bottom-md u-padding-left-none">
+                    <span id="span_PolicyHolder" i18n="@@p7ps-span-policyHolder" class="u-font-size-lg u-padding-right-md">Policy Holder</span>
+                    <i class="c-icon c-icon--poland c-icon--poland--pencil t-primary-action-darker c-poland-summary-info__edit-icon" (click)="editPolicyHolder()"></i>
+                    <span class="c-icon c-icon--chevron-down c-poland-summary-info__collapsible-icon" (click)="showAndHidePolicyHolderInfo(policyHolderDiv)"></span>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md " *ngIf="showNameSurname">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderNameSurname">Name and Surname</span></div>
+                    <div class="l-grid__column-6"> <span id="span_NameSurname" class="u-text-bold" data-hj-suppress="">{{policyHolderdata.nameAndSurname}}</span>
+                    </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md " *ngIf="showCompanyName">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderCompanyName">Company Name</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyCompany" class="u-text-bold" data-hj-suppress="">{{policyHolderdata.companyname}}</span>
+                    </div>
+
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md" *ngIf="showLeasing">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderLeasingName">LeasingNameSurname</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyPESEL" class="u-text-bold" data-hj-suppress="">{{policyHolderdata.leasingName}}</span>
+                    </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md " *ngIf="showBankName">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderNameSurname">Bank Name</span></div>
+                    <div class="l-grid__column-6"> <span id="span_NameSurname" class="u-text-bold" data-hj-suppress="">{{policyHolderdata.bankName}}</span>
+                    </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showPesel">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderPesel">PESEL</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyPESEL" class="u-text-bold" data-hj-suppress="" >{{policyHolderdata.pesel}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showRegon">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderRegon">REGON</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyREGON" class="u-text-bold" data-hj-suppress="" >{{policyHolderdata.regon}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showAddress">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderAddress">Address</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyAddress" class="u-text-bold" data-hj-suppress="" >{{policyHolderdata.address}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showPnone">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderPhone">Phone</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyPhone" class="u-text-bold" data-hj-suppress="" >{{policyHolderdata.phone}}</span> </div>
+                </div>
+
+                <div class="l-grid__row u-padding-bottom-sm u-font-size-md c-poland-summary-info__collapse-point" *ngIf="showEmail">
+                    <div class="l-grid__column-6"><span i18n="@@p7ps-span-PolicyHolderEmail">Email</span></div>
+                    <div class="l-grid__column-6"> <span id="span_PolicyEmail" class="u-text-bold" data-hj-suppress="" >{{policyHolderdata.email}}</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Car owner -->
+    <owner-details [Owner]="carOwner" [fieldName]="'Główny właściciel'" *ngIf="showMainOwner == true" data-hj-suppress=""></owner-details>
+    <owner-details [Owner]="carCoOwner" [fieldName]="'Współwłaściciel'" *ngIf="showCoOwner == true" data-hj-suppress=""></owner-details>
+    <owner-details [Owner]="carCoOwner2" [fieldName]="'Drugi współwłaściciel'" *ngIf="showCoOwner2 == true" data-hj-suppress=""></owner-details>
+    <!-- End Car owner -->
+</div>
+
+<div class="l-container l-container--full-width t-bg-soft-beige-lightest" width="100%">
+    <div class="l-grid l-grid--max-width u-padding-top-lg u-padding-bottom-lg">
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column-11 t-bg-white u-margin-top-lg u-margin-bottom-lg u-padding-top-lg u-padding-bottom-lg">
+                <div class="l-grid__row justify-content-center">
+                    <div class="l-grid__column l-grid__column-10">
+                        <div class="c-list-table c-list-table--single-select">
+                            <div class="l-grid">
+                                <div class="l-grid__row c-list-table__header">
+                                    <div class="l-grid__column-8 offset-2">
+                                        <h1 i18n="@@p7ps-headerDescription-summaryOfOffer" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-center" style="padding-bottom:7%;">
+                                            Summary of your offer
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div class="l-grid__row c-list-table__header">
+                                    <div class="l-grid__column-6">
+                                        <h1 i18n="@@p7ps-headerDescription-carvalue" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-left u-text-weight-light">
+                                            Value of your car
+                                        </h1>
+                                    </div>
+                                    <div class="l-grid__column-6">
+                                        <h1 data-hj-suppress="" id="h1_CarValue" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-right t-primary-action">
+                                            {{carValue}} zł
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div class="l-grid__row c-list-table__header">
+                                    <div class="l-grid__column-6">
+                                        <h1 data-hj-suppress="" i18n="@@p7ps-headerDescription-startDate" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-left u-text-weight-light">
+                                            Start date of insurance
+                                        </h1>
+                                    </div>
+                                    <div class="l-grid__column-6">
+                                        <h1 data-hj-suppress="" id="h1_StartDate" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-right t-primary-action">
+                                            {{startDateOfInsurance | date:'dd MMMM yyyy'}}
+                                        </h1>
+                                    </div>
+                                    <div class="l-grid__column-10" *ngIf ="showStaticText">
+                                        <p class="u-font-size-md" style="font-size:11.5px">Wybierasz rozpoczęcie ochrony w dniu dzisiejszym. Aby ochrona mogła rozpocząć się dziś płatność musi zostać wykonana online i natychmiastowo. Pamiętaj, że moment zaksięgowania płatności (data i godzina) na naszym rachunku jest momentem, w którym rozpocznie się ochrona. Jeśli płatność się opóźni, data startu ochrony również zostanie przesunięta.</p>
+                                    </div>
+                                </div>
+                                <div class="l-grid__row c-list-table__header">
+                                    <div class="l-grid__column-6">
+                                        <h1 data-hj-suppress="" i18n="@@p7ps-headerDescription-endDate" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-left u-text-weight-light">
+                                            End date of insurance
+                                        </h1>
+                                    </div>
+                                    <div class="l-grid__column-6">
+                                        <h1 data-hj-suppress="" id="h1_EndDate" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-right t-primary-action">
+                                            {{endDateOfInsurance | date:'dd MMMM yyyy'}}
+                                        </h1>
+                                    </div>
+                                </div>
+                                <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+                                <div class="l-grid__row c-list-table__header">
+                                    <div class="l-grid__column-6">
+                                        <h1 i18n="@@p7ps-headerDescription-yourCoverage" class="c-heading c-heading--subsection-xsmall c-heading--list-table-sub-headline u-text-left t-primary-action">
+                                            Your Cover
+                                        </h1>
+                                    </div>
+                                </div>
+                                <hr class="c-divider c-divider--list-table poland-divider-light" role="none" aria-hidden=”true” />
+                                <div class="l-grid__row">
+                                    <div class="l-grid__column-12">
+                                        <div class="c-table__container">
+                                            <div class=" l-scroll__container">
+                                                <table class="c-table c-table--summary js-list-table js-table-sortable" style="
+                                                    border-collapse: collapse
+                                                    ">
+                                                    <colgroup>
+                                                        <col style="width:30px">
+                                                    </colgroup>
+                                                    <tbody class="c-table__content">
+                                                        <ng-container *ngFor="let item of coveragesItem">
+                                                            <tr class="c-table__row">
+                                                                <td class="c-table__cell c-table__cell--checkbox tableRowSet">
+                                                                    <div class='c-radio--small'><i class='c-icon c-icon--check t-rich-green'></i>
+                                                                        <label for='car1' class='c-radio__label u-margin-none'></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td id="tb_{{item.name}}" class="c-table__cell tableRowSet" data-hj-suppress="">{{item.name?(item.name.split("|").pop()):""}}</td>
+                                                                <td class="c-table__cell tableRowSet" data-hj-suppress="" ></td>
+                                                                <td id="tb_{{item.sign}}"  class="c-table__cell tableRowSet" data-hj-suppress="" >{{item.sign?(item.sign.split("|").pop()):""}}</td>
+                                                                <td id="tb_{{item.price}}" class="c-table__cell u-text-right tableRowSet tableWidth" data-hj-suppress="">{{item.price}} zł</td>
+                                                            </tr>
+                                                        </ng-container>
+                                                        <tr class="c-table__row poland-divider poland-divider--light">
+                                                             <td class="c-table__cell"> </td>
+                                                           <td i18n="@@p7ps-td-PaymentRata" class="c-table__cell u-font-size-lg " data-hj-suppress="">Payment</td>
+                                                          <td class="c-table__cell "> </td>
+                                                          <td class="c-table__cell u-text-bold tableRowSet" data-hj-suppress="">{{installmentType}}</td>
+                                                      <td class="c-table__cell"></td>
+                                                        </tr>
+                                                        <tr class="c-table__row t-bg-white">
+                                                            <td i18n="@@p7ps-td-methodOfPayment" class="c-table__cell u-font-size-lg u-text-bold" colspan="2">Method of payment</td>
+                                                            <td class="c-table__cell"></td>
+                                                            <td class="c-table__cell u-text-right" colspan="2" data-hj-suppress="" >{{paymentType}}</td>
+                                                        </tr>
+                                                        <tr class="c-table__row t-bg-white" *ngIf="showTotalDiscount">
+                                                            <td class="c-table__cell" colspan="3"></td>
+                                                            <td i18n="@@p7ps-td-total" class="c-table__cell u-text-right u-valign-middle">Total</td>
+                                                            <td class="c-table__cell u-text-right">
+                                                                <h2 id="tb_grossPremium" class="c-heading u-text-decoration-strick t-rich-red h2Add" data-hj-suppress="">
+                                                                    {{grossPremium}} zł
+                                                                </h2>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="c-table__row t-bg-white">
+                                                            <td class="c-table__cell" colspan="1"></td>
+                                                            <td class="c-table__cell" colspan="1"></td>
+                                                            <td class="c-table__cell u-text-right u-padding-top-none" colspan="4">
+                                                                <h2 id="tb_actualPremium" class="c-heading t-primary-action h2Add" data-hj-suppress="">
+                                                                    {{actualPremium}} zł
+                                                                </h2>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-grid__row justify-content-center">
+                    <div class="l-grid__column l-grid__column-12" style="overflow:hidden;">
+                        <div class="l-grid__row u-margin-top-lg justify-content-center">
+                            <div class="l-grid__column-10 l-grid__column-large-8">
+                                <marketing-consents [consentsArray]="consentsArr" [nextClicked]="nextClicked" [selectedAll]="selectedAllConsent" (onDataPicked)="setConsents($event)"></marketing-consents>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-grid__row justify-content-center" *ngIf="isBuyNowFlag">
+                    <button id="btn_BuyNow" i18n="@@p7ps-button-buyNow" class="c-button u-padding-bottom-0 c-button--redCTA" type="" [disabled]="disableConfirmBuy" (click)="savePageData();">
+                                    CONFIRM & BUY
+                                </button>
+                </div>
+                <div class="l-grid__row justify-content-center" *ngIf="isNextFlag">
+                    <button id="btn_next" i18n="@@p7ps-button-next" class="c-button u-padding-bottom-0 c-button--redCTA" type="" (click)="isNextClick()">
+                            Next
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <hotline-support></hotline-support> -->
+<validation-error *ngIf="hasErrors==true" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+<ng-template error-factory></ng-template>
+<!-------------------------------------------------------------Footer------------------------------------------------------------------------------------------------ -->
+<footer-root></footer-root>
+<!-- ---------------------------------------------------------Footer------------------------------------------------------------------------------------------------ -->

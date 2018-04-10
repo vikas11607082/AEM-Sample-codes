@@ -1,0 +1,419 @@
+<!-- <header-root></header-root>-->
+
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+
+            Step 2/4: Upload documents
+
+        </h6>
+
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p4dd-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text">
+
+    Vehicle Data
+
+</p>
+
+    </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+      <p i18n = "@@p4dd-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text">
+
+    Personal Data
+
+</p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p4dd-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text">
+
+    Insurance Details
+
+</p>
+
+    </span>
+            <span class="c-progress-bar__item  ">
+      <p i18n = "@@p4dd-progressBar-application" class="c-copy c-copy--large c-progress-bar__text">
+
+    Application
+
+</p>
+
+    </span>
+        </div>
+    </div>
+</div>
+<!---------------------------------------------------------------------Progress Bar End  ----------------------------------------------------->
+<!-----------------------------------------------------------------------Driver Details Text Heading Section Begin- -------------------------------->
+
+<div class="u-text-center c-sale-funnel t-bg-rich-blue-light c-sale-funnel--poland">
+    <div class="u-padding-md">
+        <div>
+            <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+            <p i18n="@@p4dd-paragraph-5Minutes" class="c-copy c-copy--large t-rich-grey">
+
+                In 5 minutes your offer will be ready
+
+            </p>
+
+        </div>
+
+        <h1 i18n="@@p4dd-headerDescription-talkabtDriver" class="c-heading  l-grid__column-large-10 offset-large-1">
+
+            Let's talk about driver
+
+        </h1>
+
+        <h6 i18n="@@p4dd-headerDescription-personalDatatoconfig" class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2">
+
+            We need your personal data to configure policy for you
+
+        </h6>
+
+    </div>
+
+    <div class="c-sale-funnel__image-container u-padding-top-lg">
+        <figure class="c-image">
+            <img class="c-sale-funnel__image " alt="useful description of image if informative and not decoration only." src="{{'/assets/images/graphic-driver.png' | imagepathresolver}}">
+        </figure>
+
+        <div class="c-sale-funnel__image__footer--center t-bg-rich-blue-light"></div>
+        <div class="c-sale-funnel__image__footer t-bg-rich-blue"></div>
+    </div>
+    <!------------------------------------------------------------Text heading section end -- ------------------------------------------------------- -->
+
+    <!------------------------------------------------------------Main Driver Radio buttons Begin --------------------------------------------------- -->
+
+    <div class="u-padding-bottom-lg t-bg-rich-blue">
+        <h6 i18n="@@p4dd-headerDescription-mainDriverDetails" class="c-heading c-heading--subsection-small c-heading--subsection-small--negative u-padding-top-lg u-margin-bottom-0 c-sale-funnel__form--title">
+
+            Tell us who is the main driver
+
+        </h6>
+
+        <div class="u-padding-top-lg c-sale-funnel__form">
+            <div *ngIf="showMainOwnerData && mainOwnerData.type == 'PrivatePerson' || mainOwnerData.type == 'SoleTrader'" class="c-sale-funnel__form__group">
+                <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                    <input id="rdo_mainOwner" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="mainOwner" [(ngModel)]="selectedDriver" (click)="selectMainOwner()">
+                    <label for="rdo_mainOwner" class="c-radio__label">
+                        <span i18n = "@@p4dd-span-sameAsOwnerPP" *ngIf="mainOwnerData.type == 'PrivatePerson'" class="c-radio__label--text">Same as owner <br><span class="u-text-weight-light">({{mainOwnerData.firstName}} {{mainOwnerData.surName}})</span></span>
+                        <span i18n = "@@p4dd-span-sameAsOwnerST" *ngIf="mainOwnerData.type == 'SoleTrader'" class="c-radio__label--text">Same as owner <br><span class="u-text-weight-light">({{mainOwnerData.firstName}} {{mainOwnerData.surName}})</span></span>
+                    </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden="'true'">
+            </div>
+            <div *ngIf="showCoOwnerData && (coOwnerData.type == 'PrivatePerson' || coOwnerData.type == 'SoleTrader')" class="c-sale-funnel__form__group">
+                <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                    <input id="rdo_coOwner" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="coOwner" [(ngModel)]="selectedDriver" (click)="selectCoOwner()">
+                    <label for="rdo_coOwner" class="c-radio__label">
+                        <span i18n = "@@p4dd-span-owner2PP" *ngIf="coOwnerData.type == 'PrivatePerson'" class="c-radio__label--text">Co-owner 1 <br><span class="u-text-weight-light">({{coOwnerData.firstName}} {{coOwnerData.surName}})</span></span>
+                        <span i18n = "@@p4dd-span-owner2ST" *ngIf="coOwnerData.type == 'SoleTrader'" class="c-radio__label--text">Co-owner 1<br><span class="u-text-weight-light">({{coOwnerData.firstName}} {{coOwnerData.surName}})</span></span>
+                    </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden="'true'">
+            </div>
+            <div *ngIf="showCoOwner2Data && (coOwner2Data.type == 'PrivatePerson' || coOwner2Data.type == 'SoleTrader')" class="c-sale-funnel__form__group">
+                <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                    <input id="rdo_coOwner2" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="coOwner2" [(ngModel)]="selectedDriver" (click)="selectCoOwner2()">
+                    <label for="rdo_coOwner2" class="c-radio__label">
+                        <span i18n = "@@p4dd-span-owner3PP" *ngIf="coOwner2Data.type == 'PrivatePerson'" class="c-radio__label--text">Co-owner 2 <br><span class="u-text-weight-light">({{coOwner2Data.firstName}} {{coOwner2Data.surName}})</span></span>
+                        <span i18n = "@@p4dd-span-owner3ST" *ngIf="coOwner2Data.type == 'SoleTrader'" class="c-radio__label--text">Co-owner 2 <br><span class="u-text-weight-light">({{coOwner2Data.firstName}} {{coOwner2Data.surName}})</span></span>
+                    </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden="'true'">
+            </div>
+            <div class="c-sale-funnel__form__group">
+                <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                    <input id="rdo_others" class="c-radio__input" name="select-1" type="radio" value="other" [(ngModel)]="selectedDriver" tabindex="0" (click)="selectOtherDriver()">
+                    <label for="rdo_others" class="c-radio__label">
+                        <span i18n = "@@p4dd-span-other" class="c-radio__label--text">Other <br><span class="u-text-weight-light other-hidden" style="visibility:hidden">(Other)</span></span>
+                    </label>
+                </div>
+                <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" aria-hidden="”true”">
+            </div>
+        </div>
+        <div class="c-sale-funnel__form__group">
+            <error *ngIf="selectedDriver=='' && nextClicked == true" [errorMsg]="'noSelection'"></error>
+        </div>
+    </div>
+
+    <!----------------------------------------------------- Main Driver fields begin--------------------------------------------- -->
+
+</div>
+
+<div class="l-grid l-grid--max-width" [hidden]="!showDriverDetails">
+
+    <div class="l-grid__row">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p4dd-headerDescription-mainDriver" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Main Driver
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating u-margin-top-sm ">
+                        <input id="txt_driverFirstName" #driverFirstName class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="driverData.firstName" dpp-input required [ngModel]="driverData.firstName" (ngModelChange)="driverData.firstName=$event"
+                            maxlength="30" (keypress)="omit_special_char($event)" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseFirstName($event)" [readOnly]="!otherDriverSel" (keyup)="validateMandatoryFields($event)"
+                            onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-mainDriverName" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>Name</label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="driverData.firstName == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_driverSurName" #driverSurname class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="driverData.surName" dpp-input required [ngModel]="driverData.surName" (ngModelChange)="driverData.surName=$event" required
+                            ngModel maxlength="50" (keypress)="omit_special_char_space($event)" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseSurName($event)" [readOnly]="!otherDriverSel" (keyup)="validateMandatoryFields($event)"
+                            onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-mainDriverSurname" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>Surname</label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="driverData.surName == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_driverPesel" #driverPesel class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="11" [input]="driverData.pesel" dpp-input required [ngModel]="driverData.pesel | uppercase" (ngModelChange)="driverData.pesel=$event"
+                            required ngModel (focus)="addClass($event)" (blur)="removeClass($event);validatePeselBlur($event)" [readOnly]="!otherDriverSel" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPesel($event);validatePeselKeyup($event)" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-mainDriverPesel" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>Pesel</label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="validPesel==false || (driverData.pesel == '' && nextClicked == true)" [errorMsg]="validPesel==false?errorPesel:(driverData.pesel == ''?'noInput':'noInput')"></error>
+                    </div>
+                </div>
+                <div *ngIf="driverData.familyName != '' || (otherDriverSel && isDriverWoman)" class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_driverFamilyName" #driverFamilyName class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="driverData.familyName" dpp-input required [ngModel]="driverData.familyName" (ngModelChange)="driverData.familyName=$event"
+                            required ngModel maxlength="50" (keypress)="omit_special_char_space($event)" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseFamName($event)" [readOnly]="!otherDriverSel" (keyup)="validateMandatoryFields($event)"
+                            onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-mainDriverFamilyName" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>Nazwisko rodowe</label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="driverData.familyName == '' && nextClicked == true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="driverData.regOn!=''" class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_driverRegon" #driverRegOn class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="driverData.regOn" dpp-input required [ngModel]="driverData.regOn | uppercase" (ngModelChange)="driverData.regOn=$event" required
+                            ngModel maxlength="14" minlength="9" (focus)="addClass($event)" (blur)="removeClass($event)" (keypress)="acceptOnlyNumbers($event)" (keyup)="validateMandatoryFields($event)" [readOnly]="!otherDriverSel" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-mainDriverRegon" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span>Regon</label>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-grid__row u-margin-top-lg u-padding-top-lg">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h2 i18n="@@p4dd-headerDescription-yearOfissueDL" class="c-heading c-heading--subsection-medium u-margin-bottom-0 u-text-center">
+                Year of issue driving licence
+                <div class="c-tooltip c-tooltip--inline js-toggle-tooltip" (mouseover)="addClassTooltip($event,tooltip1,tooltip1popup1)" (mouseout)="removeClassTooltip($event,tooltip1,tooltip1popup1)">
+                    <a aria-expanded="true" href="#" class="c-link fa fa-question-circle-o js-toggle-tooltip__link" aria-expanded="false" #tooltip1></a>
+                    <div role="tooltip" class="c-tooltip__item" aria-hidden="true" #tooltip1popup1>
+                        <p class="c-copy">We ask you to prepare a tailored offer for your needs</p>
+                    </div>
+                </div>
+            </h2>
+        </div>
+    </div>
+    <div class="l-grid__column-12">
+        <div class="l-grid__row justify-content-center">
+            <div class="l-grid__column-3 l-grid__column-medium-2 l-grid__column-large-2 u-padding-right-none u-padding-left-none">
+                <drop-down [dropDownName]="'drivingLicenceYear'" [placeholder]="drivingLicenceYearPlaceholder" i18n-placeholder="@@p4dd-placeholder-drivingLicenceYear" [dropDownItems]="yearList" (onDataPicked)="selectLicenseIssueDate($event)"></drop-down>
+            </div>
+            <div class="u-padding-top-lg">
+                <i class="c-icon c-icon--calendar icon-sm"> </i>
+            </div>
+        </div>
+        <div class="l-grid__row justify-content-center">
+            <error *ngIf="dateOfIssueDL=='Wybierz' && nextClicked == true" [errorMsg]="'noSelection'"></error>
+        </div>
+    </div>
+    <div class="c-poland-radio-circle-group u-margin-bottom-lg u-margin-top-lg u-padding-top-lg">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h2 i18n="@@p4dd-headerDescription-maritalStatus" class="c-heading c-heading--subsection-medium u-text-center">
+                        Marital Status
+                    </h2>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_marital_items_1" class="c-radio-circle__input" name="radio-icon-marital-1" type="radio" [(ngModel)]="isMarried" value="false" (click)="marriageSelected($event);" />
+                    <label for="rdo_marital_items_1" class="c-radio-circle__label
+                c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--woman-shadow">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span i18n = "@@p4dd-span-notInMarriage" class="c-radio-circle__label-text">Not in marriage</span>
+                    </label>
+                </div>
+                <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_marital_items_2" class="c-radio-circle__input" name="radio-icon-marital-1" type="radio" [(ngModel)]="isMarried" value="true" (click)="marriageSelected($event);" />
+                    <label for="rdo_marital_items_2" class="c-radio-circle__label
+                c-radio-circle__label--icon c-icon c-icon--poland c-icon--poland--in-marriage">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span i18n = "@@p4dd-span-InMarriage" class="c-radio-circle__label-text">In marriage</span>
+                    </label>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <error *ngIf="isMarried == null && nextClicked==true" [errorMsg]="'noSelection'"></error>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-poland-radio-circle-group u-margin-bottom-lg u-padding-top-lg">
+        <div class="l-grid l-grid--max-width">
+            <div class="l-grid__row">
+                <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                    <h2 i18n="@@p4dd-headerDescription-driverKids" class="c-heading c-heading--subsection-medium u-text-center">
+                        Does the driver have kids younger than 26
+                    </h2>
+                </div>
+            </div>
+
+            <div class="c-radio-circle l-grid__row">
+                <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_kid_items_1" class="c-radio-circle__input" name="radio-icon-group-kid" type="radio" [(ngModel)]="hasDriverKids" value="true" (click)="selectDriverKidsY();" />
+                    <label for="rdo_kid_items_1" class="c-radio-circle__label ">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span i18n = "@@p4dd-span-driverKidsYes" class="c-radio-circle__label-text">Yes</span>
+                    </label>
+                </div>
+
+                <div class="l-grid__column-large-3 l-grid__column-medium-4 l-grid__column-12 c-poland-radio-circle-group__item">
+                    <input id="rdo_kid_items_2" class="c-radio-circle__input" name="radio-icon-group-kid" type="radio" [(ngModel)]="hasDriverKids" value="false" (click)="selectDriverKidsN();" />
+                    <label for="rdo_kid_items_2" class="c-radio-circle__label ">
+                        <span class="c-radio-circle__mobile-check icons-oneweb-allianz-Icon_Check" aria-hidden="true"></span>
+                        <span i18n = "@@p4dd-span-driverKidsNo" class="c-radio-circle__label-text">No</span>
+                    </label>
+                </div>
+            </div>
+            <div class="c-radio-circle l-grid__row">
+                <error *ngIf="driverKidSelected == null && nextClicked == true" [errorMsg]="'noSelection'"></error>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="hasDriverKids=='true'">
+        <div class="l-grid__row u-margin-top-lg u-padding-top-lg">
+            <div class="l-grid__column-large-8 offset-large-2 l-grid__column-medium-12">
+                <h1 i18n="@@p4dd-headerDescription-birthYearOfOldestKid" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-sm">
+                    What is the year of birth of the oldest kid?
+                </h1>
+            </div>
+        </div>
+        <div class="l-grid__column-12">
+            <div class="l-grid__row justify-content-center">
+                <div class="l-grid__column-3 l-grid__column-medium-2 l-grid__column-large-2 u-padding-right-none u-padding-left-none">
+                    <drop-down [dropDownName]="'kidBirthYear'" [placeholder]="kidBirthYearPlaceholder" i18n-placeholder="@@p4dd-placeholder-driverKidBirthYear" [dropDownItems]="kidYearList" (onDataPicked)="selectKidBirthYear($event)" (click)="trackdriverkid();" data-hj-suppress=""></drop-down>
+                </div>
+                <div class="u-padding-top-lg">
+                    <i class="c-icon c-icon--calendar icon-sm"> </i>
+                </div>
+            </div>
+            <div class="l-grid__row justify-content-center">
+                <error *ngIf="driverKidBirthYear == 'Wybierz' && nextClicked == true" [errorMsg]="'noSelection'"></error>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-grid__row u-margin-top-lg u-padding-top-lg">
+        <div class="l-grid__column-12">
+            <div class="l-grid__row justify-content-center">
+                <h1 i18n="@@p4dd-headerDescription-policyStartDate" class="c-heading c-heading--subsection-medium u-text-center u-margin-bottom-sm">
+                    When do you expect to start the policy?
+                </h1>
+            </div>
+        </div>
+        <div class="l-grid__column-12">
+            <div class="l-grid__row l-grid__row--no-gutters justify-content-center">
+                <div class="l-grid__column-3 l-grid__column-small-2 l-grid__column-medium-2 l-grid__column-large-1 u-margin-left-sm">
+                    <drop-down [dropDownName]="'policyDay'" [placeholder]="policyDatePlaceholder" i18n-placeholder="@@p4dd-placeholder-driverpolicyDay" [dropDownItems]="datesDD" (onDataPicked)="selectDateDD($event)"></drop-down>
+
+                </div>
+                <div class="l-grid__column-3 l-grid__column-small-2 l-grid__column-medium-2 l-grid__column-large-1 u-margin-left-sm">
+                    <drop-down [dropDownName]="'policyMonth'" [placeholder]="policyMonthPlaceholder" i18n-placeholder="@@p4dd-placeholder-driverpolicyMonth" [dropDownItems]="monthsDD" (onDataPicked)="selectMonthDD($event)"></drop-down>
+
+                </div>
+                <div class="l-grid__column-3 l-grid__column-small-2 l-grid__column-medium-2 l-grid__column-large-1 u-margin-left-sm">
+                    <drop-down [dropDownName]="'policyYear'" [placeholder]="policyYearPlaceholder" i18n-placeholder="@@p4dd-placeholder-driverpolicyYear" [dropDownItems]="yearsDD" (onDataPicked)="selectYearDD($event)"></drop-down>
+                </div>
+                <div class="u-padding-top-lg">
+                    <i class="c-icon c-icon--calendar icon-sm"></i>
+                </div>
+            </div>
+            <div class="l-grid__row l-grid__row--no-gutters justify-content-center">
+                <error *ngIf="(this.policyDatePlaceholder == 'Date' || this.policyMonthPlaceholder == 'Month' || this.policyYearPlaceholder == 'Year') && nextClicked == true" [errorMsg]="'noSelection'"></error>
+            </div>
+        </div>
+    </div>
+    <div class="l-grid__row u-margin-top-lg" *ngIf="isEmailPhone">
+        <div class="l-grid__column-large-10 offset-large-1 l-grid__column-medium-12">
+            <h1 i18n="@@p4dd-headerDescription-fillContactData" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0 u-text-center">
+                Leave your data and keep up to date with our promotions
+            </h1>
+        </div>
+        <div class="l-grid__column-8 offset-2 emailSpace">
+            <div class="l-grid__row u-margin-bottom-lg">
+                <div class="l-grid__column-large-6 l-grid__column-medium-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_email" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="100" [input]="email" dpp-input [ngModel]="email" (ngModelChange)="email=$event" (keyup)="emailValidation($event)" (change)="emailValidation($event)"
+                            (keypress)="removeSpace($event)" onPaste="return false" onDrag="return false" onDrop="return false" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-email" for="email" class="c-textinput__label c-textinput__label--floating">
+                            <span class="c-textinput__label--optional"></span> Email
+                        </label>
+                        <error *ngIf="!isEmailValid && email !== ''" [errorMsg]="'dataInvalid'"></error>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+                <div class="l-grid__column-large-6 l-grid__column-medium-12">
+                    <div class="c-textfield js-floating u-margin-top-sm">
+                        <input id="txt_phone" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="12" minlength="9" [ngModel]="phone" (ngModelChange)="phone=$event" [input]="phone" dpp-input (keypress)="acceptNumbersAndPlus($event)" (keyup)="phoneValiation($event)"
+                            (change)="phoneValiation($event)" onPaste="return false" onDrag="return false" onDrop="return false" data-hj-suppress="" />
+                        <label i18n="@@p4dd-label-phoneNumber" for="" class="c-textinput__label c-textinput__label--floating">
+                             <span class="c-textinput__label--optional"></span> Phone number
+                        </label>
+                        <error *ngIf="!isPhoneValid && phone !== ''" [errorMsg]="'dataInvalid'"></error>
+                        <p class="c-textinput__label--bottom"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-grid__row u-margin-top-lg justify-content-center">
+        <div class="l-grid__column-10 l-grid__column-large-8">
+            <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" [nextClicked]="nextClicked" (onDataPicked)="setConsents($event)"></marketing-consents>
+        </div>
+    </div>
+
+    <div class="l-grid__row justify-content-center u-margin-top-md u-margin-bottom-lg">
+        <span i18n="@@p4dd-span-duplicatePesel" *ngIf="showPeselErr"><h3>*Please check any duplicate Pesel id</h3></span><br/>
+    </div>
+</div>
+<div class="l-grid l-grid--max-width">
+    <div class="l-grid__row justify-content-center u-margin-top-md u-margin-bottom-md">
+        <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+            <button i18n="@@p4dd-button-back" id="btn_back" class="c-button c-button--icon c-icon c-icon--arrow-right c-icon-flip c-button--secondary" [disabled]="disabledNext" (click)="navigateToPreviousPage($event)">
+                BACK
+              </button>
+        </div>
+        <div class="l-grid__column-large-3 l-grid__column-medium-3 l-grid__column-small-6 u-text-center">
+            <button id="btn_next" i18n="@@p4dd-button-next" class="c-button c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA" (mousedown)="validateAll();" [disabled]="disabledNext">
+                NEXT
+              </button>
+        </div>
+    </div>
+</div>
+<!-- <hotline-support></hotline-support> -->
+<validation-error *ngIf="hasErrors" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+<ng-template error-factory></ng-template>
+<footer-root></footer-root>

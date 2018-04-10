@@ -1,0 +1,1161 @@
+<!-- <header-root></header-root>-->
+<div class="c-progress-bar-container c-progress-bar-container--poland">
+    <div class="l-grid l-grid--max-width c-progress-bar c-progress-bar--poland c-progress-bar--poland--invert" role="progressbar" aria-label="Step 2 of 4: Upload documents" tabindex="0">
+        <h6 class="c-heading c-progress-bar__heading">
+            Step 2&#x2F;4: Upload documents
+        </h6>
+        <div class="c-progress-bar--steps">
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p3co-progressBar-vehicleData" class="c-copy c-copy--large c-progress-bar__text" >
+               Vehicle Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item c-progress-bar__item--active c-progress-bar__item--linear">
+            <p i18n = "@@p3co-progressBar-personalData" class="c-copy c-copy--large c-progress-bar__text" >
+               Personal Data
+            </p>
+         </span>
+            <span class="c-progress-bar__item  ">
+            <p i18n = "@@p3co-progressBar-insuranceDetails" class="c-copy c-copy--large c-progress-bar__text" >
+               Insurance Details
+            </p>
+         </span>
+            <span class="c-progress-bar__item  ">
+            <p i18n = "@@p3co-progressBar-application" class="c-copy c-copy--large c-progress-bar__text" >
+               Application
+            </p>
+         </span>
+        </div>
+    </div>
+</div>
+
+<!-- bodysection -->
+
+<div class="l-grid__row">
+    <div class="l-grid__column-12">
+        <div class="u-text-center c-sale-funnel c-sale-funnel--bg-light-gray ">
+            <div class="u-padding-md">
+                <div>
+                    <div class="c-icon c-icon--clock-o c-sale-funnel__info-icon"></div>
+                    <p i18n="@@p3co-paragraph-4Minutes" class="c-copy c-copy--large t-rich-grey">
+                        in 4 minutes...
+                    </p>
+                </div>
+                <h1 i18n="@@p3co-headerDescription-ownerOfCar" class="c-heading  l-grid__column-large-10 offset-large-1">
+                    Tell us who is the owner of the car
+                </h1>
+                <h6 i18n="@@p3co-headerDescription-dedicatedOffer" class="c-heading u-margin-top-md t-rich-grey l-grid__column-large-8 offset-large-2">
+                    We will prepare dedicated offer especially for you
+                </h6>
+            </div>
+            <div class="c-sale-funnel__image-container u-padding-top-lg">
+                <figure class="c-image c-image--fixed-height ">
+                    <img class="c-image__img c-sale-funnel__image " alt="useful description of image if informative and not decoration only." src="{{'/assets/images/car-owner-funnel.png' | imagepathresolver}}" />
+                </figure>
+                <div class="c-sale-funnel__image__footer--center c-sale-funnel--bg-light-gray"></div>
+                <div class="c-sale-funnel__image__footer t-bg-rich-petrol"></div>
+            </div>
+            <div #mo class="u-padding-bottom-lg t-bg-rich-petrol">
+                <h6 i18n="@@p3co-headerDescription-typeOfOwnership" class="c-heading c-heading--subsection-small c-heading--subsection-small--negative u-padding-top-lg u-margin-bottom-0 c-sale-funnel__form--title">
+                    Select type of ownership.
+                </h6>
+                <div class="u-padding-top-lg c-sale-funnel__form">
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                            <input id="rdo_OwnershipType_PP" class="c-radio__input" name="select-1" type="radio" value="PrivatePerson" [(ngModel)]="mainOwner" tabindex="0" select (change)="resetMainOwnerFields();trackownershiptype()">
+                            <label for="rdo_OwnershipType_PP" class="c-radio__label">
+                     <span i18n = "@@p3co-span-privatePerson" class="c-radio__label--text">Private person</span>
+                     </label>
+                        </div>
+                        <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                    </div>
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                            <input id="rdo_OwnershipType_ST" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="SoleTrader" [(ngModel)]="mainOwner" (change)="resetMainOwnerFields();trackownershiptype();">
+                            <label for="rdo_OwnershipType_ST" class="c-radio__label">
+                     <span i18n = "@@p3co-span-soleTrader" class="c-radio__label--text">Sole trader</span>
+                     </label>
+                        </div>
+                        <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                    </div>
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                            <input id="rdo_OwnershipType_Company" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="Company" [(ngModel)]="mainOwner" (change)="resetMainOwnerFields();trackownershiptype()">
+                            <label for="rdo_OwnershipType_Company" class="c-radio__label">
+                     <span i18n = "@@p3co-span-company" class="c-radio__label--text">Company</span>
+                     </label>
+                        </div>
+                        <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                    </div>
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                            <input id="rdo_OwnershipType_Bank" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="Bank" [(ngModel)]="mainOwner" (change)="resetMainOwnerFields();trackownershiptype();">
+                            <label for="rdo_OwnershipType_Bank" class="c-radio__label">
+                     <span i18n = "@@p3co-span-bank" class="c-radio__label--text">Bank</span>
+                     </label>
+                        </div>
+                        <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                    </div>
+                    <div class="c-sale-funnel__form__group">
+                        <div class="c-radio c-radio--negative c-radio__sale-funnel">
+                            <input id="rdo_OwnershipType_Leasing" class="c-radio__input" name="select-1" type="radio" tabindex="0" value="Leasing" [(ngModel)]="mainOwner" (change)="resetMainOwnerFields();trackownershiptype()">
+                            <label for="rdo_OwnershipType_Leasing" class="c-radio__label">
+                     <span i18n = "@@p3co-span-leasing" class="c-radio__label--text">Leasing</span>
+                     </label>
+                        </div>
+                        <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                    </div>
+                </div>
+                <div class="u-padding-top-lg c-sale-funnel__form u-text-center">
+                    <div class="c-sale-funnel__form__group">
+                        <error *ngIf="mainOwner=='' && nextClicked==true" [errorMsg]="'noSelection'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-grid__row" *ngIf="mainOwner == 'PrivatePerson'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h1 i18n="@@p3co-headerDescription-privatePersonMainOwner" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+            Main owner
+        </h1>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_MainOwnername" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerName" dpp-input maxlength="30" required [ngModel]="mainOwnerName" (ngModelChange)="mainOwnerName=$event" (focus)="addClass($event)"
+                        (blur)="removeClass($event);validateSpace($event);titleCaseName($event);" (keypress)="omit_special_char_name($event)" (keyup)="errMOPFN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress=""
+                    />
+                    <label i18n="@@p3co-label-privatePersonName" for="mainOwnername" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+               Name
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOPFN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_MainOwnerSurname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerSurname" dpp-input maxlength="50" required [ngModel]="mainOwnerSurname" (ngModelChange)="mainOwnerSurname=$event" (focus)="addClass($event)"
+                        (blur)="removeClass($event);validateSpace($event);titleCaseSurName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errMOPSN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress=""
+                    />
+                    <label i18n="@@p3co-label-privatePersonSurname" for="mainOwnerSurname" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Surname
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOPSN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+        </div>
+        <div class="l-grid__row u-margin-bottom-lg">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_Pesel_PP_mo" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerPesel" dpp-input maxlength="11" minlength="11" required [ngModel]="mainOwnerPesel" (ngModelChange)="mainOwnerPesel=$event" (focus)="addClass($event)"
+                        (blur)="removeClass($event);validatePeselOnBlur($event);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPasel($event,'mainOwnerIsWoman','mainOwner');validatePeselOnKeyup($event);" (change)="checkPasel($event,'mainOwnerIsWoman','mainOwner');" data-hj-suppress=""
+                    />
+                    <label i18n="@@p3co-label-privatePersonPesel" for="pasel" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Pesel
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOPP==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validPeselmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="mainOwnerIsWoman">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_MainOwnerFamName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerFamName" dpp-input maxlength="50" required [ngModel]="mainOwnerFamName" (ngModelChange)="mainOwnerFamName=$event" (focus)="addClass($event)"
+                        (blur)="removeClass($event);validateSpace($event);titleCaseFamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errMOPFamN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                    />
+                    <label i18n="@@p3co-label-privatePersonFamilyName" for="mainOwnerFamName" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Nazwisko rodowe
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOPFamN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main owner : Sole Trader -->
+<div class="l-grid__row" *ngIf="mainOwner == 'SoleTrader'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h1 i18n="@@p3co-headerDescription-soleTraderMainOwner" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+            Main owner
+        </h1>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_ST_MainOwnerStname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerSoleTraderName" dpp-input maxlength="30" required [ngModel]="mainOwnerSoleTraderName" (ngModelChange)="mainOwnerSoleTraderName=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseSoleTraderName($event);" (keypress)="omit_special_char_name($event)" (keyup)="errMOSFN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;"
+                        onDrop="return false;" data-hj-suppress="" />
+                    <label i18n="@@p3co-label-soleTraderName" for="mainOwnerStname" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Name
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOSFN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_ST_MainOwnerStsurname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerSoleTraderSurname" dpp-input maxlength="50" required [ngModel]="mainOwnerSoleTraderSurname" (ngModelChange)="mainOwnerSoleTraderSurname=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseSoleTraderSurName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errMOSSN=false" onCopy="return false;" onPaste="return false;"
+                        onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                    <label i18n="@@p3co-label-soleTraderSurname" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Surname
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOSSN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+        </div>
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_Pesel_st_mo" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="11" minlength="11" [input]="mainOwnerSoleTraderPesel" dpp-input required [ngModel]="mainOwnerSoleTraderPesel" (ngModelChange)="mainOwnerSoleTraderPesel=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validatePeselOnBlur($event);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPasel($event,'mainOwnerSoleTraderIsWoman','mainOwner');validatePeselOnKeyup($event);" (change)="checkPasel($event,'mainOwnerSoleTraderIsWoman','mainOwner');"
+                        data-hj-suppress="" />
+                    <label i18n="@@p3co-label-soleTraderPesel" for="paselsoletrader" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Pesel
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOSP==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validPeselmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="mainOwnerSoleTraderIsWoman">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_ST_MainOwnerStfamname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerSoleTraderFamName" dpp-input maxlength="50" required [ngModel]="mainOwnerSoleTraderFamName" (ngModelChange)="mainOwnerSoleTraderFamName=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseSoleTraderFamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errMOSFamN=false" onCopy="return false;" onPaste="return false;"
+                        onDrag="return false;" onDrop="return false;" />
+                    <label i18n="@@p3co-label-soleTraderFamilyName" for="mainOwnerStfamname" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Nazwisko rodowe
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOSFamN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+        </div>
+        <!--next  -->
+        <div class="l-grid__row u-margin-bottom-lg">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_ST_MainOwnerregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerSoleTraderRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="mainOwnerSoleTraderRegon" (ngModelChange)="mainOwnerSoleTraderRegon=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'mo',mainOwnerSoleTraderRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'mo',mainOwnerSoleTraderRegon);" (change)="checkRegon($event)"
+                   data-hj-suppress="" />
+                    <label i18n="@@p3co-label-soleTraderRegon" for="mainOwnerregonst" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Regon
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOSRegon==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validRegonmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main owner : Company -->
+<div class="l-grid__row" *ngIf="mainOwner == 'Company'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h1 i18n="@@p3co-headerDescription-companyMainOwner" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+            Main owner
+        </h1>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_company_MainOwnerconame" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerCompName" dpp-input [ngModel]="mainOwnerCompName" (ngModelChange)="mainOwnerCompName=$event" maxlength="50" (focus)="addClass($event)"
+                        (blur)="removeClass($event);" (keyup)="errMOCN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress=""/>
+                    <label i18n="@@p3co-label-companyName" for="mainOwnerconame" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Company Name
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOCN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_company_MainOwnercoregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerCompRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="mainOwnerCompRegon" (ngModelChange)="mainOwnerCompRegon=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'mo',mainOwnerCompRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'mo',mainOwnerCompRegon);" (change)="checkRegon($event)"
+                    data-hj-suppress="" />
+                    <label i18n="@@p3co-label-companyRegon" for="mainOwnercoregon" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+              Regon
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOCRegon==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validRegonmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main owner : Bank -->
+<div class="l-grid__row" *ngIf="mainOwner == 'Bank'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h1 i18n="@@p3co-headerDescription-bankMainOwner" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+            Main owner
+        </h1>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_Bank_MainOwnerBankName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerName" dpp-input [ngModel]="mainOwnerBankName" (ngModelChange)="mainOwnerBankName=$event" maxlength="50" (focus)="addClass($event)"
+                        (blur)="removeClass($event);" (keyup)="errMOBN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                    <label i18n="@@p3co-label-bankName" for="mainOwnerBankName" class="c-textinput__label c-textinput__label--floating">
+
+              <span class="c-textinput__label--optional"></span>
+              Bank Name
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOBN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_Bank_MainOwnerBankregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerBankRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="mainOwnerBankRegon" (ngModelChange)="mainOwnerBankRegon=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'mo',mainOwnerBankRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'mo',mainOwnerBankRegon);" (change)="checkRegon($event)"
+                    data-hj-suppress="" />
+                    <label i18n="@@p3co-label-bankRegon" for="mainOwnerBankregon" class="c-textinput__label c-textinput__label--floating">
+             <span class="c-textinput__label--optional"></span>
+              Regon
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOBRegon==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validRegonmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main owner : Bank -->
+<!-- Main owner : Lease-->
+<div class="l-grid__row" *ngIf="mainOwner == 'Leasing'">
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <h1 i18n="@@p3co-headerDescription-leasingMainOwner" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+            Main owner
+        </h1>
+    </div>
+    <div class="l-grid__column l-grid__column-8 offset-2">
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_MainOwnerLeaseName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerLeaseName" dpp-input required maxlength="50" [ngModel]="mainOwnerLeaseName" (ngModelChange)="mainOwnerLeaseName=$event" (focus)="addClass($event)"
+                        (blur)="removeClass($event);" (keyup)="errMOLN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                    <label i18n="@@p3co-label-leasingCompanyName" for="mainOwnerLeaseName" class="c-textinput__label c-textinput__label--floating">
+              <span class="c-textinput__label--optional"></span>
+             Company Name
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOLN==true" [errorMsg]="'noInput'"></error>
+                </div>
+            </div>
+            <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                <div class="c-textfield js-floating ">
+                    <input id="txt_MainOwnerLeaseRegon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="mainOwnerLeaseRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="mainOwnerLeaseRegon" (ngModelChange)="mainOwnerLeaseRegon=$event"
+                        (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'mo',mainOwnerLeaseRegon);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'mo',mainOwnerLeaseRegon);" (change)="checkRegon($event)"
+                    data-hj-suppress="" />
+                    <label i18n="@@p3co-label-leasingRegon" for="mainOwnerLeaseRegon" class="c-textinput__label c-textinput__label--floating">
+             <span class="c-textinput__label--optional"></span>
+              Regon
+              </label>
+                    <p class="c-textinput__label--bottom"></p>
+                    <error *ngIf="errMOLRegon==true" [errorMsg]="'noInput'"></error>
+                    <error *ngIf="validRegonmo==false" [errorMsg]="'dataInvalid'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div #co class="l-grid" *ngIf="carCoOwner">
+    <hr class="c-divider u-border-width-lg" role="none" />
+    <div class="l-grid__row u-margin-bottom-lg">
+        <div class="l-grid__column l-grid__column-12">
+            <h1 i18n="@@p3co-headerDescription-type2ndOwner" class="c-heading c-heading--subsection-small u-text-align-center u-margin-bottom-0">
+                Select type of the 1st co-ownership
+            </h1>
+        </div>
+        <div id="coowner1Radios" #coowner1Radios class="l-grid__column l-grid__column-12">
+            <div class="u-padding-top-lg c-sale-funnel__form u-text-center">
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_SecondOwnership_PP" class="c-radio__input" name="select-2" type="radio" value="PrivatePerson" [(ngModel)]="coOwner" (change)="resetcoOwnerFields($event)" tabindex="0">
+                        <label for="rdo_SecondOwnership_PP" class="c-radio__label">
+                 <span i18n = "@@p3co-span-2ndOwnerPrivatePerson" class="c-radio__label--text">Private person</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_SecondOwnership_ST" class="c-radio__input" name="select-2" type="radio" value="SoleTrader" [(ngModel)]="coOwner" (change)="resetcoOwnerFields($event)" tabindex="0">
+                        <label for="rdo_SecondOwnership_ST" class="c-radio__label">
+                 <span i18n = "@@p3co-span-2ndOwnerSoleTrader" class="c-radio__label--text">Sole trader</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_SecondOwnership_Company" class="c-radio__input" name="select-2" type="radio" value="Company" [(ngModel)]="coOwner" (change)="resetcoOwnerFields($event)" tabindex="0">
+                        <label for="rdo_SecondOwnership_Company" class="c-radio__label">
+                 <span i18n = "@@p3co-span-2ndOwnerCompany" class="c-radio__label--text">Company</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_SecondOwnership_Bank" class="c-radio__input" name="select-2" type="radio" value="Bank" [(ngModel)]="coOwner" (change)="resetcoOwnerFields($event)" tabindex="0">
+                        <label for="rdo_SecondOwnership_Bank" class="c-radio__label">
+                 <span i18n = "@@p3co-span-2ndOwnerBank" class="c-radio__label--text">Bank</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_SecondOwnership_Leasing" class="c-radio__input" name="select-2" type="radio" value="Leasing" [(ngModel)]="coOwner" (change)="resetcoOwnerFields($event)" tabindex="0">
+                        <label for="rdo_SecondOwnership_Leasing" class="c-radio__label">
+                 <span i18n = "@@p3co-span-2ndOwnerLeasing" class="c-radio__label--text">Leasing</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+            </div>
+            <div class="u-padding-top-lg c-sale-funnel__form u-text-center">
+                <div class="c-sale-funnel__form__group">
+                    <error *ngIf="(coOwner=='' && carOwnerCount > 0) && nextClicked==true" [errorMsg]="'noSelection'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- closing div of redio button--->
+    <!-- form section -->
+    <div class="l-grid__row" *ngIf="coOwner == 'PrivatePerson'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner2PrivatePerson" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 1
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerName" dpp-input required [ngModel]="coOwnerName" (ngModelChange)="coOwnerName=$event" required ngModel maxlength="30" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerName($event);" (keypress)="omit_special_char_name($event)" (keyup)="errCOPFN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerPrivatePersonName" for="coOwnerName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOPFN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerSurname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSurname" dpp-input required [ngModel]="coOwnerSurname" (ngModelChange)="coOwnerSurname=$event" required ngModel maxlength="50" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerSurname($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCOPSN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerPrivatePersonSurname" for="coOwnerSurname" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Surname
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOPSN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row u-margin-bottom-lg">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_Pesel_pp_co" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerPesel" dpp-input maxlength="11" minlength="11" required [ngModel]="coOwnerPesel" (ngModelChange)="coOwnerPesel=$event" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validatePeselOnBlur($event);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPasel($event,'coOwnerIsWoman','coOwner');validatePeselOnKeyup($event);" (change)="checkPasel($event,'coOwnerIsWoman','coOwner');"
+                       data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerPrivatePersonPesel" for="coOwnerPesel" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Pesel
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOPP==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validPeselco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="coOwnerIsWoman">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerPeselWomen" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerFamName" dpp-input required [ngModel]="coOwnerFamName" (ngModelChange)="coOwnerFamName=$event" ngModel maxlength="30" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerFamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCOPFamN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                        />
+                        <label i18n="@@p3co-label-2ndOwnerPrivatePersonFamilyName" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Nazwisko rodowe
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOPFamN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- coOwner soleTradeerr form -->
+    <div class="l-grid__row" *ngIf="coOwner == 'SoleTrader'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner2SoleTrader" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 1
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerSTName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSoleTraderName" dpp-input required [ngModel]="coOwnerSoleTraderName" (ngModelChange)="coOwnerSoleTraderName=$event" ngModel maxlength="30"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerSoleTraderName($event);" (keypress)="omit_special_char_name($event)" (keyup)="errCOSFN=false" onCopy="return false;" onPaste="return false;"
+                            onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerSoleTraderName" for="coOwnerSTName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOSFN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerSTSurname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSoleTraderSurname" dpp-input required [ngModel]="coOwnerSoleTraderSurname" (ngModelChange)="coOwnerSoleTraderSurname=$event" ngModel
+                            maxlength="50" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerSoleTraderSurname($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCOSSN=false" onCopy="return false;"
+                            onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerSoleTraderSurname" for="coOwnerSTSurname" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Surname
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOSSN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_Pesel_st_co" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSoleTraderPesel" dpp-input maxlength="11" minlength="11" required [ngModel]="coOwnerSoleTraderPesel" (ngModelChange)="coOwnerSoleTraderPesel=$event"
+                            required (blur)="removeClass($event);validatePeselOnBlur($event);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPasel($event,'coOwnerSoleTraderIsWoman','coOwner');validatePeselOnKeyup($event);" ngModel (focus)="addClass($event);"
+                            (change)="checkPasel($event,'coOwnerSoleTraderIsWoman','coOwner');" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerSoleTraderPesel" for="coOwnerSTPesel" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Pesel
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOSP==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validPeselco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="coOwnerSoleTraderIsWoman">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerSTFamName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSoleTraderFamName" dpp-input required [ngModel]="coOwnerSoleTraderFamName" (ngModelChange)="coOwnerSoleTraderFamName=$event" required
+                            ngModel maxlength="30" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwnerSoleTraderFamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCOSFamN=false" onCopy="return false;"
+                            onPaste="return false;" onDrag="return false;" onDrop="return false;" />
+                        <label i18n="@@p3co-label-2ndOwnerSoleTraderFamilyName" for="coOwnerSTFamName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Nazwisko rodowe
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOSFamN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <!--next  -->
+            <div class="l-grid__row u-margin-bottom-lg">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerSTRegon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerSoleTraderRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwnerSoleTraderRegon" (ngModelChange)="coOwnerSoleTraderRegon=$event"
+                            required ngModel (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co',coOwnerSoleTraderRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co',coOwnerSoleTraderRegon)"
+                            (change)="checkRegon($event)" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerSoleTraderRegon" for="coOwnerSTRegon" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOSRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- coOwner company form -->
+    <div class="l-grid__row" *ngIf="coOwner == 'Company'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner2Company" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 1
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerCompanyname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerCompanyName" dpp-input maxlength="50" minlength="1" [ngModel]="coOwnerCompanyName" (ngModelChange)="coOwnerCompanyName=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event)" (keyup)="validateMandatoryFields($event)" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerCompanyName" for="coOwnerconame" class="c-textinput__label c-textinput__label--floating">
+           
+           <span class="c-textinput__label--optional"></span>
+           Company Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOCN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwnerCompanyregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerCompanyRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwnerCompanyRegon" (ngModelChange)="coOwnerCompanyRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co',coOwnerCompanyRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co',coOwnerCompanyRegon)" (change)="checkRegon($event)"
+                         data-hj-suppress=""  />
+                        <label i18n="@@p3co-label-2ndOwnerCompanyRegon" for="coOwnercompanyregon" class="c-textinput__label c-textinput__label--floating">
+          
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOCRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forth -->
+    <!-- coOwner bank form -->
+    <div class="l-grid__row" *ngIf="coOwner == 'Bank'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner2Bank" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 1
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwnerBankName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerBankName" dpp-input maxlength="50" [ngModel]="coOwnerBankName" (ngModelChange)="coOwnerBankName=$event" (focus)="addClass($event)"
+                            (blur)="removeClass($event);" (keyup)="validateMandatoryFields($event)" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerBankName" for="coOwnerBankName" class="c-textinput__label c-textinput__label--floating">
+
+           <span class="c-textinput__label--optional"></span>
+           Bank Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOBN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwnerBankregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerBankRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwnerBankRegon" (ngModelChange)="coOwnerBankRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co',coOwnerBankRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co',coOwnerBankRegon)" (change)="checkRegon($event)"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerBankRegon" for="coOwnerBankregon" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOBRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- coOwner Lease form-->
+    <div class="l-grid__row" *ngIf="coOwner == 'Leasing'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner2Leasing" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 1
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwnerLeaseName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerLeaseName" dpp-input maxlength="50" minlength="1" required [ngModel]="coOwnerLeaseName" (ngModelChange)="coOwnerLeaseName=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);" (keyup)="errCOLN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerLeasingCompanyName" for="coOwnerLeaseName" class="c-textinput__label c-textinput__label--floating">
+           
+           <span class="c-textinput__label--optional"></span>
+          Company Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOLN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+
+
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwnerLeaseRegon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwnerLeaseRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwnerLeaseRegon" (ngModelChange)="coOwnerLeaseRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co',coOwnerLeaseRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co',coOwnerLeaseRegon);" (change)="checkRegon($event)"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-2ndOwnerLeasingCompanyRegon" for="coOwnerLeaseRegon" class="c-textinput__label c-textinput__label--floating">              
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCOLRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main owner : Private Person-->
+<div #co2 class="l-grid" *ngIf="carCoOwner2">
+    <hr class="c-divider u-border-width-lg" role="none" />
+    <div class="l-grid__row u-margin-bottom-lg">
+        <div class="l-grid__column l-grid__column-12">
+            <h1 i18n="@@p3co-headerDescription-type3rdOwner" class="c-heading c-heading--subsection-small u-text-align-center u-margin-bottom-0">
+                Select type of the 2nd co-ownership
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-12">
+            <div class="u-padding-top-lg c-sale-funnel__form u-text-center">
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_OwnershipType3_PP" class="c-radio__input" name="select-3" type="radio" value="PrivatePerson" [(ngModel)]="coOwner2" (change)="resetcoOwner2Fields($event)" tabindex="0">
+                        <label for="rdo_OwnershipType3_PP" class="c-radio__label">
+                 <span i18n = "@@p3co-span-3rdOwnerPrivatePerson" class="c-radio__label--text">Private person</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_OwnershipType3_ST" class="c-radio__input" name="select-3" type="radio" value="SoleTrader" [(ngModel)]="coOwner2" (change)="resetcoOwner2Fields($event)" tabindex="0">
+                        <label for="rdo_OwnershipType3_ST" class="c-radio__label">
+                 <span i18n = "@@p3co-span-3rdOwnerSoleTrader" class="c-radio__label--text">Sole trader</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_OwnershipType3_Company" class="c-radio__input" name="select-3" type="radio" value="Company" [(ngModel)]="coOwner2" (change)="resetcoOwner2Fields($event)" checked tabindex="0">
+                        <label for="rdo_OwnershipType3_Company" class="c-radio__label">
+                 <span i18n = "@@p3co-span-3rdOwnerCompany" class="c-radio__label--text">Company</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_OwnershipType3_Bank" class="c-radio__input" name="select-3" type="radio" value="Bank" [(ngModel)]="coOwner2" (change)="resetcoOwner2Fields($event)" tabindex="0">
+                        <label for="rdo_OwnershipType3_Bank" class="c-radio__label">
+                 <span i18n = "@@p3co-span-3rdOwnerBank" class="c-radio__label--text">Bank</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+                <div class="c-sale-funnel__form__group">
+                    <div class="c-radio c-radio__sale-funnel c-radio--dark">
+                        <input id="rdo_OwnershipType3_Leasing" class="c-radio__input" name="select-3" type="radio" value="Leasing" [(ngModel)]="coOwner2" (change)="resetcoOwner2Fields($event)" tabindex="0">
+                        <label for="rdo_OwnershipType3_Leasing" class="c-radio__label">
+                 <span i18n = "@@p3co-span-3rdOwnerLeasing" class="c-radio__label--text">Leasing</span>
+                 </label>
+                    </div>
+                    <hr class="c-divider u-margin-bottom-lg u-margin-top-lg u-hidden-small-up" role="none" />
+                </div>
+            </div>
+            <div class="u-padding-top-lg c-sale-funnel__form u-text-center">
+                <div class="c-sale-funnel__form__group">
+                    <error *ngIf="(coOwner2=='' && carOwnerCount > 1) && nextClicked==true" [errorMsg]="'noSelection'"></error>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Co-owner 2 form section -->
+    <div class="l-grid__row" *ngIf="coOwner2 == 'PrivatePerson'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner3PrivatePerson" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 2
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2Name" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2Name" dpp-input required [ngModel]="coOwner2Name" (ngModelChange)="coOwner2Name=$event" required ngModel maxlength="30" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCasecoOwner2Name($event);" (keypress)="omit_special_char_name($event)" (keyup)="errCO2PFN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerPrivatePersonName" for="textfield01" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2PFN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2Surname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2Surname" dpp-input required [ngModel]="coOwner2Surname" (ngModelChange)="coOwner2Surname=$event" maxlength="50" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCaseCoOwner2Surname($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCO2PSN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;"
+                       data-hj-suppress=""  />
+                        <label i18n="@@p3co-label-3rdOwnerPrivatePersonSurname" for="coOwner2Surname" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Surname
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2PSN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row u-margin-bottom-lg">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_Pesel_pp_co2" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2Pesel" dpp-input maxlength="11" minlength="11" required [ngModel]="coOwner2Pesel" (ngModelChange)="coOwner2Pesel=$event" required
+                            ngModel (focus)="addClass($event)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkPasel($event,'coOwner2IsWoman', 'coOwner2');validatePeselOnKeyup($event);" (blur)="removeClass($event);validatePeselOnBlur($event);" (change)="checkPasel($event,'coOwner2IsWoman', 'coOwner2');"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerPrivatePersonPesel" for="coOwner2Pesel" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Pesel
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2PP==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validPeselco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="coOwner2IsWoman">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2FamName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2FamName" dpp-input required [ngModel]="coOwner2FamName" (ngModelChange)="coOwner2FamName=$event" maxlength="30" (focus)="addClass($event)"
+                            (blur)="removeClass($event);validateSpace($event);titleCaseCoOwner2FamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCO2PFamN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;"
+                            onDrop="return false;" />
+                        <label i18n="@@p3co-label-3rdOwnerPrivatePersonFamilyName" for="coOwner2FamName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Nazwisko rodowe
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2PFamN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- coOwner 3 soleTradeerr form -->
+    <div class="l-grid__row" *ngIf="coOwner2 == 'SoleTrader'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner3SoleTrader" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 2
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2STName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2SoleTraderName" dpp-input required [ngModel]="coOwner2SoleTraderName" (ngModelChange)="coOwner2SoleTraderName=$event" required ngModel
+                            maxlength="30" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwner2SoleTraderName($event);" (keypress)="omit_special_char_name($event)" (keyup)="validateMandatoryFields($event)" onCopy="return false;"
+                            onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerSoleTraderName" for="coOwner2STName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2SFN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="_txt_CoOwner2STSurname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2SoleTraderSurname" dpp-input maxlength="50" minlength="1" required [ngModel]="coOwner2SoleTraderSurname" (ngModelChange)="coOwner2SoleTraderSurname=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwner2SoleTraderSurName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCO2SSN=false" onCopy="return false;" onPaste="return false;"
+                            onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerSoleTraderSurname" for="coOwner2STSurname" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Surname
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2SSN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_Pesel_st_co2" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2SoleTraderPesel" [input]="coOwner2SoleTraderPesel" dpp-input maxlength="11" minlength="11" required [ngModel]="coOwner2SoleTraderPesel"
+                            (ngModelChange)="coOwner2SoleTraderPesel=$event" (blur)="removeClass($event);validatePeselOnBlur($event);" (keypress)="acceptOnlyNumbers($event)" required ngModel (focus)="addClass($event)" (keypress)="acceptOnlyNumbers($event)"
+                            (keyup)="checkPasel($event,'coOwner2SoleTraderIsWoman', 'coOwner2'); validatePeselOnKeyup($event);" (change)="checkPasel($event,'coOwner2SoleTraderIsWoman', 'coOwner2')" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerSoleTraderPesel" for="coOwner2STPesel" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Pesel
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2SP==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validPeselco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12" *ngIf="coOwner2SoleTraderIsWoman">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2STFamName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2SoleTraderFamName" dpp-input required [ngModel]="coOwner2SoleTraderFamName" (ngModelChange)="coOwner2SoleTraderFamName=$event"
+                            required ngModel maxlength="30" (focus)="addClass($event)" (blur)="removeClass($event);validateSpace($event);titleCaseCoOwner2SoleTraderFamName($event);" (keypress)="omit_special_char_space($event)" (keyup)="errCO2SFamN=false"
+                            onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" />
+                        <label i18n="@@p3co-label-3rdOwnerSoleTraderFamilyName" for="coOwner2STFamName" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Nazwisko rodowe
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2SFamN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+            </div>
+            <!--next  -->
+            <div class="l-grid__row u-margin-bottom-lg">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2STRegon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2SoleTraderRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwner2SoleTraderRegon" (ngModelChange)="coOwner2SoleTraderRegon=$event"
+                            required ngModel (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co2',coOwner2SoleTraderRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co2',coOwner2SoleTraderRegon)"
+                            (change)="checkRegon($event)" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerSoleTraderRegon" for="coOwner2STRegon" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2SRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- coOwner 3 company form -->
+    <div class="l-grid__row" *ngIf="coOwner2 == 'Company'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner3Company" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 2
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="txt_CoOwner2coname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2CompanyName" dpp-input maxlength="50" minlength="1" [ngModel]="coOwner2CompanyName" (ngModelChange)="coOwner2CompanyName=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);" (keyup)="errCO2CN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerCompanyName" for="coOwner2coname" class="c-textinput__label c-textinput__label--floating">          
+           <span class="c-textinput__label--optional"></span>
+           Company Name
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2CN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwner2companyregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2CompanyRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwner2CompanyRegon" (ngModelChange)="coOwner2CompanyRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co2',coOwner2CompanyRegon);" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co2',coOwner2CompanyRegon);" (change)="checkRegon($event)"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerCompanyRegon" for="coOwner2companyregon" class="c-textinput__label c-textinput__label--floating">
+          
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2CRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- coOwner 3 bank form -->
+    <div class="l-grid__row" *ngIf="coOwner2 == 'Bank'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner3Bank" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 2
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+                        <input id="txt_CoOwner2bankname" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2BankName" dpp-input maxlength="50" minlength="1" [ngModel]="coOwner2BankName" (ngModelChange)="coOwner2BankName=$event" (focus)="addClass($event)"
+                            (blur)="removeClass($event);" (keyup)="errCO2BN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerBankName" for="coOwner2bankname" class="c-textinput__label c-textinput__label--floating">
+          <span class="c-textinput__label--optional"></span>
+           Bank Name
+          </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2BN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+
+
+                        <input id="txt_CoOwner2bankregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2BankRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwner2BankRegon" (ngModelChange)="coOwner2BankRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co2',coOwner2BankRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co2',coOwner2BankRegon);" (change)="checkRegon($event)"
+                        data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerBankRegon" for="coOwner2bankregon" class="c-textinput__label c-textinput__label--floating">
+           <span class="c-textinput__label--optional"></span>
+           Regon
+           </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2BRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- co-owner3 Lease form-->
+    <div class="l-grid__row" *ngIf="coOwner2 == 'Leasing'">
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <h1 i18n="@@p3co-headerDescription-coOwner3Leasing" class="c-heading c-heading--subsection-medium u-margin-top-lg u-margin-bottom-0">
+                Co-owner 2
+            </h1>
+        </div>
+        <div class="l-grid__column l-grid__column-8 offset-2">
+            <div class="l-grid__row">
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating">
+                        <input id="txt_CoOwner2leaseName" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2LeaseCompanyName" dpp-input maxlength="50" minlength="1" required [ngModel]="coOwner2LeaseCompanyName" (ngModelChange)="coOwner2LeaseCompanyName=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);" (keyup)="errCO2LN=false" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerLeasingCompanyName" for="coOwner2leaseName" class="c-textinput__label c-textinput__label--floating">
+                  <span class="c-textinput__label--optional"></span>
+                 Company Name
+                  </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2LN==true" [errorMsg]="'noInput'"></error>
+                    </div>
+                </div>
+                <div class="l-grid__column l-grid__column-large-6 l-grid__column-medium-12 l-grid__column-small-12">
+                    <div class="c-textfield js-floating ">
+                        <input id="_txt_CoOwner2leaseregon" class="c-textinput__field c-textinput__field--floating js-floating__input" [input]="coOwner2LeaseCompanyRegon" dpp-input maxlength="14" minlength="9" required [ngModel]="coOwner2LeaseCompanyRegon" (ngModelChange)="coOwner2LeaseCompanyRegon=$event"
+                            (focus)="addClass($event)" (blur)="removeClass($event);validateRegon(true,'co2',coOwner2LeaseCompanyRegon)" (keypress)="acceptOnlyNumbers($event)" (keyup)="checkRegon($event);validateRegon(false,'co2',coOwner2LeaseCompanyRegon);"
+                            (change)="checkRegon($event)" data-hj-suppress="" />
+                        <label i18n="@@p3co-label-3rdOwnerLeasingRegon" for="coOwner2leaseregon" class="c-textinput__label c-textinput__label--floating">
+                  <span class="c-textinput__label--optional"></span>
+                  Regon
+                  </label>
+                        <p class="c-textinput__label--bottom"></p>
+                        <error *ngIf="errCO2LRegon==true" [errorMsg]="'noInput'"></error>
+                        <error *ngIf="validRegonco2==false" [errorMsg]="'dataInvalid'"></error>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end 3rd ownership -->
+
+<div class="l-grid__row justify-content-end u-margin-top-md" *ngIf="carOwnerCount == 0  || carOwnerCount == 1">
+    <div class="l-grid__column-4 u-text-center">
+        <button id="btn_AddNext_Co-owner" i18n="@@p3co-button-addNextCoOwner" class="c-button c-button--icon c-icon c-icon--poland c-icon--poland--plus c-button--secondary c-icon-flip" (click)="addCarCoOwner($event)">
+      Add next co-owner
+      </button>
+    </div>
+</div>
+<div class="l-grid__row justify-content-end u-margin-top-md" *ngIf="carOwnerCount > 0">
+    <div class="l-grid__column-4 u-text-center">
+        <button id="btn_Remove_Co-owner" i18n="@@p3co-button-removeCoOwner" style="padding-left:30px; padding-right:30px" class="c-button c-button--icon c-icon c-icon--poland c-button--secondary c-icon-flip" (click)="removeCoOwner($event);validateMandatoryFields();"><span class="fa fa-1x fa-minus" style="margin-right:18px;"></span>
+      Remove co-owner
+      </button>
+    </div>
+</div>
+<div *ngIf="mainOwner !== ''">
+    <div class="l-grid">
+        <hr class="c-divider u-border-width-lg" role="none" aria-hidden=”true” />
+    </div>
+
+    <div class="l-grid">
+        <div class="l-grid__row">
+            <div class="l-grid__column-12">
+                <h1 i18n="@@p3co-headerDescription-fillContactData" class="c-heading c-heading--subsection-medium u-margin-bottom-0 u-text-center">
+                    Leave your data and keep up to date with our promotions
+                </h1>
+            </div>
+        </div>
+        <div class="l-grid__row">
+            <div class="l-grid__column l-grid__column-8 offset-2">
+                <div class="l-grid__row">
+                    <div class="l-grid__column-12 l-grid__column-large-6">
+                        <div class="c-textfield js-floating ">
+                            <input id="txt_Email" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="100" [input]="email" dpp-input [ngModel]="email" (ngModelChange)="email=$event" (keypress)="removeSpace($event)" (keyup)="isEmailValid=true;" (blur)="emailValidation($event)"
+                                onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" data-hj-suppress="" />
+                            <label i18n="@@p3co-label-email" for="email" class="c-textinput__label c-textinput__label--floating">
+                  <span class="c-textinput__label--optional"></span> Email
+              </label>
+                            <error *ngIf="!isEmailValid && email !== ''" [errorMsg]="'dataInvalid'"></error>
+                            <p class="c-textinput__label--bottom"></p>
+                        </div>
+                    </div>
+                    <div class="l-grid__column-12 l-grid__column-large-6">
+                        <div class="c-textfield js-floating ">
+                            <input id="txt_Phone" class="c-textinput__field c-textinput__field--floating js-floating__input" maxlength="12" minlength="9" [ngModel]="phone" (ngModelChange)="phone=$event" [input]="phone" dpp-input (keypress)="acceptNumbersAndPlus($event)" (keyup)="isPhoneValid=true;"
+                                (change)="phoneValiation($event)" onCopy="return false;" onPaste="return false;" onDrag="return false;" onDrop="return false;" (blur)="phoneValiation($event)" data-hj-suppress="" />
+                            <label i18n="@@p3co-label-phoneNumber" for="" class="c-textinput__label c-textinput__label--floating">
+                          <span class="c-textinput__label--optional"></span> Phone number
+              </label>
+                            <error *ngIf="!isPhoneValid && phone !== ''" [errorMsg]="'dataInvalid'"></error>
+                            <p class="c-textinput__label--bottom"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-container l-container--full-width">
+        <div class="l-grid u-padding-top-md u-padding-bottom-md">
+            <div class="l-grid__row u-margin-top-lg justify-content-center">
+                <div class="l-grid__column-10 l-grid__column-large-8">
+                    <marketing-consents [consentsArray]="consentsArr" [selectedAll]="selectedAllConsent" (onDataPicked)="setConsents($event)"></marketing-consents>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-grid__row justify-content-center u-margin-top-md u-margin-bottom-lg">
+    <span i18n="@@p3co-span-duplicatePesel" *ngIf="showPeselErr"><h3>*Please check any duplicate Pesel id</h3></span><br/>
+    <span i18n="@@p3co-span-duplicateRegon" *ngIf="showRegErr"><h3>*Please check any duplicate Regon id</h3></span>
+</div>
+<div class="l-grid__row justify-content-center u-margin-top-md u-margin-bottom-lg">
+    <div class="l-grid__column-3 u-text-center">
+        <button id="btn_Back" i18n="@@p3co-button-back" class="c-button c-button--icon c-icon c-icon--arrow-right c-icon-flip c-button--secondary" [disabled]="nextDisa" (click)="saveCarOwnerData('back')">
+      BACK
+      </button>
+    </div>
+    <div class="l-grid__column-3 u-text-center">
+        <button id="btn_Next" i18n="@@p3co-button-next" class="c-button c-button--icon c-icon c-icon--arrow-right c-button--icon-right c-button--redCTA" (mousedown)="saveCarOwnerData('next');" [disabled]="nextDisa">NEXT</button>
+    </div>
+</div>
+<!-- <hotline-support></hotline-support> -->
+<validation-error *ngIf="hasErrors" (hideErrorPopup)="hideErrorPopup($event)"></validation-error>
+<ng-template error-factory></ng-template>
+<footer-root></footer-root>
